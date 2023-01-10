@@ -19,3 +19,29 @@
     --bg-color-- :#D9D9D9 ;
 }
 
+body{
+    color: var(--bg-color----);
+}
+.container{
+    max-width: 1068px;
+    width: 100%;
+}
+/* Header */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    z-index: 100; 
+}
+.nav{
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.cart-site{
+    margin: left 100px;
+    text
+}
