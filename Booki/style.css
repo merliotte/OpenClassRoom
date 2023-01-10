@@ -59,7 +59,31 @@ main{
 .container{
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 0px;
     background-position: center;
     background-size: cover;
+    margin: 10px 50px 20px 0;
+}
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    display: flex ;
+    align-items: center;
+    background: transparent;
+    border-radius: 60px;   
+}
+.search-bar input{
+    background: transparent;
+    flex: 0;
+    border: 0;
+    outline: 0;
+    padding: 24px;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.search {
+background: var(--text-color);
+box-sizing: border-box;
+color: #D9D9D9;
+border-radius: solid 2px;
 }
