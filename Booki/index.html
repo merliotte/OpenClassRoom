@@ -6,29 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Link CSS -->
-     <link rel="stylesheet" href="style.css">
-     <!-- Box Icon -->
-     <link rel="icon" href="./icon/">
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
     </head>
 <body>
     <!-- Header -->
     <header> 
-        <div class="nav container">
-                    <a href="#" class="cart-site">Booki</a>            
-                    <a href="#" class="cart-accomodation">Hébergement</a>            
-                    <a href="#" class="cart-activity">Activités</a> 
-             </div>       
-                <h2  class="cart-title">Trouvez votre hébergement pour des vacances de rêve</h2>
-                <p>En plein centre-ville ou en pleine nature</p>           
-            
-            
-        
-                
-            
+    <!-- Nav -->
+        <img class ="logo" src="./Logo/Logo/Booki.svg" alt="Logo Booki">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Hébergement</a></li>       
+                 <li><a href="#">Activités</a></li>       
+            </ul> 
+        </nav>
+    <!-- Main -->    
     </header>
-    
+    <main>
+         <h2 class ="cart-description">Trouvez votre hébergement pour des vacances de rêve
+            </h2>
+                <p>En plein centre-ville ou en pleine nature</p>
+            <!--BOX city-->
+            <div class="container">
+            <form action="">
+                <input type="text" placeholder="Rechercher une destination" name="q">
+                <button type="submit"> <img src="fa-solid fa-location-dot"></i></button> 
+            </form>
+            </div>
+
+    </main>
     
 </body>
 </html>
