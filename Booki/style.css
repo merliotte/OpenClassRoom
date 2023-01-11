@@ -16,10 +16,12 @@
 :root {
     --main-color : #DEEBFF; 
     --text-color : #0065FC ;
-    --bg-color-- :#D9D9D9 ;
+    --bg-color-- : #F0F2F6 ;
 }
 body{
-    color: var(--bg-color----);
+    height: 100vh;
+    width: 100%;
+    background: var(--bg-color--);
 }
 /* Menu + Logo */
 li, a{
@@ -55,35 +57,67 @@ main{
     margin: auto;
     padding: 55px;
 }
-/* Container */
-.container{
+/* Box */
+.box{
+    box-sizing: content-box;
     width: 100%;
-    min-height: 100vh;
-    padding: 0px;
-    background-position: center;
-    background-size: cover;
-    margin: 10px 50px 20px 0;
 }
-.search-bar{
+/* Container */
+.container {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 728px;
+    min-width: 0px;
+}
+/* box */
+.search{
     width: 100%;
-    max-width: 700px;
+    border: solid 2px var(--bg-color--);
+    background: var(--text-color);
     display: flex ;
     align-items: center;
-    background: transparent;
-    border-radius: 60px;   
-}
-.search-bar input{
-    background: transparent;
+    border-radius: 80px; 
+    padding: 0px 40px; 
+ }
+ /* Imput Rechercher une destination */
+.search input{
+    display: flex;
+    background: var(--bg-color--);
     flex: 0;
     border: 0;
     outline: 0;
     padding: 24px;
     text-overflow: ellipsis;
     white-space: normal;
+   
 }
-.search {
-background: var(--text-color);
-box-sizing: border-box;
-color: #D9D9D9;
-border-radius: solid 2px;
+/* input rechercher*/
+.bar {
+border: transparent ;
+background: transparent;
+box-sizing: content-box;
+color: var(--bg-color--);
+border-radius: 10px 40px 40px 10px;
+padding: 24px;
+cursor: pointer;
+margin: 0;
+}
+.bar:hover{
+    color: #D9D9D9;
+}
+/* Icon localisation */
+.container img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-height: 64px;
+    max-width: 50px; 
+    padding: 15px;
+    left: 55px;
+    background: #DEEBFF;
+    outline: none;
+    border: solid 1px var(--main-color);
+    border-radius : 40px 10px 10px 40px ;
 }
