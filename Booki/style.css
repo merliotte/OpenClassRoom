@@ -17,6 +17,7 @@
     --main-color : #DEEBFF; 
     --text-color : #0065FC ;
     --bg-color-- : #F0F2F6 ;
+    --border-image:  #D9D9D9;
 }
 body{
     height: 100vh;
@@ -86,7 +87,7 @@ main{
     display: flex;
     background: var(--bg-color--);
     flex: 0;
-    border: 0;
+    border: solid 1px var(--border-image);
     outline: 0;
     padding: 24px;
     text-overflow: ellipsis;
@@ -110,14 +111,37 @@ margin: 0;
 /* Icon localisation */
 .container img {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    max-height: 64px;
-    max-width: 50px; 
+    height: 67px;
+    width: 50px;
     padding: 15px;
     left: 55px;
-    background: #DEEBFF;
-    outline: none;
+    background: #D9D9D9;
     border: solid 1px var(--main-color);
     border-radius : 40px 10px 10px 40px ;
+}
+/* Filtre */
+.filter{
+
+}
+.filter ul{
+   margin: 30px 0;
+   padding: 10px;
+   display: flex;
+   justify-content: space-around;
+   white-space: normal;   
+   text-align: center;
+  
+}
+
+.filter li{
+    width: 100%;
+    max-width: 150px;
+    border: solid 3px var(--border-image);
+    border-radius: 30px;
+    cursor: pointer;
+}
+.filter li:hover{
+    background: var(--border-image);
+}
+.filter img {
 }
