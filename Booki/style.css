@@ -40,9 +40,13 @@ header{
 .logo{
     padding: 55px;
 }
+.logo{
+
+}
 /* menu */
 .header-link{
-    width: 250px;
+    padding-right: 130px;
+    width: 380px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,16 +54,25 @@ header{
     box-sizing: border-box;
 }
 .menu{
-    width: 100%;
-    padding-top: 55px;
+    padding-top: 50px;
     height: 126px;
     align-items: center;
     border-top: solid transparent;
 }
+
 .menu:hover{
     transition: 0.3s ease;
     border-top: solid rgb(59, 41, 195);
+    color: var(--text-color);
 }
+a{
+    color: black;
+}
+a:hover{
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+
 /* Nav */
 nav{
     margin: auto;
@@ -169,4 +182,16 @@ margin: 0;
 }
 .filter img {
     margin: 0 10px;   
+}
+/* Main */
+.main-travel{
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    background: var(--border-image);
+}
+
+.product-travel{
+    border: solid;
 }
