@@ -180,6 +180,27 @@ margin: 0;
 .filter img {
     margin: 0 10px;   
 }
+/* Information Contain */
+.contain-information{   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 404px;
+}
+.contain-information-image {
+    height: 24px;
+    width: 24px;
+    float: left;
+    border: 0.5px solid var(--border-image);
+    border-radius:  50% 50% 51% 49% / 51% 50% 50% 49% ;
+}
+.contain-information-image img {
+    object-fit: contain;
+    margin: 4px;
+    height: 14px;
+    width: 14px;
+ 
+}
 /* Main */
  main{
     width: 100%;
@@ -249,13 +270,50 @@ h3{
     border: solid transparent;
     border-radius: 30px;
     margin: 30px; 
-    align-items: center; 
-
+    align-items: center;    
+}
+.product-famous-title{
+    padding-left: 157px;
+    margin-top: -99px;
 }
 .box-famous-travel{
     background: var(--border-image);
     padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,auto));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(330px,auto));
+    gap: 1.5rem;
+}
+.product-famous-travel{
+    background: var(--bg-color--);
+    border-radius: 30px;
+    width: 343px;
+    height: 144px;
+}
+.product-famous-img{
+    padding: 5px;
+    width: 137px;
+    height: 144px;
+    object-fit: cover;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+/* Curve img  et texte*/
+.curve{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;}
+.curve img{
+    overflow: hidden;
+    text-indent: 999px;
+    display: block;
+    height: 18px;
+    width: 18px;
+    float: left;
+    background-image: url(./icon/courbe.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.curve h2{
+    padding-top: 10px;
+    margin: 10px;
 }
