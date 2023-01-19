@@ -1,3 +1,13 @@
+/* Responsive smartphone */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1,fr);
+}
+@media screen and (min-width: 900px) {
+    body {
+        padding: 1rem 3rem;
+    }
+}
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&display=swap');
 *{
@@ -190,11 +200,11 @@ cursor: pointer;
 }
 /* Main */
  main{
-    width: 100%;
-    height: 100%;
     display: flex; 
-    justify-content: space-between;   
+    flex-wrap: wrap;
+    flex-direction: row;
     margin: 0px 30px;
+    width: max-content;
 } 
 .main-travel{
     background: var(--border-image);
@@ -202,11 +212,11 @@ cursor: pointer;
     border-radius: 30px;
     align-items: center;
     max-width: 880px;
-   
 }
 .box-travel{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 .product-travel{
     background: var(--bg-color--);
