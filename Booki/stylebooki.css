@@ -7,8 +7,7 @@
     list-style: none;
     text-decoration: none;
     margin: 0;
-
-
+    flex-wrap: wrap;
 }
 
 :root{
@@ -21,17 +20,30 @@
 .menu{
     display: grid;
     grid-template-columns: 1400px  auto auto ;   
-    gap: 57px;
+    gap: 20px;
     align-items: center;
-    
+    flex-wrap: wrap;
+
 }
 a{
     text-align: center;
     color: black;
-    padding-top: 50px;
+    padding-top: 40px;
     width: min-content;
 }
 .menu a:hover{
     color: var(--text-color);
     border-top: solid var(--text-color);
 }
+.menu img{
+    width: 61px;
+    height: 29px;
+    object-fit: contain;
+    margin-left: 55px;
+    padding-top: 40px;
+}
+
+h1, p {
+    margin-left:  55px;
+}
+

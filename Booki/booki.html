@@ -8,16 +8,30 @@
     <!-- css -->
     <link rel="stylesheet" href="stylebooki.css">
     <!-- box Icon -->
+    <link rel="stylesheet" href="searchbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class = "container menu">
+    <header> 
+        <nav class = "container menu">
         <h2><img src="./Images-Booki/logo/Booki.png" alt=""></h2>
         <a href="#">Hébergements</a>
         <a href="#">Activitées</a>
+        </nav>
     </header>
     <nav>
-
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+        <p>En plein centre-ville ou en pleine nature</p>
+        <div class="search-bar">
+            <div class="search-logo">
+               <img src="./icon/localisation.svg" alt="localisation">
+            </div>
+            <div class="search-destination">
+                <label for="recherche destination" ></label>
+                <input type="text" placeholder= "rechercher une destination" id="Marseille" autofocus>
+            </div>
+            <button type="button" class = "bar">Rechercher</button> 
+        </div>
     </nav>
     <main>
         <section></section>

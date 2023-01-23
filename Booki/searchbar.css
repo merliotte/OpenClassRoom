@@ -1,0 +1,43 @@
+:root{
+    --main-color : #DEEBFF; 
+    --text-color : #0065FC ;
+    --bg-color-- : #F0F2F6 ;
+    --border-image:  #D9D9D9;
+}
+nav{
+ margin: 0;    
+}
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 55px;
+}
+input, button{
+    display: flex;
+    border: none;
+    text-overflow: ellipsis; 
+    align-items: center;
+    height: 51px;
+}
+
+.search-bar button{
+    background: var(--text-color);
+    color: white;
+    border-radius: 0 15px 15px 0;
+}
+.search-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid var(--border-image);
+    object-fit: cover;
+    width: 50px;
+    border-radius: 15px 0 0 15px;
+    background: var(--border-image);
+} 
+
+::placeholder {
+    color: black;
+    font-size: 0.95em;
+    border: var(--bg-color--);
+  }
