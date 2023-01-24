@@ -25,7 +25,7 @@
     flex-wrap: wrap;
 
 }
-a{
+.menu a{
     text-align: center;
     color: black;
     padding-top: 40px;
@@ -44,7 +44,8 @@ a{
     padding-top: 40px;
 }
 
-h1, p {
+.nav-title h1,  
+.nav-title p  {
     margin-left:  55px;
 }
 
