@@ -6,7 +6,8 @@
 }
 .activity{
     display: grid;
-    grid-template-columns: 300px 1380px;
+    justify-content: center;
+    grid-template-columns: 0 1380px;
     grid-template-rows: 30px 500px;
 }
 .text-activity {

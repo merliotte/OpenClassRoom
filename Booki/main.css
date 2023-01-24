@@ -110,15 +110,12 @@ h3{
     justify-content: center;
     background: var(--bg-color--);
     border-radius: 15px;
-    width: max-content ;
-    height: ;
-    
+    width: max-content;  
 }
 .famous-img{
     display: flex;
     position: relative;
 }
-
 .famous-img img{
     object-fit: cover;
     width: 137px;

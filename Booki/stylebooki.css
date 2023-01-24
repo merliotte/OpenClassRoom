@@ -9,7 +9,6 @@
     margin: 0;
     flex-wrap: wrap;
 }
-
 :root{
     --main-color : #DEEBFF; 
     --text-color : #0065FC ;
@@ -17,26 +16,38 @@
     --border-image:  #D9D9D9;
 }
 
-.menu{
-    display: grid;
-    grid-template-columns: 1400px  auto auto ;   
-    gap: 20px;
+@media screen and (max-width: 1400px) { 
+    .container-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+     menu{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+.container-menu{
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
+    
 
 }
-.menu a{
+.container-menu a{
+    flex-wrap: wrap;
     text-align: center;
     color: black;
     padding-top: 40px;
     width: min-content;
 }
-.menu a:hover{
+.container-menu a:hover{
     color: var(--text-color);
     border-top: solid var(--text-color);
     transition: 0.1s ease;
 }
-.menu img{
+.container-menu img{
     width: 61px;
     height: 29px;
     object-fit: contain;
