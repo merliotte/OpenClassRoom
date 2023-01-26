@@ -30,7 +30,7 @@
     transition: 0.3s ease;
 }
 
-/* Logo Information */
+/* Logo et texte Information */
 
 .container-information{
     display: flex;
@@ -47,4 +47,21 @@
 .logo-information img{
     width: 25px;
     height: 25px;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .menu-filter{
+        display: grid;
+        grid-template-columns: auto 200px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .container-filter{
+        margin: 20px;
+    }
+    .container-information{
+        margin-left: 5px;        
+    }
 }

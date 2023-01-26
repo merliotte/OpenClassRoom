@@ -19,11 +19,23 @@ input, button{
     align-items: center;
     height: 51px;
 }
-
+input{
+    border : solid var(--bg-color--);
+}
 .search-bar button{
     background: var(--text-color);
     color: white;
     border-radius: 0 15px 15px 0;
+    width: 75px;
+    height: 58px;
+}    
+.bar-test img{
+    padding-left: 20px;
+    visibility: hidden;
+    width: 20px;
+}
+.bar-test p{ 
+    position: absolute;
 }
 .search-logo{
     display: flex;
@@ -35,9 +47,19 @@ input, button{
     border-radius: 15px 0 0 15px;
     background: var(--border-image);
 } 
-
 ::placeholder {
     color: black;
     font-size: 0.95em;
-    border: var(--bg-color--);
+  }
+
+@media screen and (max-width: 1400px){
+    .bar-test img {
+        visibility: visible;  
+    }
+    .bar-test   { 
+        visibility: hidden;
+    }
+    .search-bar{
+        justify-content: center;
+    }
   }

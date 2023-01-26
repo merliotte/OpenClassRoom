@@ -16,47 +16,83 @@
     --border-image:  #D9D9D9;
 }
 
-@media screen and (max-width: 1400px) { 
-    .container-menu{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-     menu{
-        display: flex;
-        flex-direction: column;
-    }
-    
-}
 .container-menu{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    
+    padding-top: 50px;
+    margin-left: 55px;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: black;
+    margin-right: 30px;
+    border-top: solid transparent;
+}
+.menu a{
+    box-sizing: content-box;
+    text-align: center;
+    padding-top: 56px;
 
 }
-.container-menu a{
-    flex-wrap: wrap;
-    text-align: center;
-    color: black;
-    padding-top: 40px;
-    width: min-content;
-}
-.container-menu a:hover{
+.menu a:hover{
     color: var(--text-color);
     border-top: solid var(--text-color);
-    transition: 0.1s ease;
+    transition: 0.3s ease;
 }
+
+/* Overline */
+
+.box-overline{
+    align-content: flex-end;
+
+}
+/* Size image */
 .container-menu img{
     width: 61px;
     height: 29px;
     object-fit: contain;
-    margin-left: 55px;
-    padding-top: 40px;
 }
 
-.nav-title h1,  
-.nav-title p  {
+.nav-title {
     margin-left:  55px;
 }
 
+@media screen and (max-width: 1400px) { 
+    .container-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        margin: 0 0 30px;
+        border-bottom: solid var(--border-image);
+        padding: 10px 10px 10px;
+    }
+    .container-menu img{
+        justify-content: center;
+        margin: 5px;
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        padding: 10px;
+        margin-right: 25px;
+    }
+    .menu a{
+        padding-bottom: 20px;
+        
+    }
+    .menu a:hover{
+        color: var(--text-color);
+        border-bottom: solid var(--text-color);
+        transition: 0.1s ease;
+    }
+    .nav-title {
+        margin-left: 30px;
+        display: flex;
+        align-content: center;
+        align-content: center;
+    }
+}
