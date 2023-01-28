@@ -1,0 +1,12 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --main-font: 'Shrikhand', cursive;
+    --primaire: #9356DC;
+    --secondaire: #FF79DA;
+    --tertiaire: #99E2D0;
+}
