@@ -20,7 +20,7 @@
 }
 
 .menu-filter button:hover{
-    background: var(--border-image);
+    background: var(--main-color);
     transition: 0.3s ease;
 }
 

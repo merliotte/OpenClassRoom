@@ -11,7 +11,7 @@ input, button{
     border: none;
     text-overflow: ellipsis; 
     align-items: center;
-    height: 51px;
+    height: 49px;
 }
 input{
     border : solid var(--bg-color--);
@@ -21,7 +21,7 @@ input{
     color: white;
     border-radius: 0 15px 15px 0;
     width: 75px;
-    height: 58px;
+    height: 55px;
 }    
 .bar-test img{
     padding-left: 20px;

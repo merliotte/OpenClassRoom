@@ -1,7 +1,7 @@
 .activity{
     display: grid;
     justify-content: center;
-    grid-template-columns: 0 1380px;
+    grid-template-columns: -1px 1380px;
     grid-template-rows: 30px 500px;
 }
 .text-activity {
@@ -44,6 +44,9 @@
     .image-activity img{
         width: 334px;
         height: 190px;
+    }
+    .text-activity{
+        margin: 0px 35px 15px;
     }
 }
 
