@@ -1,0 +1,31 @@
+.box-exploration{
+    
+}
+.localisation{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 60px;
+background: var(--border-image);
+gap: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.text-exploration{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background:#F0F2F6 ;  
+}
+.text-exploration button{
+    color: white;
+    border-radius: 15px;
+    width: 170px;
+    background: rgb(147,86,220);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 40px;
+}

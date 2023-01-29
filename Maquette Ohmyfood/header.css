@@ -1,0 +1,26 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main-font: 'Shrikhand', cursive;
+    --primaire: #9356DC;
+    --secondaire: #FF79DA;
+    --tertiaire: #99E2D0;
+    --border-image:  #D9D9D9;
+}
+
+header{
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    margin: 20px 0 0;
+}
+.logo{
+    display: flex ;
+    justify-content: center;
+    width: 400px;
+    height: 30px;
+}
