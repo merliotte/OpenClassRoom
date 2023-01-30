@@ -12,20 +12,52 @@ gap: 20px;
 
 nav{
     display: flex;
-    justify-content: center;
     flex-direction: column;
 }
-.text-exploration{
+.exploration-reservation{
     display: flex;
     justify-content: center;
+    text-align: center;
     flex-direction: column;
-    background:#F0F2F6 ;  
+    background:#F0F2F6 ;    
+    padding: 20px;  
+    
 }
-.text-exploration button{
+.exploration-reservation .reservation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.exploration-reservation .reservation button{
     color: white;
     border-radius: 15px;
     width: 170px;
+    border: transparent;
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     height: 40px;
+}
+.box-fonctionnement{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    gap: 10px;
+}
+.filter-fonctionnement{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-fonctionnement .filter button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border: transparent;
+    border-radius: 15px;
+    height: 30px;
+    width: 202px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }

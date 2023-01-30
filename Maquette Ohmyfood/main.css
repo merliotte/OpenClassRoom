@@ -1,0 +1,21 @@
+.box-restaurant{
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+}
+.container-restaurant{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-restaurant img{
+    object-fit: cover;
+    margin: 3px;
+    width: 334px;
+    border-radius: 15px;
+}
+.container-restaurant .logo-restaurant img{
+    object-fit: cover;
+    width: 30px;
+    
+}
