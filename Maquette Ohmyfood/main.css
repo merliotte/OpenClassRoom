@@ -3,16 +3,24 @@
     flex-direction: column;
     background: var(--background);
 }
-.container-restaurant{
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+}
+.container-restaurant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border-radius: 15px ;
 }
 .container-restaurant img{
     object-fit: cover;
-    margin: 3px;
+    margin: 0 ;
     width: 334px;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 .container-restaurant .logo-restaurant img{
     object-fit: cover;
