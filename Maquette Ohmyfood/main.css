@@ -16,13 +16,21 @@
     background: white;
     border-radius: 15px ;
 }
+.container-restaurant p{
+
+}
 .container-restaurant img{
     object-fit: cover;
     margin: 0 ;
     width: 334px;
     border-radius: 15px 15px 0 0;
 }
-.container-restaurant .logo-restaurant img{
+.logo-restaurant img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
     object-fit: cover;
-    width: 30px; 
+    width: 35px; 
+    margin: -34px 8px 12px 271px;
+    
 }
