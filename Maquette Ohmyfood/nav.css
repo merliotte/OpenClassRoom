@@ -6,9 +6,15 @@
 display: flex;
 justify-content: center;
 align-items: center;
-height: 60px;
 background: var(--border-image);
-gap: 20px;
+
+}
+.localisation button{
+    display: flex;
+    gap: 20px;
+    background: var(--border-image);
+    border: none;
+    margin: 20px;  
 }
 /* Élément de navigation */
 nav{

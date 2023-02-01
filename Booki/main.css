@@ -65,6 +65,18 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+.star-transparent{
+    overflow: hidden;
+    text-indent: 999px;
+    height: 12px;
+    margin: 1px;
+    width: 12px;
+    float: left;
+    background-image: url(./icon/star.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 20%;
+}
 h3{
     display: flex;
     padding: 40px 55px;
