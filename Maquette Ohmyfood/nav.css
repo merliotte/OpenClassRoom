@@ -52,9 +52,13 @@ nav{
 .box-fonctionnement{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin: 20px;
     gap: 10px;
+}
+/* Box des filtres */
+.box-filter{
+    display: flex;
+    justify-content: center;
 }
 /* Filtre de fonctionnement */
 .filter-fonctionnement{
@@ -63,7 +67,7 @@ nav{
     gap: 10px;
 }
 /* Bouton de filtre */
-.filter-fonctionnement .filter button{
+.filter-fonctionnement button{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -74,5 +78,59 @@ nav{
     height: 56px;
     width: 260px;
     font-weight: bold;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+    color: black;
 }
+.filter-fonctionnement img{
+    object-fit: cover;
+    width: 20px;
+    height: auto;
+}
+/* .filter button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -12px;
+    z-index: 1;
+} */
+/* Icone Nombre */
+.number-filter{
+    position: absolute;
+    padding: 55px 50px 10px;
+} 
+.number-filter img {
+    object-fit: cover;
+    width: 20px;
+}
+/* button à puce listé */
+ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .number-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primaire);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -12px;
+    z-index: 1;
+  }
+  
+  
+  

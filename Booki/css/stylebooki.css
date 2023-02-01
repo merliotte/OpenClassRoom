@@ -37,11 +37,6 @@
     padding-top: 56px;
 
 }
-.menu a:hover{
-    color: var(--text-color);
-    border-top: solid var(--text-color);
-    transition: 0.3s ease;
-}
 
 /* Overline */
 
@@ -59,7 +54,14 @@
 .nav-title {
     margin-left:  55px;
 }
-
+/* animation */
+@media screen and (min-width: 1400px){
+    .menu a:hover{
+        color: var(--text-color);
+        border-top: solid var(--text-color);
+        transition: 0.3s ease;
+    }
+}
 @media screen and (max-width: 1400px) { 
     .container-menu{
         display: flex;
