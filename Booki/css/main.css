@@ -61,7 +61,7 @@
     margin: 1px;
     width: 12px;
     float: left;
-    background-image: url(./icon/star.svg) ;
+    background-image: url(/Booki/icon/) ;
     background-size: contain;
     background-repeat: no-repeat;
 }
