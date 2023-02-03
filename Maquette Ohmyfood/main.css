@@ -1,3 +1,16 @@
+.restautant-box_new{
+    background: var(--tertiaire);
+    opacity: 85%;
+    color: #008766;
+    position: absolute;
+    font-weight : bold;
+    text-align: center;
+    margin: 10px 10px 214px 231px;
+    padding: 8px;
+    z-index: 1;
+    width: 80px;
+    height: 18px;
+}
 .box-restaurant{
     display: flex;
     flex-direction: column;
@@ -7,6 +20,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
     gap: 20px;
 }
 .container-restaurant{
@@ -14,10 +28,11 @@
     flex-direction: column;
     justify-content: center;
     background: white;
+    gap: 5px;
     border-radius: 15px ;
 }
 .container-restaurant p{
-
+    padding: 0px 10px;
 }
 .container-restaurant img{
     object-fit: cover;
@@ -32,5 +47,5 @@
     object-fit: cover;
     width: 35px; 
     margin: -34px 8px 12px 271px;
-    
 }
+

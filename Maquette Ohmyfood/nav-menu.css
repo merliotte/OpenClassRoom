@@ -1,0 +1,6 @@
+@media screen and (max-width: 1400px) {
+.box-image img{
+    object-fit: cover;
+    width: 100%;
+}
+}

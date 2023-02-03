@@ -1,3 +1,21 @@
+.container-fluid {
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1100px) {
+      .container-fluid {
+        padding: 0 50px;
+      }
+    }
+  
+    @media (min-width: 1800px) {
+      .container-fluid {
+        box-sizing: border-box;
+        max-width: 1800px;
+        width: 100%;
+      }
+    }
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&display=swap');
 
 *{
@@ -52,10 +70,13 @@
 }
 
 .nav-title {
-    margin-left:  55px;
+    margin: 55px 0 0 55px;
+}
+.nav-title p{
+    padding: 10px 0 0 0;
 }
 /* animation */
-@media screen and (min-width: 1400px){
+/* @media screen and (min-width: 1400px){
     .menu a:hover{
         color: var(--text-color);
         border-top: solid var(--text-color);
@@ -97,4 +118,4 @@
         align-content: center;
         align-content: center;
     }
-}
+} */

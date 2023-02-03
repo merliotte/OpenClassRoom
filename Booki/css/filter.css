@@ -13,6 +13,11 @@
 }
 
 .menu-filter button{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 13px 45px 16px 26px;
     gap: 10px;
     border: 2px solid var(--border-image);
     border-radius: 25px;
@@ -30,7 +35,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 99px;
+    margin: 0px 18px 18px 55px;
     gap: 15px;
 }
 .logo-information{
@@ -43,7 +48,7 @@
     height: 25px;
 }
 
-@media screen and (max-width: 1400px) {
+/* @media screen and (max-width: 1400px) {
 
     .menu-filter{
         display: grid;
@@ -58,4 +63,4 @@
     .container-information{
         margin-left: 5px;        
     }
-}
+} */

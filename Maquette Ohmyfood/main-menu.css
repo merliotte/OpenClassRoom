@@ -1,0 +1,62 @@
+@media screen and (max-width: 1400px) {
+.box-menu{
+    display: flex; 
+    flex-direction: column;
+    background: var(--background-menu);
+}
+/* Title Restaurant */
+.menu-title{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 10px 0;
+}
+.container-menu{
+    border-radius: 30px;
+    margin: -33px 0px 0 0;
+    padding: 30px 14px;
+    z-index: 1;
+    background: var(--background-menu);
+}
+h3{
+    text-transform: uppercase;
+    border-bottom: solid var(--tertiaire);
+    width: 60px;
+}
+/* Image Coeur */
+ .container-menu img{
+    object-fit: contain;
+    width: 32px;  
+ }
+/* Liste des plats  */
+.list-menu {
+    margin: 10px 0;
+}
+.container-menu ol li{
+    display: grid;
+    grid-template-columns: 240px 50px;
+    grid-template-rows: repeat(3, auto);
+    border-radius: 15px;
+    background: white ;
+    padding: 10px;
+    margin: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 300px;
+    cursor: pointer;
+    background: white;
+}
+.container-menu p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ol li .prix{
+    text-align: center;
+    z-index: 1;
+    padding: 0px 10px;
+}
+}
+
+/* Box Commander */

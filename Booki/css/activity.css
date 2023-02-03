@@ -30,7 +30,7 @@
     height: 445px;
     border-radius: 20px 20px 0 0;
 }
-
+/* 
 @media screen and (max-width: 1400px) {
     .activity{ 
         display: flex;
@@ -48,5 +48,5 @@
     .text-activity{
         margin: 0px 35px 15px;
     }
-}
+} */
 

@@ -1,0 +1,23 @@
+footer{
+    background: #353535;
+   
+}
+/* Box Footer */
+.box-footer{
+    display: flex;
+    color: white;
+    background: rgb(58, 54, 54);
+}
+.container-footer{
+    margin: 20px;
+}
+.box-footer li strong{
+    margin: 0px 10px;
+}
+/* Icon Footer */
+
+.container-footer ol img{
+    object-fit: cover;
+    width: 20px;
+}
+

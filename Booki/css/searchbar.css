@@ -6,30 +6,37 @@ nav{
     flex-direction: row;
     margin: 20px 55px;
 }
-input, button{
+.search-destination input{
     display: flex;
     border: none;
     text-overflow: ellipsis; 
-    align-items: center;
-    height: 49px;
-}
-input{
+    height: 51px;
+    width: 236px;
     border : solid var(--bg-color--);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px 0 0px 10px;
+}
+::placeholder{
+    color: black;
 }
 .search-bar button{
+    border: none;
     background: var(--text-color);
     color: white;
     border-radius: 0 15px 15px 0;
-    width: 75px;
+    width: 132px;
     height: 55px;
 }    
-.bar-test img{
+.bar-logo img{
     padding-left: 20px;
     visibility: hidden;
     width: 20px;
 }
-.bar-test p{ 
+.bar-logo p{ 
     position: absolute;
+    font-weight: bold;
+    font-size: 20px;
 }
 .search-logo{
     display: flex;
@@ -41,19 +48,14 @@ input{
     border-radius: 15px 0 0 15px;
     background: var(--border-image);
 } 
-::placeholder {
-    color: black;
-    font-size: 0.95em;
-  }
-
-@media screen and (max-width: 1400px){
-    .bar-test img {
+/* @media screen and (max-width: 1400px){
+    .bar-logo img {
         visibility: visible;  
     }
-    .bar-test   { 
+    .bar-logo   { 
         visibility: hidden;
     }
     .search-bar{
         justify-content: center;
     }
-  }
+  } */
