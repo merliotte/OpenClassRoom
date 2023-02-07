@@ -1,4 +1,4 @@
-.container-fluid {
+/* .container-fluid {
     padding: 0 15px;
     margin: 0 auto;
   }
@@ -9,19 +9,17 @@
       }
     }
   
-    @media (min-width: 1800px) {
+    @media (max-width: 1400px) {
       .container-fluid {
         box-sizing: border-box;
-        max-width: 1800px;
+        max-width: 1400px;
         width: 100%;
       }
-    }
+    } */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;1,700&display=swap');
 
 *{
-    font-family: 'Amatic SC', cursive;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Raleway', sans-serif;
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -33,57 +31,60 @@
     --bg-color-- : #F0F2F6 ;
     --border-image:  #D9D9D9;
 }
-
-.container-menu{
+@media screen and (max-width: 1400px) {
+    
+    .container-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 50px;
     margin-left: 55px;
-}
-.menu{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    color: black;
-    margin-right: 30px;
-    border-top: solid transparent;
-}
-.menu a{
-    box-sizing: content-box;
-    text-align: center;
-    padding-top: 56px;
+    }
+    .menu{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        color: black;
+        margin-right: 30px;
+        border-top: solid transparent;
+    }
+    .menu a{
+        box-sizing: content-box;
+        text-align: center;
+        padding-top: 56px;
+        
+    }
 
-}
+    /* Overline */
 
-/* Overline */
+    .box-overline{
+        align-content: flex-end;
+        
+    }
+    /* Size image */
+    .container-menu img{
+        width: 61px;
+        height: 29px;
+        object-fit: contain;
+    }
 
-.box-overline{
-    align-content: flex-end;
-
-}
-/* Size image */
-.container-menu img{
-    width: 61px;
-    height: 29px;
-    object-fit: contain;
-}
-
-.nav-title {
-    margin: 55px 0 0 55px;
-}
-.nav-title p{
-    padding: 10px 0 0 0;
+    .nav-title {
+        margin: 55px 0 0 55px;
+    }
+    .nav-title p{
+        padding: 10px 0 0 0;
+    }
 }
 /* animation */
-/* @media screen and (min-width: 1400px){
+
+@media screen and (min-width: 0px){
     .menu a:hover{
         color: var(--text-color);
         border-top: solid var(--text-color);
         transition: 0.3s ease;
     }
 }
-@media screen and (max-width: 1400px) { 
+@media screen and (max-width: 768px) { 
     .container-menu{
         display: flex;
         flex-direction: column;
@@ -118,4 +119,4 @@
         align-content: center;
         align-content: center;
     }
-} */
+}

@@ -1,53 +1,55 @@
-nav{
- margin: 0;    
+@media screen and (max-width: 1400px) {
+    nav{
+    margin: 0;    
+    }
+    .search-bar{
+        display: flex;
+        flex-direction: row;
+        margin: 20px 55px;
+    }
+    .search-destination input{
+        display: flex;
+        border: none;
+        text-overflow: ellipsis; 
+        height: 51px;
+        width: 236px;
+        border : solid var(--bg-color--);
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0px 0 0px 10px;
+    }
+    ::placeholder{
+        color: black;
+    }
+    .search-bar button{
+        border: none;
+        background: var(--text-color);
+        color: white;
+        border-radius: 0 15px 15px 0;
+        width: 132px;
+        height: 55px;
+    }    
+    .bar-logo img{
+        padding-left: 20px;
+        visibility: hidden;
+        width: 20px;
+    }
+    .bar-logo p{ 
+        position: absolute;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .search-logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid var(--border-image);
+        object-fit: cover;
+        width: 50px;
+        border-radius: 15px 0 0 15px;
+        background: var(--border-image);
+    } 
 }
-.search-bar{
-    display: flex;
-    flex-direction: row;
-    margin: 20px 55px;
-}
-.search-destination input{
-    display: flex;
-    border: none;
-    text-overflow: ellipsis; 
-    height: 51px;
-    width: 236px;
-    border : solid var(--bg-color--);
-    font-weight: bold;
-    font-size: 20px;
-    padding: 0px 0 0px 10px;
-}
-::placeholder{
-    color: black;
-}
-.search-bar button{
-    border: none;
-    background: var(--text-color);
-    color: white;
-    border-radius: 0 15px 15px 0;
-    width: 132px;
-    height: 55px;
-}    
-.bar-logo img{
-    padding-left: 20px;
-    visibility: hidden;
-    width: 20px;
-}
-.bar-logo p{ 
-    position: absolute;
-    font-weight: bold;
-    font-size: 20px;
-}
-.search-logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: solid var(--border-image);
-    object-fit: cover;
-    width: 50px;
-    border-radius: 15px 0 0 15px;
-    background: var(--border-image);
-} 
 /* @media screen and (max-width: 1400px){
     .bar-logo img {
         visibility: visible;  
