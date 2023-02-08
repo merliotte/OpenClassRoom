@@ -6,13 +6,11 @@
         margin: 45px 55px;
         align-items: center;
     }
-
     .menu-filter{
         display: flex;
         flex-direction: row;
         gap: 32px;
     }
-
     .menu-filter button{
         display: flex;
         align-items: center;
@@ -24,7 +22,6 @@
         border-radius: 25px;
         background: white;
     }
-
     .menu-filter button:hover{
         background: var(--main-color);
         transition: 0.3s ease;
@@ -44,7 +41,6 @@
         border: solid var(--border-image);
         border-radius:  50% 50% 51% 49% / 51% 50% 50% 49% ;
     }
-
     .logo-information img{
         width: 25px;
         height: 25px;
@@ -55,11 +51,12 @@
         display: flex;
         flex-direction: row;
         gap: 19px;
-        margin: 45px 55px;
+        margin: 0px 0px 0px 0px;
+        padding: 25px 0px 25px 25px;
         align-items: center;
     }
     .container-filter h2{
-        font-size: 20px;
+        font-size: 16px;
     }
     .menu-filter{
         gap: 16px;
@@ -69,19 +66,19 @@
         align-items: center;
         width: auto;
         height: auto;
-        padding: 18px 19px 13px 19px;
+        padding: 10px 15px 10px 15px;
         gap: 10px;
         border: 2px solid var(--border-image);
         border-radius: 25px;
         background: white;
-        font-size: 13px;
+        
     }
     .menu-filter img{
         width: 18px;
         height: 18px;
     }
     .container-information{
-        margin: 0px 18px 42px 55px;
+        margin: 0px 20px 42px 22px;
     }
 }
 @media screen and (min-width: 320px) and (max-width: 767px) {
