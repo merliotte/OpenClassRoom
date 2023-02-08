@@ -50,14 +50,27 @@
         background: var(--border-image);
     } 
 }
-/* @media screen and (max-width: 1400px){
+@media screen and (min-width: 320px) and (max-width: 767px){
     .bar-logo img {
         visibility: visible;  
     }
     .bar-logo   { 
         visibility: hidden;
     }
-    .search-bar{
-        justify-content: center;
+    .search-logo{
+        width: 40px;
     }
-  } */
+    .search-bar{
+        margin: 22px 0px 0px 18px;
+    }
+    .search-destination input{
+        width: 170px;
+        font-size: 17px;
+    }
+    .search-bar button {
+        width: auto;
+    }
+    .bar-logo img {
+        padding: 5px 8px 0px 10px;
+    }
+  }

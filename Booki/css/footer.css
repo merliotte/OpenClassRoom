@@ -1,4 +1,7 @@
-@media screen and (max-width: 1400px) {
+@media  screen and (max-width: 1400px) {
+    footer{
+        background: var(--border-image);
+    }
     .box-footer{
         display: flex;
         flex-direction: row;
@@ -14,9 +17,25 @@
         padding: 10px 10px 10px 10px;
     }
 }
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 991px) {
     .box-footer{
         margin: 0px 50px 0px 50px;
 
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    footer{
+        box-sizing: content-box;
+        margin: 0px 0px 0px 0px;
+    }
+    .box-footer{
+        display: grid;
+        align-content: center;
+        margin: 0px 0px 0px 0px;
+    }
+    .contain-footer{
+        background: var(--border-image);
+        margin: 0px 0px 0px 0px;
     }
 }

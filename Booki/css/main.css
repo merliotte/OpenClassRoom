@@ -14,7 +14,7 @@
         border-radius: 15px;
         width: 880px;
     }
-    .box-accommodation h2{
+    .title-accomodation{
         padding: 0 0 40px 40px;
     }
     .box{
@@ -136,25 +136,53 @@
         display: block;
     }
 }
-@media screen and (max-width: 992px) {
-    .famous{
+/* Format tablette */
+@media screen  and (min-width: 768px) and (max-width: 991px) {
+    .container-box{
+        display: flex;
+        justify-content: center;
+        margin: 0px 0px 0px 0px;
+    }
+    .box-accommodation{
+        display: flex;
+        justify-content: center;
+        margin: 0px 65px 0px 0px;
+        width: 100%;
+        padding: 25px 0px 0px 0px;
+        font-size: 12px;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+    }
+    .accomodation-1{
         display: flex;
         flex-direction: row;
-        padding: 10px;
-        gap: 20px;   
-    }  
+    }
+    .accomodation-container{
+        width: 199px;
+        height: 199px;
+    }
+
     .box-famous {
         background: var(--bg-color--);
         border-radius: 15px;
-        padding: 0px 25px 40px 19px;
+        
         box-sizing: content-box;
     }
+    .famous{
+        display: flex;
+        flex-direction: row;
+        gap: 18px;  
+        margin: 0px 13px 0px 13px;
+        padding: 0px 0px 0px 0px;
+    }  
     .famous-title{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0px 14px 19px 17px;
-        padding: 51px 0px 0px 0px;
+        padding: 25px 0px 0px 0px;
     }
     .container-famous{
         display: flex;
@@ -163,39 +191,61 @@
         background: white;
         border-radius: 15px;
         width: max-content;
-        width: 258px;
+        width: 208px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .famous-text{
-        font-size: 15px;  
+        font-size: 12px;  
 
     }
     .famous-img img{
         object-fit: cover;
-        width: 95px;
-        height: 109px;
-        border-radius: 20px 0 0  20px;
+        width: 70px;
+        height: 120px;
+        border-radius: 20px 0 0 20px;
         padding: 5px
     }
 }
-@media screen and (max-width: 768px) {
-    .box-famous{
-        border-radius: 0px;
-        grid-template-columns: 310px;
-        width: 420px;
-        padding: 0;
-        background: var(--bg-color--);
-        box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .container-box{
+        display: flex;
+        flex-direction: column-reverse ;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        gap: 0;
+    }
+    .title-accomodation{
+        padding: 4px 0px 22px 0px;
     }
     .box-accommodation{
         border-radius: 0px;
-        width: 416px;
-        padding: 0;
-        margin: 0;
+        padding: 0px 0px 0px 0px;
+        margin: 30px 0px 0px 0px;
         background: none;
+        width: 100%;
+    }
+    .box-famous{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        padding: 0px;
+        border-radius: 0px;
+        background: var(--bg-color--);
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+        width: 100%;
     }
     .box{
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px 0px 0px 0px;
+    }
+    .accomodation-1{
+        display: flex;
+        flex-direction: column;
     }
     .famous{
         align-items: center;
@@ -210,13 +260,7 @@
         display: flex;
         width: 350px;
     }
-    .container-box{
-        display: flex;
-        flex-direction: column-reverse ;
-        justify-content: center;
-        margin: 20px 0;
-        gap: 0;
-    }
+    
     .accomodation-1{
         justify-content: center;
     }

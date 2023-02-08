@@ -38,7 +38,7 @@
         border-radius: 20px 20px 0 0;
     }
 }
-@media screen and (max-width: 992px) {
+@media  screen and (min-width: 768px) and (max-width: 991px) {
     .activity{
         grid-template-rows: none;
         margin: 30px 0px 30px 0px;
@@ -59,22 +59,26 @@
         gap: 50px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 767px)  {
     .activity{ 
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 10px;
+        margin: 10px 0px 0px 0px;
+    }
+    .container-activity{
+        width: 330px;
     }
     .box-activity{
         justify-content: center;
+        margin: 14px 0px 80px 10px;
     }
     .image-activity img{
-        width: 334px;
+        width: 100%;
         height: 190px;
     }
     .text-activity{
-        margin: 0px 35px 15px;
+        margin: 0px 35px 15px 0px;
     }
 }
 
