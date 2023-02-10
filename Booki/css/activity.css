@@ -15,9 +15,10 @@
 .box-activity{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     gap: 50px;
     grid-column: 2/2;
-    margin: 18px 0px 0px 0px;
+    margin: 18px 17px 0px 0px;
 }
 
 .container-activity{
@@ -29,7 +30,7 @@
 }
 .container-activity p{
     display: flex;
-    margin: 10px 25px; 
+    margin: 23px 25px; 
 }
 .image-activity img{
     display: flex;
@@ -40,9 +41,8 @@
 }
 @media screen and (max-width: 1400px) {
     .activity{
-        display: grid;
+        display: flex;
         justify-content: center;
-        grid-template-rows: 30px 500px;
         margin: 60px 0px 60px 0px;
     }
     .text-activity {
@@ -58,7 +58,6 @@
         grid-column: 2/3;
         margin: 18px 0px 0px 0px;
     }
-
     .container-activity{
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 20px;
@@ -80,8 +79,13 @@
 }
 @media  screen and (min-width: 992px) and (max-width: 1024px) {
     .activity{
-        grid-template-rows: none;
+        display: flex;
+        flex-direction: column;
         margin: 30px 0px 30px 0px;
+        padding: 30px 0px 30px 0px;
+    }
+    .text-activity{
+        margin: 0px 0px 0px 55px;
     }
     .container-activity{
         width: 205px;
@@ -96,7 +100,12 @@
         margin: 5px 0px 0px 17px; 
     }
     .box-activity{
-        gap: 38px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 30px 0px 30px 55px;
+        padding: 30px 0px 30px 0px;
+        gap: 0px;
     }
 }
 @media  screen and (min-width: 768px) and (max-width: 991px) {

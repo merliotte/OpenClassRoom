@@ -1,8 +1,8 @@
 .container-box{
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    margin: 0px 0px 0px 55px;
+    justify-content: space-around;
+    margin: 0px 0px 0px 0px;
     box-sizing: border-box;
 }
 .box-accommodation{
@@ -279,14 +279,15 @@ h3{
     .container-box{
         display: flex;
         flex-direction: row;
-        margin: 0px 0px 0px 55px;
-        gap: 27px;
+        justify-content: space-around;
+        margin: 0px 0px 0px 0px;
+        padding: 25px 0px 0px 0px;
     }
     .box-accommodation{
         display: flex;
         justify-content: center;
-        margin: 0px 65px 0px 0px;
-        width: 650px;
+        margin: 0px 0px 0px 45px;
+        width: 631px;
         padding: 25px 0px 0px 0px;
         font-size: 12px;
     }
@@ -312,8 +313,8 @@ h3{
         background: var(--bg-color--);
         border-radius: 15px;
         box-sizing: content-box;
-        padding: 6px 13px 44px 8px;
-        margin: 0px -5px 0px -78px;
+        padding: 6px 10px 47px 8px;
+        margin: 0px 0px 0px 0px;
         gap: 16px;
     }
     .famous{
