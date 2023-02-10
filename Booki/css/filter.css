@@ -1,4 +1,51 @@
-@media screen and (max-width: 1400px) {
+.container-filter{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin: 45px 55px;
+    align-items: center;
+}
+.menu-filter{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+.menu-filter button{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 18px 30px 13px 30px;
+    gap: 10px;
+    border: 2px solid var(--border-image);
+    border-radius: 25px;
+    background: white;
+}
+.menu-filter button:hover{
+    background: var(--main-color);
+    transition: 0.3s ease;
+}
+
+/* Logo et texte Information */
+
+.container-information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 18px 18px 55px;
+    gap: 15px;
+    font-family: "Raleway";
+}
+.logo-information{
+    border: solid var(--border-image);
+    border-radius:  50% 50% 51% 49% / 51% 50% 50% 49% ;
+}
+.logo-information img{
+    width: 25px;
+    height: 25px;
+}
+/* Screen >=992px */
+@media screen and (min-width: 992px){
     .container-filter{
         display: flex;
         flex-direction: row;
@@ -21,6 +68,9 @@
         border: 2px solid var(--border-image);
         border-radius: 25px;
         background: white;
+    }
+    .container-filter h2{
+        font-size: 15px;
     }
     .menu-filter button:hover{
         background: var(--main-color);
@@ -81,7 +131,7 @@
         margin: 0px 20px 42px 22px;
     }
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
     .container-filter{
         margin: 20px;

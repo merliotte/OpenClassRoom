@@ -1,3 +1,141 @@
+.container-box{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 0px 0px 0px 55px;
+    box-sizing: border-box;
+}
+.box-accommodation{
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color--);
+    margin: 0px 95px 0px 0px; 
+    padding: 42px 0px 15px 0px;
+    border-radius: 15px;
+    width: 100%;
+}
+.title-accomodation{
+    padding: 0 0 40px 40px;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.accomodation-1{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.accomodation-container{
+    display: flex;
+    flex-direction: row;
+    background: var(--bg-color--);
+    border-radius: 15px;
+    width: 290px;
+    height: 260px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.accomodation-1 img{
+    display: flex;
+    object-fit: cover;
+    box-sizing: content-box;
+    width: 100%;
+    height: 180px;
+    padding: 5px;
+    border-radius: 15px 15px 0 0;
+}
+.accomodation-container p, 
+.accomodation strong, 
+.accomodation-container li 
+{
+    margin-left: 10px;
+}
+.star{
+    overflow: hidden;
+    text-indent: 999px;
+    height: 12px;
+    margin: 1px;
+    width: 12px;
+    float: left;
+    background-image: url(/Booki/icon/star-blue.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.star-transparent{
+    overflow: hidden;
+    text-indent: 999px;
+    height: 12px;
+    margin: 1px;
+    width: 12px;
+    float: left;
+    background-image: url(/Booki/icon/star.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 20%;
+}
+h3{
+    display: flex;
+    padding: 40px 55px;
+}
+/* Box Famous */
+.box-famous{
+    background: var(--bg-color--);
+    border-radius: 15px;
+    padding: 0px 25px 118px 19px;
+}
+.famous-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 17px 32px 17px;
+    padding: 40px 0px 0px 0px;
+}
+.famous-title img{
+    object-fit: cover;
+    width: 23px;
+    height: 20px;
+}
+.famous{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 33px;    
+}
+.container-famous{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: white;
+    border-radius: 15px;
+    width: max-content;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+}
+.famous-img{
+    display: flex;
+    position: relative;
+}
+.famous-img img{
+    object-fit: cover;
+    width: 144px;
+    height: 148px;
+    border-radius: 20px 0 0  20px;
+    padding: 5px
+}
+.famous-text{
+    display: grid;
+    margin: 5px;   
+}
+.container-star{
+    display: block;
+}
+
 @media screen and (max-width: 1400px) {
     .container-box{
         display: flex;
@@ -40,7 +178,6 @@
         height: 199px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
-
     .accomodation-1 img{
         display: flex;
         object-fit: cover;
@@ -123,8 +260,8 @@
     }
     .famous-img img{
         object-fit: cover;
-        width: 137px;
-        height: 135px;
+        width: 150px;
+        height: 152px;
         border-radius: 20px 0 0  20px;
         padding: 5px
     }
@@ -136,17 +273,20 @@
         display: block;
     }
 }
-@media screen and (min-width: 992px){
+
+/* Screen >= 992px */
+@media screen and (min-width: 992px) and (max-width: 1024px){
     .container-box{
-        display: grid;
-        grid-template-columns: auto 250px;
-        margin: 0px 0px 0px 0px;
+        display: flex;
+        flex-direction: row;
+        margin: 0px 0px 0px 55px;
+        gap: 27px;
     }
     .box-accommodation{
         display: flex;
         justify-content: center;
         margin: 0px 65px 0px 0px;
-        width: 90%;
+        width: 650px;
         padding: 25px 0px 0px 0px;
         font-size: 12px;
     }
@@ -167,16 +307,19 @@
         height: 153px;
     }
     .box-famous {
+        display: flex;
+        flex-direction: column;
         background: var(--bg-color--);
         border-radius: 15px;
         box-sizing: content-box;
-        padding: 6px 13px 16px 8px;
-        margin: 0px 24px 0px -67px;
+        padding: 6px 13px 44px 8px;
+        margin: 0px -5px 0px -78px;
+        gap: 16px;
     }
     .famous{
         display: flex;
-        flex-direction: row;
-        gap: 18px;  
+        flex-direction: column;
+        gap: 28px;  
         margin: 0px 13px 0px 13px;
         padding: 0px 0px 0px 0px;
     }  
@@ -186,6 +329,7 @@
         align-items: center;
         margin: 0px 14px 19px 17px;
         padding: 25px 0px 0px 0px;
+        font-size: 12px;
     }
     .container-famous{
         display: flex;
@@ -194,7 +338,7 @@
         background: white;
         border-radius: 15px;
         width: max-content;
-        width: 208px;
+        width: 215px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .famous-text{
@@ -204,7 +348,7 @@
     .famous-img img{
         object-fit: cover;
         width: 70px;
-        height: 120px;
+        height: 100px;
         border-radius: 20px 0 0 20px;
         padding: 5px
     }

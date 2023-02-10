@@ -1,3 +1,20 @@
+footer{
+    background: var(--border-image);
+}
+.box-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px 50px 0px 50px;
+    background: var(--border-image);
+}
+
+.contain-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px 10px 10px;
+}
 @media  screen and (max-width: 1400px) {
     footer{
         background: var(--border-image);
