@@ -1,44 +1,61 @@
-@media screen and (max-width: 1400px) {
-.box-menu{
+@media screen and (min-width: 319px) {
+    main{ 
+        display: flex;
+        flex-direction: column;
+    }
+    .box-menu{
     display: flex; 
     flex-direction: column;
+    width: 100%;
     background: var(--background-menu);
-}
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
 /* Title Restaurant */
-.menu-title{
+    .menu-title{
     display: flex;
     flex-direction: row;
     gap: 30px;
-    margin: 10px 0;
-}
-.container-menu{
+    margin: 10px 0px 0px 0px;
+    }
+/* Menu */
+    .container-menu{
+    display: flex;
+    flex-direction: column;
     border-radius: 30px;
-    margin: -33px 0px 0 0;
-    padding: 30px 14px;
+    margin: -33px 0px 0px 0px;
+    padding: 30px 0px 0px 14px;
     z-index: 1;
     background: var(--background-menu);
-}
-h3{
+    }
+    h3{
     text-transform: uppercase;
     border-bottom: solid var(--tertiaire);
     width: 60px;
-}
+    }
+    /* Image header */
+    .box-image {
+        display: flex;
+        align-content: center;
+    }
 /* Image Coeur */
- .container-menu img{
+    .container-menu img{
     object-fit: contain;
     width: 32px;  
- }
-/* Liste des plats  */
-.list-menu {
+    }
+ /* Liste des plats  */
+    .list-menu {
     margin: 10px 0;
-}
-.container-menu ol li{
-    display: grid;
-    grid-template-columns: 240px 50px;
-    grid-template-rows: repeat(3, auto);
+    }
+    .list-menu ol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .container-menu ol li{
     border-radius: 15px;
     background: white ;
-    padding: 10px;
+    padding:  0px 0px 0px 0px;;
     margin: 10px;
     overflow: hidden;
     white-space: nowrap;
@@ -46,17 +63,145 @@ h3{
     width: 300px;
     cursor: pointer;
     background: white;
-}
-.container-menu p{
+    }
+    .container-menu h4, p{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-ol li .prix{
+    }
+    ol li .prix{
     text-align: center;
     z-index: 1;
     padding: 0px 10px;
-}
-}
+    }
+    .container-menu li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    }
+    .container-list{
+        margin: 14px 0px 11px 17px;
+        padding: 0px 0px 0px 0px;
+    }
+    .prix{
+        display: flex;
+        margin: 18px 0px 0px 18px;
+    }
 
+    
 /* Box Commander */
+    .box-order{
+    display: flex;
+    justify-content: center;
+    background: var(--background-menu);
+    padding: 0px 0px 30px 0px;
+    }
+    .box-order button{
+    color: white;
+    border-radius: 30px;
+    width: 170px;
+    border: transparent;
+    background: rgb(147,86,220);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    height: 40px;
+    }
+    /* Animation */
+    li{
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out ;
+    }
+    .container-menu li:nth-child(1) {
+        animation: showList 1s ease-in-out;
+        animation-delay: 0s;
+    }
+    .container-menu li:nth-child(2) {
+        animation: showList 1s ease-in-out;
+        animation-delay: 0.2s; 
+    }
+    .container-menu  li:nth-child(3) {
+        animation: showList 1s ease-in-out;
+        animation-delay: 0.5s;
+    }
+}
+/* Animation Apparition */
+@keyframes showList {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    30%{
+        opacity: 30%;
+        transform: translateY(-10%);
+        }
+        60%{
+            opacity:60%;
+            transform: translateY(-5%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    /* Animation slide left */
+    .animation-hover{
+        display: flex;   
+        justify-content: center;
+        background-color: var(--tertiaire);
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        opacity: 0;
+    }
+    li:hover .animation-hover{
+        animation: slide  1.3s  ease-in-out forwards ;
+        }
+        .animation-hover img{
+            width: 20px;
+        }
+    li:hover .animation-hover img{
+        object-fit: contain;
+        animation: rotate 0.3s ease-in-out forwards;
+    }   
+    @keyframes slide {
+        0%{
+            width: 0%;
+            opacity: 100%;
+        }
+        30%{
+            width: 33%;
+            opacity: 100%;
+        }
+        50%{
+            width: 55%;
+            opacity: 100%;
+        }
+        75%{
+            width: 75%;
+            opacity: 100%;
+        }
+        100%{
+            width: 100%;
+            opacity: 100%;
+        }
+    }
+    @keyframes rotate {
+        0%{
+            transform: rotate(90deg);
+        }  
+        25%{
+            transform: rotate(180deg);
+        }
+        50%{
+            transform: rotate(240deg);
+           
+        }
+        100%{
+            transform: rotate(360deg);
+            
+        }
+    }

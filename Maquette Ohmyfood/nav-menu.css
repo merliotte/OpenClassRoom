@@ -1,4 +1,4 @@
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 319px) {
 .box-image img{
     object-fit: cover;
     width: 100%;
