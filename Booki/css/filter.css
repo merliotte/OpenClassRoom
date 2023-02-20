@@ -13,8 +13,8 @@
 .menu-filter button{
     display: flex;
     align-items: center;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     padding: 18px 30px 13px 30px;
     gap: 10px;
     border: 2px solid var(--border-image);
@@ -45,7 +45,7 @@
     height: 25px;
 }
 /* Screen >=992px */
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) and (max-width: 1400px) {
     .container-filter{
         display: flex;
         flex-direction: row;
@@ -63,18 +63,22 @@
         align-items: center;
         width: auto;
         height: auto;
-        padding: 18px 30px 13px 30px;
+        padding: 9px 16px 9px 16px;
         gap: 10px;
         border: 2px solid var(--border-image);
         border-radius: 25px;
         background: white;
     }
     .container-filter h2{
-        font-size: 15px;
+        font-size: 18px;
     }
     .menu-filter button:hover{
         background: var(--main-color);
         transition: 0.3s ease;
+    }
+    .menu-filter img{
+        width: 19px ;
+        height: 19px ;
     }
 
     /* Logo et texte Information */
@@ -96,13 +100,13 @@
         height: 25px;
     }
 }
-@media  screen and (min-width: 768px) and (max-width: 991px) {
+@media  screen and (min-width: 767px) and (max-width: 991px) {
     .container-filter{
         display: flex;
         flex-direction: row;
-        gap: 19px;
-        margin: 0px 0px 0px 0px;
-        padding: 25px 0px 25px 25px;
+        gap: 15px;
+        margin: 30px 0px 30px 50px;
+        padding:  0px 0px 0px 0px;
         align-items: center;
     }
     .container-filter h2{
@@ -117,53 +121,63 @@
         width: auto;
         height: auto;
         padding: 10px 15px 10px 15px;
-        gap: 10px;
+        gap: 8px;
         border: 2px solid var(--border-image);
         border-radius: 25px;
         background: white;
-        
+    }
+    .menu-filter h2{
+        font-size: 14px;
+
     }
     .menu-filter img{
         width: 18px;
         height: 18px;
     }
     .container-information{
-        margin: 0px 20px 42px 22px;
+        margin: 0px 20px 42px 50px;
+    }
+    .logo-information img{
+        width: 20px;
+        height: 20px;
     }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 766px) {
 
     .container-filter{
-        margin: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 28px 0px 15px 25px;
         gap: 16px;
     }
     .menu-filter{
         display: grid;
-        grid-template-columns: 122px 138px;
+        grid-template-columns: 157px 179px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 7px;
     }
     .menu-filter button{
         display: flex;
         align-items: center;
         width: auto;
         height: auto;
-        padding: 10px 0px 10px 5px;
-        gap: 14px;
+        padding: 15px 0px 15px 10px;
+        margin: 0px 0px 15px 0px;
+        gap: 6px;
         border: 2px solid var(--border-image);
         border-radius: 25px;
         background: white;
-        font-size: 7px;
+        font-size: 10px;
     }
     .menu-filter img{
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
     .container-information{
         display: grid;
-        grid-template-columns: 22px 230px;
-        margin: 0px 0px 6px 20px;      
+        grid-template-columns: 22px 305px;
+        margin: 0px 0px 38px 20px;      
     }
     .logo-information img{
         width: 15px;

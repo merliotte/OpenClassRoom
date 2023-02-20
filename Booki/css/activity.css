@@ -15,13 +15,14 @@
 .box-activity{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     gap: 50px;
     grid-column: 2/2;
     margin: 18px 17px 0px 0px;
 }
 
 .container-activity{
+    display: flex;
+    flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
     word-wrap: break-word;
@@ -48,14 +49,12 @@
     .text-activity {
         display: flex;
         justify-content: flex-start;
-        grid-column: 2/2;
         margin: 0px 0px 0px 0px;
     }
     .box-activity{
         display: flex;
         flex-direction: row;
         gap: 43px;
-        grid-column: 2/3;
         margin: 18px 0px 0px 0px;
     }
     .container-activity{
@@ -77,7 +76,7 @@
         border-radius: 20px 20px 0 0;
     }
 }
-@media  screen and (min-width: 992px) and (max-width: 1024px) {
+@media  screen and (min-width: 992px){
     .activity{
         display: flex;
         flex-direction: column;
@@ -114,41 +113,62 @@
         margin: 30px 0px 30px 0px;
     }
     .container-activity{
+        display: flex;
         width: 140px;
+        height: 210px;
         word-wrap: break-word;
-        height: 270px;
     }
-        .image-activity img{
-            height: 200px;
+    .image-activity img{
+        height: 160px;
     }
     .container-activity p{
-        display: flex;
         margin: 5px 0px 0px 17px; 
+        font-size: 13px;
+        overflow: hidden;
+        width: 90px;
+        
     }
     .box-activity{
-        gap: 50px;
+        display: flex;
+        justify-content: space-between;
+        gap: 35px;
+        margin: 31px 50px 0px 50px; 
+        padding: 0;
+    }
+    .text-activity{
+        margin: 0px 0px 0px 50px;
     }
 }
-@media screen and (min-width: 320px) and (max-width: 767px)  {
+@media screen and (max-width: 681px)  {
     .activity{ 
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
-        margin: 10px 0px 0px 0px;
+        align-items: center;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
     }
     .container-activity{
         width: 330px;
     }
     .box-activity{
         justify-content: center;
-        margin: 14px 0px 80px 10px;
+        margin: 0px 0px 50px 0px;
+        gap: 23px;
     }
     .image-activity img{
         width: 100%;
-        height: 190px;
+        height: 115px;
     }
     .text-activity{
-        margin: 0px 35px 15px 0px;
+        display: flex;
+        align-items: flex-start;
+        width: 217px;
+        margin: 0px 114px 0px 0px;
+    }
+    .container-activity p{
+        padding: 9px 0px 9px 0px;
     }
 }
 

@@ -59,7 +59,6 @@
     margin: 10px;
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
     width: 300px;
     cursor: pointer;
     background: white;
@@ -71,7 +70,6 @@
     }
     ol li .prix{
     text-align: center;
-    z-index: 1;
     padding: 0px 10px;
     }
     .container-menu li{
@@ -83,12 +81,21 @@
     padding: 0;
     }
     .container-list{
+        display: grid;
+        grid-template-columns: 180px  ;
         margin: 14px 0px 11px 17px;
         padding: 0px 0px 0px 0px;
     }
+    .container-list p{
+        text-overflow: ellipsis;
+        font-size: 13px;
+    }
     .prix{
         display: flex;
-        margin: 18px 0px 0px 18px;
+        grid-row: 1/2;
+        margin: 31px 0px 0px 18px;
+        padding: 0px 0px 0px 0px;
+
     }
 
     
@@ -103,6 +110,7 @@
     color: white;
     border-radius: 30px;
     width: 170px;
+    cursor: pointer;
     border: transparent;
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);
@@ -114,19 +122,22 @@
         display: flex;
         flex-direction: row;
         overflow: hidden;
-        transition: all 0.5s ease-in-out ;
+        transition: all 1s ease-in-out forwards ;
     }
     .container-menu li:nth-child(1) {
-        animation: showList 1s ease-in-out;
-        animation-delay: 0s;
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
     }
     .container-menu li:nth-child(2) {
-        animation: showList 1s ease-in-out;
-        animation-delay: 0.2s; 
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 0.6s; 
+        opacity: 0;
     }
     .container-menu  li:nth-child(3) {
-        animation: showList 1s ease-in-out;
-        animation-delay: 0.5s;
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 1s;
+        opacity: 0;
     }
 }
 /* Animation Apparition */

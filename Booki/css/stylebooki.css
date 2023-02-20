@@ -23,6 +23,7 @@
     list-style: none;
     text-decoration: none;
     margin: 0;
+    padding: 0;
     flex-wrap: wrap;
 }
 :root{
@@ -35,24 +36,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    margin-left: 55px;
     }
-    .menu{
+    .menu ol {
         display: flex;
         flex-direction: row;
-        gap: 30px;
-        color: black;
-        margin-right: 30px;
-        border-top: solid transparent;
-    }
-    .menu a{
-        box-sizing: content-box;
-        text-align: center;
-        padding-top: 56px; 
+        justify-content: space-between;
+        gap: 55px;
     }
     /* Overline */
-    .box-overline{
+    .menu{
         align-content: flex-end;
     }
     /* Size image */
@@ -74,25 +66,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    margin-left: 55px;
+    margin: 50px 0 0 50px;
+    padding: 0px 0px 0px 0px;
     }
     .menu{
         display: flex;
         flex-direction: row;
         gap: 30px;
         color: black;
-        margin-right: 30px;
+        margin: 0px 50px 0px 0px;
         border-top: solid transparent;
     }
-    .menu a{
+    li a{
         box-sizing: content-box;
         text-align: center;
         padding-top: 56px; 
     }
     /* Overline */
-    .box-overline{
-        align-content: flex-end;
+    .menu a:hover{
+        border-top: solid var(--text-color);
     }
     /* Size image */
     .container-menu img{
@@ -101,7 +93,7 @@
         object-fit: contain;
     }
     .nav-title {
-        margin: 55px 0 0 55px;
+        margin: 50px 0 0 50px;
     }
     .nav-title p{
         padding: 10px 0 0 0;
@@ -110,52 +102,87 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
     .container-menu{
-        margin: 20px 0px 0px 22px;
+        margin: 30px 0px 0px 50px;
     }
     .nav-title{
-        margin: 20px 0px 0px 22px;
+        margin: 30px 0px 0px 50px;
+        font-size: 12px;
     }
     
 }
-/* Format 320px */
 
-@media screen and (min-width: 320px) and (max-width: 767px) { 
+@media screen and (max-width: 767px) { 
+    .nav-title {
+        display: flex;
+        align-content: center;
+        
+    }
+    .nav-title h1{
+        padding: 0px 0px 0px 0px;
+        font-size: 23px;
+        width: 100%;
+    }
+    .nav-title p{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 611px) { 
+   
     .container-menu{
         display: flex;
         flex-direction: column;
         justify-content: center; 
-        margin: 0px 0px 0px 0px;
         border-bottom: solid var(--border-image);
-        padding: 0px 0px 10px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 12px 0px 0px 0px;
     }
     .container-menu img{
         justify-content: center;
         margin: 5px;
     }
-    .menu{
+    .menu ol{
         display: flex;
         flex-direction: row;
-        gap: 50px;
-        padding: 10px;
-        margin-right: 25px;
+        justify-content: flex-end;
+        gap: 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
+    }
+    .menu {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0px 0px 0px 0px;
+        padding: 15px 0px 0px 0px;
     }
     .menu a{
-        padding-bottom: 20px;
-        
+        padding: 0px 64px 20px 31px;
     }
-    .menu a:hover{
+    .menu a:hover {
         color: var(--text-color);
         border-bottom: solid var(--text-color);
         transition: 0.1s ease;
     }
+    .box-overline{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 120px;
+        height: 50px;
+        margin: 0px 0px -2px 0px;
+        padding: 0px 25px 19px 15px;
+    }
     .nav-title {
-        margin: 20px 0px 0px 18px;
+        margin: 20px 0px 35px 20px;
         display: flex;
         align-content: center;
-        align-content: center;
     }
-    .nav-title p, h1{
+    .nav-title h1{
         padding: 0px 0px 0px 0px;
-        font-size: 20px;
+        font-size: 23px;
+        width: 300px;
+    }
+    .nav-title p{
+        font-size: 16px;
     }
 }
