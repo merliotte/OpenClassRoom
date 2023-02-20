@@ -45,7 +45,7 @@
     height: 25px;
 }
 /* Screen >=992px */
-@media screen and (min-width: 992px) and (max-width: 1400px) {
+@media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-filter{
         display: flex;
         flex-direction: row;
