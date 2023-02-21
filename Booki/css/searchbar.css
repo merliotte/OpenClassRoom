@@ -49,7 +49,7 @@ nav{
         background: var(--bg-color--);
     } 
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1536px) {
     nav{
     margin: 0;    
     }
@@ -144,5 +144,12 @@ nav{
     }
     .bar-logo img {
         padding: 5px 8px 0px 10px;
+    }
+  }
+
+  @media screen  and (min-width: 320px) and (max-width: 375px){
+    .search-destination input{
+        width: 173px;
+        font-size: 17px;
     }
   }

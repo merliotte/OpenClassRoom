@@ -60,7 +60,7 @@
         padding: 10px 0 0 0;
     }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1536px) {
     
     .container-menu{
     display: flex;
@@ -84,7 +84,9 @@
     }
     /* Overline */
     .menu a:hover{
+        color: var(--text-color);
         border-top: solid var(--text-color);
+        transition: 3s ease forwards;
     }
     /* Size image */
     .container-menu img{
@@ -126,7 +128,7 @@
         font-size: 16px;
     }
 }
-@media screen and (max-width: 611px) { 
+@media screen and (min-width: 320px) and (max-width: 611px) { 
    
     .container-menu{
         display: flex;
@@ -184,5 +186,19 @@
     }
     .nav-title p{
         font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px){
+    .menu ol{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin: 0px 0px -2px 0px;
+        padding: 0px 25px 19px 15px;
+    }
+    .menu a{
+        padding: 0;
+        margin: 0;
     }
 }

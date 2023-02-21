@@ -134,7 +134,7 @@ h4{
 
 }
 
- @media screen and (max-width: 1400px) {
+ @media screen and (max-width: 1536px) {
     .container-box{
         display: flex;
         flex-direction: row;
@@ -468,13 +468,18 @@ h4{
 /* Screen between 611 767px */
 @media screen  and (min-width: 611px) and (max-width: 767px) {
     .container-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 90px 0px;
         padding: 0px 0px 0px 0px;
-        margin: 0px 52px 0px 25px;
+        gap: 0;
     }
     .title-accomodation{
         padding: 4px 0px 22px 0px;
     }
     .box-accommodation{
+        align-items: center;
         border-radius: 0px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
@@ -484,20 +489,19 @@ h4{
     .box{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin: 0px 0px 0px 0px;
     }
     .accomodation-1{
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         gap: 10px;
     }
     .accomodation-container{
         display: flex;
         flex-wrap: wrap;
-        width: 100%;
+        width: 60%;
         height: 100%;
         margin: 0px;
         padding: 3px;
@@ -509,14 +513,24 @@ h4{
         width: 100%;
         height: 100%;
     }
-
     .box-famous{
+        display: flex;
+        justify-content: center;
         width: 100%;
+        border-radius: 0px;
+    }
+    .famous-title{
+        margin: 75px 15px 25px 15px;
+        padding: 0px 0px 0px 0px;
+        gap: 252px;
+
     }
     .container-famous{
-        width: 500px;
+        padding: 3px;
+        min-width: 500px;
     }
     .container-famous img{
+        border-radius: 15px 0px 0px 15px;
         height: 150px;
     }
 }
@@ -537,10 +551,10 @@ h4{
         justify-content: center;
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
-        border-radius: 0px;
         background: var(--bg-color--);
         box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
         width: 100%;
+        border-radius: 0px;
     }
     .famous{
         align-items: center;
@@ -641,6 +655,40 @@ h4{
     }
     h3{
         display: none;
-        
+    }
+}
+@media screen  and (min-width: 320px) and (max-width: 375px){
+    .accomodation-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        width: 250px;
+        background: white;
+    }
+    .accomodation-1{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        gap: 15px;
+    }
+    .box-famous{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .famous{
+        width: 100%;
+    }
+    .container-famous{
+        display: flex;
+        width: 278px;
+    }
+    .famous-title{
+    /* width: 100%; */
+    gap: 33px;
+    font-size: 16px;
     }
 }
