@@ -4,18 +4,16 @@ nav{
     .search-bar{
         display: flex;
         flex-direction: row;
-        margin: 20px 55px;
+        margin: 15px 0px 0px 0px;
+
     }
     .search-destination input{
-        display: flex;
-        border: none;
-        text-overflow: ellipsis; 
         height: 51px;
-        width: 236px;
         border :  1px solid var(--bg-color--);
         font-weight: bold;
         font-size: 20px;
-        padding: 0px 0 0px 10px;
+        padding: 0px 0 0px 15px;
+        color: black;
     }
     ::placeholder{
         color: black;
@@ -37,6 +35,8 @@ nav{
         position: absolute;
         font-weight: bold;
         font-size: 20px;
+        margin: 0px 0px 0px 10px;
+
     }
     .search-logo{
         display: flex;
@@ -48,108 +48,54 @@ nav{
         border-radius: 15px 0 0 15px;
         background: var(--bg-color--);
     } 
-
-@media screen and (max-width: 1536px) {
-    nav{
-    margin: 0;    
-    }
-    .search-bar{
-        display: flex;
-        flex-direction: row;
-        margin: 50px 0px 0px 50px ;
-    }
-    .search-destination input{
-        display: flex;
-        border: none;
-        text-overflow: ellipsis; 
-        height: 51px;
-        width: 236px;
-        border : 1px solid var(--bg-color--);
-        font-weight: bold;
-        font-size: 20px;
-        padding: 0px 0 0px 10px;
-    }
-    ::placeholder{
-        color: black;
-    }
-    .search-bar button{
-        border: none;
-        background: var(--text-color);
-        color: white;
-        border-radius: 0 15px 15px 0;
-        width: 132px;
-        height: 53px;
-    }    
-    .bar-logo img{
-        padding-left: 20px;
-        visibility: hidden;
-        width: 20px;
-    }
-    .bar-logo p{ 
-        position: absolute;
-        font-weight: bold;
-        font-size: 20px;
-        margin: 3px 0px 0px 20px;
-        font-size: 17px;
-    }
-    .search-logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: solid var(--bg-color--);
-        object-fit: cover;
-        width: 50px;
-        border-radius: 15px 0 0 15px;
-        background: var(--bg-color--);
-    } 
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px){
-    .search-bar{
-        margin: 18px 0px 0px 50px;
-        font-size: 12px;
-    }
-    .search-bar button{
-        padding: 0px 0px 0px 19px;
-    }
-    .bar-logo p{
-        font-size: 18px;
-        margin: 0px;
-    }
-    .search-destination input{
-        width: 169px;
-        font-size: 15px;
-    }
     
-}
-@media screen  and (max-width: 611px){
-    .bar-logo img {
-        visibility: visible;  
+    @media screen and (min-width: 320px) and (max-width: 767px){
+        .search-bar {
+            margin: 22px 20px 0px 20px;
+        }
+        .bar-logo img {
+            visibility: visible;  
+        }
+        .bar-logo   { 
+            visibility: hidden;
+        }
+        .search-logo{
+            width: 40px;
+            height: 42px;
+        }
+        .search-destination{
+            display: flex;
+        }
+        .search-destination input{
+            width: 170px;
+            height: 45px;
+            font-size: 17px;
+        }
+        .search-bar button {
+            border-bottom: 1px solid;
+            height: 47px;
+            width: 48px;
+        }
+        .bar-logo img {
+            padding: 5px 8px 0px 10px;
+        }
     }
-    .bar-logo   { 
-        visibility: hidden;
+    @media screen and (min-width: 768px) and (max-width: 991px){
+        .search-bar{
+            margin: 18px 0px 0px 0px;
+            font-size: 12px;
+        }
+        .search-bar button{
+            padding: 0px 0px 0px 19px;
+        }
+        .bar-logo p{
+            font-size: 16px;
+            margin: 0px;
+        }
+        .search-destination input{
+            width: 169px;
+            font-size: 16px;
+        }
+        
     }
-    .search-logo{
-        width: 45px;
-    }
-    .search-bar{
-        margin: 22px 0px 0px 18px;
-    }
-    .search-destination input{
-        width: 228px;
-        font-size: 17px;
-    }
-    .search-bar button {
-        width: 53px;
-    }
-    .bar-logo img {
-        padding: 5px 8px 0px 10px;
-    }
-  }
 
-  @media screen  and (min-width: 320px) and (max-width: 375px){
-    .search-destination input{
-        width: 173px;
-        font-size: 17px;
-    }
-  }

@@ -21,96 +21,99 @@
     display: flex;
     align-items: center;
     }
-    .menu ol {
+.menu{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: black;
+    border-top: solid transparent;
+}
+.menu ol{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+}
+.container-menu img{
+    width: 61px;
+    height: 29px;
+    object-fit: contain;
+}
+.nav-title {
+    margin: 55px 0 0 55px;
+}
+.nav-title p{
+    padding: 10px 0 0 0;
+}
+    
+@media screen and (min-width: 320px) and (max-width: 767px) { 
+    .container-all{
+        margin: 0;
+    }
+    .container-menu{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .container-menu img{
+        justify-content: center;
+        margin: 7px 0px 0px 0px;
+    }
+    .menu {
+        display: flex;
+        width: 100%;
+        margin: 0px 0px 0px 0px;
+        padding: 15px 0px 0px 0px;
+    }
+    .menu ol{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        border-bottom: solid var(--border-image);
+        padding: 0px 0px 0px 0px;
+        width: 100%;
     }
-    /* Overline */
-    .menu{
+    .menu li{
+        display: flex;
+        justify-content: center;
+        padding: 0px 0px 0px 0px;
+        flex: 0 1 45%;
     }
-    /* Size image */
-    .container-menu img{
-        width: 61px;
-        height: 29px;
-        object-fit: contain;
+    .menu a{
+        padding: 0px 0px 30px 0px;
+    }
+    .menu a:hover {
+        position: absolute;
+        color: var(--text-color);
+        border-bottom: 2px solid var(--text-color);
+        padding: 0px 0px 30px 0px;
+        transition:  ease;
+        z-index: 0;
+    }
+    .box-overline{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 120px;
+        height: 50px;
+        margin: 0px 0px -2px 0px;
+        padding: 0px 25px 19px 15px;
     }
     .nav-title {
-        margin: 55px 0 0 55px;
+        margin: 30px 20px 30px 20px;
+        display: flex;
+        align-content: center;
+    }
+    .nav-title h1{
+        padding: 0px 0px 0px 0px;
+        font-size: 19px;
     }
     .nav-title p{
-        padding: 10px 0 0 0;
+        font-size: 14px;
     }
-    
-    @media screen and (min-width: 320px) and (max-width: 767px) { 
-       .container-all{
-            margin: 0;
-       }
-        .container-menu{
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            margin: 0px 0px 0px 0px;
-            padding: 0px 0px 0px 0px;
-        }
-        .container-menu img{
-            justify-content: center;
-            margin: 7px 0px 0px 0px;
-        }
-        .menu {
-            display: flex;
-            width: 100%;
-            margin: 0px 0px 0px 0px;
-            padding: 15px 0px 0px 0px;
-        }
-        .menu ol{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            border-bottom: solid var(--border-image);
-            padding: 0px 0px 0px 0px;
-            width: 100%;
-        }
-        .menu li{
-            display: flex;
-            justify-content: center;
-            padding: 0px 0px 0px 0px;
-            flex: 0 1 45%;
-        }
-        .menu a{
-            padding: 0px 0px 30px 0px;
-        }
-        .menu a:hover {
-            position: absolute;
-            color: var(--text-color);
-            border-bottom: 2px solid var(--text-color);
-            padding: 0px 0px 30px 0px;
-            transition:  ease;
-            z-index: 0;
-        }
-        .box-overline{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 120px;
-            height: 50px;
-            margin: 0px 0px -2px 0px;
-            padding: 0px 25px 19px 15px;
-        }
-        .nav-title {
-            margin: 30px 0px 30px 20px;
-            display: flex;
-            align-content: center;
-        }
-        .nav-title h1{
-            padding: 0px 0px 0px 0px;
-            font-size: 20px;
-        }
-        .nav-title p{
-            font-size: 14px;
-        }
-    } 
-    @media screen and (min-width: 767px) and (max-width: 991px) {
+} 
+@media screen and (min-width: 767px) and (max-width: 991px) {
 
     .container-menu{
         display: flex;
@@ -141,18 +144,8 @@
 @media screen and (min-width: 991px) and (max-width: 1400px) {
     
     .container-menu{
-        display: flex;
         justify-content: space-between;
-        align-items: center;
         margin: 30px 0 0 0px;
-    }
-    .menu{
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        color: black;
-        margin: 0px 50px 0px 0px;
-        border-top: solid transparent;
     }
     .menu ol{
         display: grid;
@@ -169,12 +162,6 @@
         color: var(--text-color);
         border-top: solid var(--text-color);
         transition: 3s ease forwards;
-    }
-    /* Size image */
-    .container-menu img{
-        width: 61px;
-        height: 29px;
-        object-fit: contain;
     }
     .nav-title {
         margin: 50px 0 0 0px;
