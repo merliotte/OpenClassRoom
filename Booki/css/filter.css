@@ -141,7 +141,7 @@
         height: 20px;
     }
 }
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 767px) {
 
     .container-filter{
         flex-direction: column;
