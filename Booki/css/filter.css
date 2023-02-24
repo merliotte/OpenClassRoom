@@ -28,7 +28,9 @@
 }
 
 /* Logo et texte Information */
-
+.box-information{
+    display: flex;
+}
 .container-information{
     display: flex;
     flex-direction: row;
@@ -72,10 +74,12 @@
         width: 18px;
         height: 18px;
     }
+    .box-information{
+        margin: 30px 20px 0px 20px;
+    }
     .container-information{
         display: grid;
-        grid-template-columns: 22px auto;
-        margin: 30px 20px 0px 20px;
+        grid-template-columns: 22px 247px;
     }
     .container-information p{
         font-size: 13px;
@@ -115,7 +119,6 @@
         height: 18px;
     }
     .container-information{
-        margin: 0px 20px 42px 50px;
     }
     .logo-information img{
         width: 20px;
@@ -124,27 +127,12 @@
 }
 @media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-filter{
-        display: flex;
-        flex-direction: row;
         gap: 32px;
-        margin: 40px 0px 0px 0px;
-        align-items: center;
-    }
-    .menu-filter{
-        display: flex;
-        flex-direction: row;
-        gap: 32px;
+        margin: 40px 0px 40px 0px;
     }
     .menu-filter button{
-        display: flex;
-        align-items: center;
-        width: auto;
-        height: auto;
         padding: 9px 16px 9px 16px;
-        gap: 10px;
-        border: 2px solid var(--border-image);
         border-radius: 25px;
-        background: white;
     }
     .container-filter h2{
         font-size: 18px;
@@ -161,19 +149,11 @@
     /* Logo et texte Information */
 
     .container-information{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 0px 18px 18px 55px;
+        margin: 0px 18px 18px 0px;
         gap: 15px;
-        font-family: "Raleway";
     }
     .logo-information{
         border: solid var(--border-image);
         border-radius:  50% 50% 51% 49% / 51% 50% 50% 49% ;
-    }
-    .logo-information img{
-        width: 25px;
-        height: 25px;
     }
 }

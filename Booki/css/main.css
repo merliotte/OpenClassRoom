@@ -2,48 +2,37 @@
     display: flex;
     flex-direction: row;
     margin: 0px 0px 0px 0px;
-    box-sizing: border-box;
 }
 .box-accommodation{
     display: flex;
-    flex-direction: column;
     background: var(--bg-color--);
-    margin: 0px 95px 0px 0px; 
-    padding: 42px 0px 15px 0px;
+    padding: 42px 0px 0px 0px;
     border-radius: 15px;
-    width: 100%;
-}
-.title-accomodation{
-    padding: 0 0 40px 40px;
-}
-.box{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
 }
 
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+}
 .accomodation-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: var(--bg-color--);
     border-radius: 15px;
-    width: 290px;
-    height: 260px;
+    width: 100%;
+    padding: 3px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .accomodation-1{
     display: flex;
     flex-direction: row;
-    gap: 30px;
     width: 100%;
 }
 .accomodation-1 img{
     display: flex;
-    object-fit: cover;
     box-sizing: content-box;
     width: 100%;
     border-radius: 15px 15px 0 0;
@@ -71,12 +60,14 @@
     background-repeat: no-repeat;
     opacity: 20%;
 }
-h3{
+.accomodation-information h3{
     display: flex;
-    padding: 40px 55px;
+    font-size: large;
+    margin: 20px 0px 30px 0px;
 }
 /* Box Famous */
 .box-famous{
+    display: flex;
     background: var(--bg-color--);
     border-radius: 15px;
     width: 100%;
@@ -85,8 +76,6 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 17px 32px 17px;
-    padding: 40px 0px 0px 0px;
 }
 .famous-title img{
     object-fit: cover;
@@ -95,8 +84,6 @@ h3{
 }
 .famous{
     display: flex;
-    flex-direction: column;
-    padding: 10px;
     gap: 33px;    
 }
 .container-famous{
@@ -105,24 +92,21 @@ h3{
     background: white;
     border-radius: 15px;
     box-sizing: border-box;
-    width: 350px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
 }
-.famous-img{
-    display: flex;
-    position: relative;
-}
+
 .famous-img img{
+    display: block;
     object-fit: cover;
     width: 144px;
     height: 148px;
-    border-radius: 20px 0 0  20px;
+    border-radius: 15px 0 0  15px;
 }
 .famous-text{
     display: flex;
     flex-direction: column;
     padding: 0px 0px 0px 0px;
-    margin: 30px 0px 0px 0px;  
+    margin: 10px 0px 0px 0px;  
     overflow: hidden;
 }
 h4{
@@ -130,177 +114,50 @@ h4{
 .container-star{
     display: flex;
     padding: 0px 0px 0px 0px;
-    margin: 30px 0px 0px 0px;
-
+    margin: 20px 0px 0px 0px;
+    
 }
-
- @media screen and (max-width: 1536px) {
-    .container-box{
-        display: flex;
-        flex-direction: row;
-        margin: 0px 0px 0px 55px;
-        box-sizing: border-box;
-    }
-    .box-accommodation{
-        display: flex;
-        flex-direction: column;
-        background: var(--bg-color--); 
-        padding: 42px 0px 15px 0px;
-        border-radius: 15px;
-        width: 880px;
-    }
-    .title-accomodation{
-        padding: 0 0 40px 40px;
-    }
-    .box{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 30px;
-    }
-    .accomodation-1{
-        display: flex;
-        flex-direction: row;
-    }
-    .accomodation-container{
-        display: flex;
-        flex-direction: row;
-        background: var(--bg-color--);
-        border-radius: 15px;
-        width: 100%;
-        height: 100%;
-        padding: 3px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-    .accomodation-container img{
-        display: flex;
-        object-fit: cover;
-        box-sizing: content-box;
-        width: 100%;
-        border-radius: 15px 15px 0 0;
-    }
-    .star{
-        overflow: hidden;
-        text-indent: 999px;
-        height: 12px;
-        margin: 1px;
-        width: 12px;
-        float: left;
-        background-image: url(/Booki/icon/star-blue.svg) ;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .star-transparent{
-        overflow: hidden;
-        text-indent: 999px;
-        height: 12px;
-        margin: 1px;
-        width: 12px;
-        float: left;
-        background-image: url(/Booki/icon/star.svg) ;
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 20%;
-    }
-    h3{
-        display: flex;
-        padding: 30px 12px;
-    }
-    /* Box Famous 1400px */
-     .box-famous{
-        background: var(--bg-color--);
-        border-radius: 15px;        
-    }
-    .famous-title{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0px 14px 19px 17px;
-        padding: 51px 0px 0px 0px;
-    }
-    .famous-title img{
-        object-fit: cover;
-        width: 23px;
-        height: 20px;
-    }
-    .famous{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        gap: 32px;    
-    }
-    .container-famous{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        background: white;
-        border-radius: 15px;
-        width: 350px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
-    }
-    .famous-img{
-        display: flex;
-        position: relative;
-    }
-    .famous-img img{
-        object-fit: cover;
-        width: 150px;
-        height: 152px;
-        border-radius: 20px 0 0  20px;
-    }
-    .famous-text{
-        display: grid;
-        margin: 5px;   
-    }
-    .container-star{
-        display: flex;
-    }
-}
-
 /* Screen >= 992px */
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-box{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 0px 34px 0px 50px;
         padding: 0px 0px 0px 0px;
-        gap: 0px;
+        width: 100%;
     }
     .title-accomodation{
-        margin: 30px 0px 20px 12px;
+        margin: 30px 0px 20px 30px;
         padding: 0px 0px 0px 0px;
     }
     .box-accommodation{
         display: flex;
-        justify-content: center;
         margin: 0px 0px 0px 0px;
         width: 100%;
-        padding: 0px 25px 0px 25px;
-        font-size: 10px;
+        padding: 0px 0px 0px 0px;
+        font-size: 12px;
+        width: 65%;
     }
     .box{
         display: flex;
         flex-direction: column;
-        margin: 0px 0px 0px 0px;
+        margin: 0px 30px 0px 30px;
         padding: 0px 0px 0px 0px;
     }
     .accomodation-1{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        gap: 11px;
+        justify-content: space-between;
     }
     .accomodation-container{
         width: 150px; 
-        height: 145px;
+        max-width: 550px;
     }
     .accomodation-container img{
+        display: block;
+        object-fit: cover;
         width: 100%;
-        height: 80px;
+        height: 70px;
     }
     .accomodation-text{
         display: flex;
@@ -308,26 +165,26 @@ h4{
         gap: 5px;
         margin: 9px 0px 5px 9px;
         padding: 0px 0px 0px 0px;
+        font-size: 10px;
     }
     .accomodation-text ol {
         width: 100%;
     }
     .box-famous {
-        display: flex;
         flex-direction: column;
         background: var(--bg-color--);
         border-radius: 15px;
-        box-sizing: content-box;
-        padding: 0px 0px 60px 0px;
+        padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
         gap: 16px;
+        width: 30%;
     }
     .famous{
         display: flex;
         flex-direction: column;
         gap: 28px;  
-        margin: 0px 0px 0px 0px;
-        padding: 0px 30px 0px 30px;
+        margin: 0px 30px 0px 30px;
+        padding: 0px 0px 0px 0px;
     }  
     .famous-title{
         display: flex;
@@ -344,17 +201,17 @@ h4{
     }
     .container-famous{
         display: flex;
-        flex-wrap: wrap;
         flex-direction: row;
         background: white;
         border-radius: 15px;
         padding: 3px;
-        width: max-content;
-        width: 220px;
+        width: 100%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .famous-text{
+        margin: 5px 0px 0px 7px;
         font-size: 10px;
+        gap: 5px;
     }
     .famous-img img{
         object-fit: cover;
@@ -364,20 +221,17 @@ h4{
     }
 }
 /* Format tablette */
-@media screen  and (min-width: 768px) and (max-width: 991px) {
+@media screen  and (min-width: 767px) and (max-width: 991px) {
     .container-box{
         display: flex;
-        justify-content:initial;
-        margin: 0px 0px 0px 50px;
+        margin: 30px 0px 30px 0px;
+
     }
     .title-accomodation{
-        margin: 0px 65px 20px 33px;
-        padding: 25px 0px 0px 0px;
-
+        margin: 30px 0px 30px 35px;
     }
     .box-accommodation{
         display: flex;
-        justify-content: center;
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         width: 100%;
@@ -386,20 +240,22 @@ h4{
     .box{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        
+        margin: 0px 35px 0px 35px;
+        padding: 0px 0px 0px 0px;        
     }
     .accomodation-1{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         margin: 0px 0px 0px 0px;
-        padding: 0px 40px 0px 40px;
+        padding: 0px 0px 0px 0px;
     }
     .accomodation-container{
-        width: 165px;
-        height: 170px;
+        width: 30%;
+        max-width: 400px;
+    }
+    .accomodation-container img{
+        width: 100%;
+        height: 90px;
+
     }
     .accomodation-text{
         display: flex;
@@ -409,6 +265,7 @@ h4{
         padding: 0px 0px 0px 0px;
     }
     .accomodation-text ol{
+        display: flex;
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
 
@@ -423,272 +280,136 @@ h4{
     }
     .famous{
         display: flex;
-        flex-direction: row;
-        gap: 18px;  
-        margin: 0px 0px 0px 0px;
-        padding: 7px 30px 38px 30px;
+        justify-content: space-between;
+        margin: 0px 31px 40px 31px;
     }  
     .famous-title{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0px 43px 19px 44px;
-        padding: 25px 0px 0px 0px;
+        width: 100%;
+        margin: 20px 35px 20px 35px;
         font-size: 12px;
     }
     .container-famous{
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
         background: white;
         border-radius: 15px;
         padding: 3px;
-        width: 187px;
+        width: 180px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .famous-text{
         font-size: 10px;  
     }
+    .famous-img{
+        display: flex;
+        flex-direction: row;
+        max-width: 150px;
+    }
     .famous-img img{
+        display: block;
         object-fit: cover;
         width: 70px;
         height: 90px;
-        border-radius: 15px 0 0 15px;
     }
     .famous-text{
         font-size: 10px;
         margin: 0px 0px 0px 9px;
-
     }
     .famous-text h4{
         margin: 0px 0px 7px 0px;
 
     }
 }
-/* Screen between 611 767px */
-@media screen  and (min-width: 611px) and (max-width: 767px) {
+@media screen  and (min-width: 320px) and (max-width: 767px){
     .container-box{
-        display: flex;
-        justify-content: center;
+        flex-direction: column-reverse;
         align-items: center;
-        margin: 0px 0px 90px 0px;
-        padding: 0px 0px 0px 0px;
-        gap: 0;
-    }
-    .title-accomodation{
-        padding: 4px 0px 22px 0px;
-    }
-    .box-accommodation{
-        align-items: center;
-        border-radius: 0px;
-        padding: 0px 0px 0px 0px;
-        margin: 0px 0px 0px 0px;
-        background: none;
-        width: 100%;
-    }
-    .box{
-        display: flex;
-        flex-direction: column;
-        margin: 0px 0px 0px 0px;
-    }
-    .accomodation-1{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-    .accomodation-container{
-        display: flex;
-        flex-wrap: wrap;
-        width: 60%;
-        height: 100%;
-        margin: 0px;
-        padding: 3px;
-        background: white ;
-    }
-    .accomodation-container img{
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-        height: 100%;
+        margin: 30px 0px 0px 0px;
     }
     .box-famous{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        border-radius: 0px;
-    }
-    .famous-title{
-        margin: 75px 15px 25px 15px;
-        padding: 0px 0px 0px 0px;
-        gap: 252px;
-
-    }
-    .container-famous{
-        padding: 3px;
-        min-width: 500px;
-    }
-    .container-famous img{
-        border-radius: 15px 0px 0px 15px;
-        height: 150px;
-    }
-}
-/* Screen < 612px */
-@media screen  and (max-width: 611px) {
-    .container-box{
-        display: flex;
-        flex-direction: column-reverse ;
         justify-content: center;
         align-items: center;
-        margin: 0px 0px 90px 0px;
-        padding: 0px 0px 0px 0px;
-        gap: 0;
-    }
-    /* Step Famous */
-    .box-famous{
-        display: flex;
-        justify-content: center;
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-        background: var(--bg-color--);
-        box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
-        width: 100%;
-        border-radius: 0px;
+        border-radius: 0;
     }
     .famous{
-        align-items: center;
-        padding: 0 0 47px;
-        gap: 11px;
-    }
-    .famous-title{
-        margin: 0px 0px 25px 0px;
-        padding: 22px 0px 0px 0px;
-        gap: 103px;
-        font-size: 16px;
+        width: 100%;
+        margin: 0px 20px 25px 20px;
+        justify-content: center;
     }
     .container-famous{
-        background: white;
         display: flex;
+        flex-direction: row;
+        max-width: 350px;
+        width: 100%;
+    }
+    .famous-img{
+        display: flex;
+        max-width: 150px;
         padding: 3px;
-        width: 330px;
     }
-    .container-famous img{
-        border-radius: 15px 0px 0px 15px;
-    }
-    /* Dimention et Ajustement Star */
-    .famous-text .container-star{
-        padding: 0px 0px 0px 0px;
-        margin: 0px 0px 0px 0px;
-    }
-    .star{
-        width: 19px;
-        height: 15px;
-    }
-    .star-transparent{
-        width: 19px;
-        height: 15px;
-    }
-    /* Dimention et Ajustement Image  */
     .famous-img img{
-        width: 127px;
-        height: 109px;
-    }
-    /*  Dimention et Ajustement text-famous */
-    .container-famous .famous-text{
-        display: flex;
-        font-size: 14px;
-        padding: 0px 0px 0px 0px;
-        margin: 5px 0px 0px 11px;
-    }
-    .famous-text h4{
-        padding: 0px 0px 10px 0px;
-        margin: 0px 0px 0px 0px;
-    }
-    .famous-text p{
-        padding: 0px 0px 23px 0px;
-        margin: 0px 0px 0px 0px;
-    }
-    /* Step Accomodation */
-    .title-accomodation{
-        padding: 4px 0px 22px 0px;
-    }
-    .box-accommodation{
-        border-radius: 0px;
-        padding: 0px 0px 0px 0px;
-        margin: 30px 0px 50px 0px;
-        background: none;
-        width: 100%;
-    }
-    .box{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0px 0px 0px 0px;
-        gap: 15px;
-    }
-    .accomodation-1{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-        gap: 15px;
-    }
-    .accomodation-container{
-        display: flex;
-        flex-wrap: wrap;
-        padding: 5px;
-        width: 330px;
-        background: white ;
-    }
-    .accomodation-container img{
-        width: 100%;
+        display: block;
+        object-fit: cover;
         margin: 0;
-        padding: 0;
+        width: 6rem;
+        height: 7rem;
+        margin: 0px 10px 0px 0px;
     }
-    .accomodation-text{
-        display: grid;
-        margin: 0px 0px 0px 10px;
-        padding: 0px 0px 0px 0px;
+    .famous-text{
+        font-size: 15px;
         gap: 5px;
     }
-    h3{
-        display: none;
+    .container-star{
+        margin: 20px 0px 0px 0px;
     }
-}
-@media screen  and (min-width: 320px) and (max-width: 375px){
-    .accomodation-container {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 5px;
-        width: 250px;
-        background: white;
+    .famous-title {
+        width: 100%;
+        margin: 0px 20px 30px 20px;
+        padding: 29px 0px 0px 0px;
+        font-size: 16px;
+        max-width: 350px;
+    }
+    .box-accommodation{
+        align-items: center;
+        background: none;
+        padding: 30px 0px 15px 0px;
+        width: 18rem;
+    }
+    .title-accomodation{
+        margin: 0px 0px 20px 0px;
+
+    }
+    .title-accomodation h2{
+        font-size: 23px ;
     }
     .accomodation-1{
         display: flex;
         flex-direction: column;
         align-content: center;
-        margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         gap: 15px;
     }
-    .box-famous{
+    .accomodation-1 img{
+        object-fit: cover;
+        height: 80px;
+    }
+    .accomodation-container {
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
+        flex-direction: column;
+        padding: 5px;
+        width: 95%;
+        max-width: 350px;
+        background: white;
     }
-    .famous{
-        width: 100%;
-    }
-    .container-famous{
+    .accomodation-text{
         display: flex;
-        width: 278px;
+        flex-direction: column;
+        margin: 0px 0px 5px 5px;
+        gap: 5px;
     }
-    .famous-title{
-    /* width: 100%; */
-    gap: 33px;
-    font-size: 16px;
+    .accomodation-text ol{
+        display: flex;
+    }
+    .accomodation-information{
+        display: none;
     }
 }
