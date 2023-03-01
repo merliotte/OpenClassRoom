@@ -1,30 +1,17 @@
 .container-box{
     display: flex;
     flex-direction: row;
-    margin: 0px 0px 0px 0px;
 }
 .box-accommodation{
     display: flex;
     background: var(--bg-color--);
-    padding: 42px 0px 0px 0px;
     border-radius: 15px;
 }
-
 .box{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     gap: 30px;
-}
-.accomodation-container{
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-color--);
-    border-radius: 15px;
-    width: 100%;
-    padding: 3px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .accomodation-1{
     display: flex;
@@ -36,6 +23,19 @@
     box-sizing: content-box;
     width: 100%;
     border-radius: 15px 15px 0 0;
+}
+.accomodation-container{
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color--);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.accomodation-text{
+    display: flex;
+    flex-direction: column;
 }
 .star{
     overflow: hidden;
@@ -120,10 +120,7 @@ h4{
 /* Screen >= 992px */
 @media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-box{
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
-        padding: 0px 0px 0px 0px;
         width: 100%;
     }
     .title-accomodation{
@@ -131,7 +128,6 @@ h4{
         padding: 0px 0px 0px 0px;
     }
     .box-accommodation{
-        display: flex;
         margin: 0px 0px 0px 0px;
         width: 100%;
         padding: 0px 0px 0px 0px;
@@ -139,29 +135,22 @@ h4{
         width: 65%;
     }
     .box{
-        display: flex;
-        flex-direction: column;
         margin: 0px 30px 0px 30px;
         padding: 0px 0px 0px 0px;
     }
     .accomodation-1{
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
     }
     .accomodation-container{
-        width: 150px; 
+        width: 29%; 
         max-width: 550px;
     }
     .accomodation-container img{
         display: block;
         object-fit: cover;
-        width: 100%;
         height: 70px;
     }
     .accomodation-text{
-        display: flex;
-        flex-direction: column;
         gap: 5px;
         margin: 9px 0px 5px 9px;
         padding: 0px 0px 0px 0px;
@@ -172,41 +161,29 @@ h4{
     }
     .box-famous {
         flex-direction: column;
-        background: var(--bg-color--);
-        border-radius: 15px;
         padding: 0px 0px 0px 0px;
         margin: 0px 0px 0px 0px;
         gap: 16px;
         width: 30%;
     }
     .famous{
-        display: flex;
         flex-direction: column;
         gap: 28px;  
         margin: 0px 30px 0px 30px;
         padding: 0px 0px 0px 0px;
     }  
     .famous-title{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin: 30px 32px 6px 34px;
         padding: 0px 0px 0px 0px;
         font-size: 10px;
     }
     .famous-title img{
-        object-fit: contain;
         width: 17px;
         height: 17px;
     }
     .container-famous{
-        display: flex;
-        flex-direction: row;
-        background: white;
-        border-radius: 15px;
         padding: 3px;
         width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .famous-text{
         margin: 5px 0px 0px 7px;
@@ -214,10 +191,8 @@ h4{
         gap: 5px;
     }
     .famous-img img{
-        object-fit: cover;
         width: 70px;
         height: 90px;
-        border-radius: 15px 0 0 15px;
     }
 }
 /* Format tablette */
@@ -255,11 +230,8 @@ h4{
     .accomodation-container img{
         width: 100%;
         height: 90px;
-
     }
     .accomodation-text{
-        display: flex;
-        flex-direction: column;
         gap: 5px;
         margin: 8px 0px 0px 9px;
         padding: 0px 0px 0px 0px;
@@ -333,7 +305,8 @@ h4{
     .famous{
         width: 100%;
         margin: 0px 20px 25px 20px;
-        justify-content: center;
+        gap: 17;
+        justify-content: space-between;
     }
     .container-famous{
         display: flex;
@@ -371,21 +344,25 @@ h4{
     .box-accommodation{
         align-items: center;
         background: none;
-        padding: 30px 0px 15px 0px;
-        width: 18rem;
+        margin: 20px 0px 20px 0px;
+        padding: 0;
+        width: 100%;
     }
     .title-accomodation{
-        margin: 0px 0px 20px 0px;
-
+        width: 100%;
+        margin: 0px 0px 20px 20px;
     }
     .title-accomodation h2{
-        font-size: 23px ;
+        font-size: 20px ;
+    }
+    .box{
+        margin: 0px 20px 20px 20px;    
     }
     .accomodation-1{
         display: flex;
         flex-direction: column;
         align-content: center;
-        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 20px 0px;
         gap: 15px;
     }
     .accomodation-1 img{
@@ -393,17 +370,12 @@ h4{
         height: 80px;
     }
     .accomodation-container {
-        display: flex;
-        flex-direction: column;
-        padding: 5px;
-        width: 95%;
-        max-width: 350px;
+        width: 100%;
+        max-width: 550px;
         background: white;
     }
     .accomodation-text{
-        display: flex;
-        flex-direction: column;
-        margin: 0px 0px 5px 5px;
+        margin: 5px 0px 5px 5px;
         gap: 5px;
     }
     .accomodation-text ol{

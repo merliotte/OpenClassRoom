@@ -1,190 +1,90 @@
 .activity{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     grid-template-rows: 30px 500px;
-    margin: 60px 0px 60px 55px;
-    padding: 60px 0px 60px 0px;
+    margin: 40px 0px 0px 0px;
 }
 .text-activity {
     display: flex;
     justify-content: flex-start;
-    grid-column: 2/2;
     margin: 0px 0px 0px 0px;
 }
 .box-activity{
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    grid-column: 2/2;
-    margin: 18px 17px 0px 0px;
+    justify-content: space-between;
+    margin: 20px 0px 40px 0px;
+    width: 100%;
 }
-
 .container-activity{
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 20px;
     word-wrap: break-word;
-    width: 360px;
-    height: auto;
+    width: 23%;
+    max-width: 550px;
+    height: 290px;
 }
 .container-activity p{
-    display: flex;
-    margin: 23px 25px; 
+    font-size: 14px;
+    margin: 10px 0px 0px 13px;
+    overflow: hidden;
 }
 .image-activity img{
     display: flex;
     object-fit: cover;
     width: 100%;
-    height: 430px;
+    height: 250px;
     border-radius: 20px 20px 0 0;
 }
-@media screen and (max-width: 1400px) {
-    .activity{
-        display: flex;
-        justify-content: center;
-        margin: 60px 0px 60px 0px;
-    }
-    .text-activity {
-        display: flex;
-        justify-content: flex-start;
-        margin: 0px 0px 0px 0px;
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .activity{ 
+        flex-wrap: wrap;
+        margin: 0px 20px 0px 20px;
+        padding: 0px 0px 0px 0px;
     }
     .box-activity{
-        display: flex;
-        flex-direction: row;
-        gap: 43px;
-        margin: 18px 0px 0px 0px;
+        margin: 0px 0px 50px 0px;
+        gap: 23px;
     }
     .container-activity{
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        border-radius: 20px;
-        word-wrap: break-word;
-        width: 302px;
+        max-width: 320px;
+        width: 100%;
         height: auto;
     }
-    .container-activity p{
-        display: flex;
-        margin: 10px 25px; 
-    }
     .image-activity img{
-        display: flex;
-        object-fit: cover;
-        width: 100%;
-        height: 430px;
-        border-radius: 20px 20px 0 0;
-    }
-}
-@media  screen and (min-width: 991px){
-    .activity{
-        display: flex;
-        flex-direction: column;
-        margin: 30px 0px 30px 0px;
-        padding: 30px 0px 30px 0px;
+        height: 115px;
     }
     .text-activity{
-        margin: 0px 0px 0px 55px;
-    }
-    .container-activity{
-        width: 205px;
-        word-wrap: break-word;
-        height: 306px;
-    }
-        .image-activity img{
-            height: 250px;
+        width: 50%;
+        max-width: 500px ;
+        margin: 80px 0px 5px 0px;
     }
     .container-activity p{
-        display: flex;
-        margin: 5px 0px 0px 17px; 
-    }
-    .box-activity{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 30px 0px 30px 55px;
-        padding: 30px 0px 30px 0px;
-        gap: 0px;
+        padding: 9px 0px 13px 0px;
     }
 }
 @media  screen and (min-width: 768px) and (max-width: 991px) {
-    .activity{
-        grid-template-rows: none;
-        margin: 30px 0px 30px 0px;
+    .box-activity{
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        margin: 20px 0px 40px 0px;
     }
     .container-activity{
-        display: flex;
-        width: 140px;
-        height: 210px;
-        word-wrap: break-word;
+        max-width: 320px;
+        height: 206px;
     }
     .image-activity img{
+        width: 100%;
         height: 160px;
     }
     .container-activity p{
         margin: 5px 0px 0px 17px; 
-        font-size: 13px;
-        overflow: hidden;
-        width: 90px;
-        
-    }
-    .box-activity{
-        display: flex;
-        justify-content: space-between;
-        gap: 35px;
-        margin: 31px 50px 0px 50px; 
-        padding: 0;
-    }
-    .text-activity{
-        margin: 0px 0px 0px 50px;
+        font-size: 15px;
     }
 }
-/* Version Tablette */
-@media screen and (max-width: 768px){
-    .activity {
-        display: flex;
-        justify-content: center;
-        margin: 60px 0px 60px 20px;
-    }
-}
-@media screen and (max-width: 682px){
-    .activity{ 
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-    }
-    .container-activity{
-        width: 330px;
-    }
-    .box-activity{
-        justify-content: center;
-        margin: 0px 0px 50px 0px;
-        gap: 23px;
-    }
-    .image-activity img{
-        width: 100%;
-        height: 115px;
-    }
-    .text-activity{
-        display: flex;
-        text-align: start;
-        align-content: flex-start;
-        width: 207px;
-        max-width: 500px ;
-        margin: 0px 114px 0px 0px;
-    }
-    .container-activity p{
-        padding: 9px 0px 9px 0px;
-    }
-}
-/* Version mobile */
-@media screen and (min-width: 320px) and (max-width: 375px){
-    .container-activity{
-        width: 280px;
-    }
-}
+
+
 
