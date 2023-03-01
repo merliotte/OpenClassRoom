@@ -45,11 +45,11 @@
         padding: 0px 0px 0px 0px;
     }
     .box-activity{
+        justify-content: center;
         margin: 0px 0px 50px 0px;
         gap: 23px;
     }
     .container-activity{
-        max-width: 320px;
         width: 100%;
         height: auto;
     }
@@ -84,6 +84,7 @@
         margin: 5px 0px 0px 17px; 
         font-size: 15px;
     }
+    
 }
 
 
