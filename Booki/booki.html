@@ -44,20 +44,27 @@
                     <img src="./icon/localisation.svg" alt="localisation">
                 </div>
                 <div class="search-destination">
-                    <label for="recherchedestination"></label>
+                    <!-- <label for="recherchedestination"></label> -->
                     <input type="text" placeholder="Marseille, France" id="Marseille" autofocus>
                 </div>
-                    <button type="button"><div class="bar-logo"><p>Rechercher</p>  
-                <img src="./icon/loupe.svg" alt="Rechercher"></button></div>
+                <div class="bar-logo">
+                    <button type="button"><img src="./icon/loupe.svg" alt="Rechercher"></button>
+                </div>
+                <div class="bar-logo-recherche">
+                    <button type="button">Rechercher</button>
+                </div>
+            </div>
                 <div class="container-filter">
-                    <div class="text-filter"><h2>Filtres</h2></div>
-                        <div class="menu-filter">
-                            <button><img src="./icon/moneyblue.svg" alt="billet"> <h2>Economique</h2></button>
-                            <button><img src="./icon/peopleblue.svg" alt="personne"><h2>Familial</h2></button>
-                            <button><img src="./icon/coeurblue.svg" alt="coeurblue"><h2>Romantique</h2></button>
-                            <button><img src="./icon/dogblue.svg" alt="animaux"><h2>Animaux autorisés</h2></button>
-                        </div>
+                    <div class="text-filter">
+                        <h2>Filtres</h2>
                     </div>
+                    <div class="menu-filter">
+                        <button><img src="./icon/moneyblue.svg" alt="billet">Economique</button>
+                        <button><img src="./icon/peopleblue.svg" alt="personne">Familial</button>
+                        <button><img src="./icon/coeurblue.svg" alt="coeurblue">Romantique</button>
+                        <button><img src="./icon/dogblue.svg" alt="animaux">Animaux autorisés</button>
+                    </div>
+                </div>
     <!-- Information textuel  -->
                 <div class="box-information">
                     <div class="container-information">
@@ -78,13 +85,13 @@
                                     <div class="accomodation-container">
                                         <a href=""><picture>
                                             <!-- Image pour les écrans de 320px à 767px -->
-                                            <source media="(min-width: 320px) and (max-width: 767px)" href="#" src="./Images-Booki/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source srcset= "./Images-Booki/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)"> 
                                             <!-- Image pour les écrans de 767px à 991px -->
-                                            <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/Canebière.jpg">
+                                            <source srcset="./Images-Booki/hebergements/3_medium/Canebière.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                             <!-- Image pour les écrans de 991px à 1400px -->
-                                            <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                             <!-- Image par défaut -->
-                                            <img src="./Images-Booki/hebergements/3_medium/Canebière.jpg"alt="">
+                                            <img src="./Images-Booki/hebergements/3_medium/Canebière.jpg" alt="">
                                           </picture>
                                         <div class="accomodation-text">
                                             <h4>Auberge La Canebière</h4> 
@@ -101,13 +108,13 @@
                                     <div class="accomodation-container">
                                         <a href=""><picture>
                                             <!-- Image pour les écrans de 320px à 767px -->
-                                            <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)" >
                                             <!-- Image pour les écrans de 767px à 991px -->
-                                            <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/port.jpg">
+                                            <source srcset="./Images-Booki/hebergements/3_medium/port.jpg" media="(min-width: 768px) and (max-width: 991px)" >
                                             <!-- Image pour les écrans de 991px à 1400px -->
-                                            <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/2_large/fred-kleber-gTbaxaVLvsg-unsplash.jpg"  media="(min-width: 992px) and (max-width: 1400px)" >
                                             <!-- Image par défaut -->
-                                            <img src="./Images-Booki/hebergements/3_medium/port.jpg"alt="">
+                                            <img src="./Images-Booki/hebergements/3_medium/port.jpg" alt="">
                                         </picture>
                                         <div class="accomodation-text">
                                                 <h4>Hôtel du port</h4>
@@ -123,13 +130,13 @@
                                         <div class="accomodation-container">
                                             <a href=""><picture>
                                                 <!-- Image pour les écrans de 320px à 767px -->
-                                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg">
+                                                <source srcset="./Images-Booki/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)" >
                                                 <!-- Image pour les écrans de 767px à 991px -->
-                                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/mouettes.jpg">
+                                                <source srcset="./Images-Booki/hebergements/3_medium/mouettes.jpg" media="(min-width: 768px) and (max-width: 991px)" >
                                                 <!-- Image pour les écrans de 991px à 1400px -->
-                                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/reisetopia-B8WIgxA_PFU-unsplash.jpg">
+                                                <source srcset="./Images-Booki/hebergements/2_large/reisetopia-B8WIgxA_PFU-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)" >
                                                 <!-- Image par défaut -->
-                                                <img src="./Images-Booki/hebergements/3_medium/mouettes.jpg"alt="">
+                                                <img src="./Images-Booki/hebergements/3_medium/mouettes.jpg" alt="">
                                             </picture>                                    
                                             <div class="accomodation-text">
                                                 <h4>Hôtel les mouettes</h4>
@@ -148,13 +155,13 @@
                                         <div class="accomodation-container">
                                             <a href=""><picture>
                                                 <!-- Image pour les écrans de 320px à 767px -->
-                                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
+                                                <source srcset="./Images-Booki/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                                 <!-- Image pour les écrans de 767px à 991px -->
-                                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/mer.jpg">
+                                                <source srcset="./Images-Booki/hebergements/3_medium/mer.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                                 <!-- Image pour les écrans de 991px à 1400px -->
-                                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
+                                                <source srcset="./Images-Booki/hebergements/2_large/annie-spratt-Eg1qcIitAuA-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                                 <!-- Image par défaut -->
-                                                <img src="./Images-Booki/hebergements/3_medium/mer.jpg"alt="">
+                                                <img src="./Images-Booki/hebergements/3_medium/mer.jpg" alt="">
                                             </picture>                                    
                                         <div class="accomodation-text">
                                                 <h4>Hôtel de la mer</h4>
@@ -171,13 +178,13 @@
                                     <div class="accomodation-container">
                                         <a href=""><picture>
                                             <!-- Image pour les écrans de 320px à 767px -->
-                                            <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)" >
                                             <!-- Image pour les écrans de 767px à 991px -->
-                                            <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/Panier.jpg">
+                                            <source srcset="./Images-Booki/hebergements/3_medium/Panier.jpg" media="(min-width: 768px) and (max-width: 991px)" >
                                             <!-- Image pour les écrans de 991px à 1400px -->
-                                            <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/2_large/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)" >
                                             <!-- Image par défaut -->
-                                            <img src="./Images-Booki/hebergements/3_medium/Panier.jpg"alt="">
+                                            <img src="./Images-Booki/hebergements/3_medium/Panier.jpg" alt="">
                                         </picture>
                                         <div class="accomodation-text">
                                                 <h4>Auberge Le Panier</h4>
@@ -194,14 +201,14 @@
                                     <div class="accomodation-container">
                                         <a href=""><picture>
                                             <!-- Image pour les écrans de 320px à 767px -->
-                                            <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                             <!-- Image pour les écrans de 767px à 991px -->
-                                            <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/Canebière.jpg">
+                                            <source srcset="./Images-Booki/hebergements/3_medium/Amina.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                             <!-- Image pour les écrans de 991px à 1400px -->
-                                            <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
+                                            <source srcset="./Images-Booki/hebergements/2_large/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                             <!-- Image par défaut -->
                                             <img src="./Images-Booki/hebergements/3_medium/Amina.jpg" alt=""> 
-                                        </picture>                                    
+                                        </picture>                                     
                                         <div class="accomodation-text">
                                                 <h4>Hôtel Chez Amina</h4>
                                                 <p>Nuit à partir de 96<strong>€</strong></p>
@@ -226,18 +233,18 @@
                         </div>
                         <div class="famous">
                             <div class="container-famous">
-                                <div class="famous-img">
-                                    <a href=""><picture>
+                                <a href=""><div class="famous-img">
+                                    <picture>
                                         <!-- Image pour les écrans de 320px à 767px -->
-                                        <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/soleil.jpg">
+                                        <source srcset="./Images-Booki/hebergements/4_small/soleil.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                         <!-- Image pour les écrans de 767px à 991px -->
-                                        <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                         <!-- Image pour les écrans de 991px à 1400px -->
-                                        <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/2_large/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                         <!-- Image par défaut -->
                                         <img src="./Images-Booki/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="">
-                                      </picture>                             
-                                    </div>
+                                    </picture>                            
+                                </div>
                                 <div class="famous-text">
                                         <h4>Hôtel Le soleil<br>du matin</h4>
                                         <p>Nuit à partir de 128<strong>€</strong></p>
@@ -248,23 +255,24 @@
                                             <li><div class="star"></div></li>
                                             <li><div class="star"></div></li>
                                             <li><div class="star-transparent"></div></li>
-                                        </ul></a>
+                                        </ul>
                                     </div>
-                                </div>
+                                </div>    
+                                </a>
                             </div>
                             <div class="container-famous">
-                                <div class="famous-img">
-                                    <a href=""><picture>
+                                <a href=""><div class="famous-img">
+                                    <picture>
                                         <!-- Image pour les écrans de 320px à 767px -->
-                                        <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/coeur de l'eau.jpg">
+                                        <source srcset="./Images-Booki/hebergements/4_small/coeur-de-l'eau.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                         <!-- Image pour les écrans de 767px à 991px -->
-                                        <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                         <!-- Image pour les écrans de 991px à 1400px -->
-                                        <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/aw-creative-VGs8z60yT2c-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/2_large/aw-creative-VGs8z60yT2c-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                         <!-- Image par défaut -->
                                         <img src="./Images-Booki/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="">
                                       </picture>                                
-                                    </div>
+                                </div>
                                 <div class="famous-text">
                                         <h4>Chambres d'hôtes<br>Au coeur de l'eau</h4>
                                         <p>Nuit à partir de 71<strong>€</strong></p>
@@ -276,22 +284,23 @@
                                             <li><div class="star"></div></li>
                                             <li><div class="star-transparent"></div></li>
                                         </ul>
-                                    </a></div>
-                                </div>
+                                    </div>
+                                </div>   
+                                </a>
                             </div>
                             <div class="container-famous">
-                                <div class="famous-img">
-                                    <a href=""><picture>
+                                <a href=""><div class="famous-img">
+                                    <picture>
                                         <!-- Image pour les écrans de 320px à 767px -->
-                                        <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/hotel Bleu Blanc.jpg">
+                                        <source srcset="./Images-Booki/hebergements/4_small/hotel-Bleu-Blanc.jpg" media="(min-width: 320px) and (max-width: 767px)" >
                                         <!-- Image pour les écrans de 767px à 991px -->
-                                        <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)" >
                                         <!-- Image pour les écrans de 991px à 1400px -->
-                                        <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                        <source srcset="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)" >
                                         <!-- Image par défaut -->
                                         <img src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="">
                                       </picture>                               
-                                    </div>
+                                </div>
                                 <div class="famous-text">
                                         <h4>Hôtel Bleu et Blanc</h4>
                                         <p>Nuit à partir de 68<strong>€</strong></p>
@@ -303,11 +312,13 @@
                                             <li><div class="star"></div></li>
                                             <li><div class="star"></div></li>
                                             <li><div class="star-transparent"></div></li>
-                                        </ul></a>
+                                        </ul>
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         </div>
+                </div>
             </div>
             </section>
             <section>
@@ -315,63 +326,74 @@
                 <div class="activity">
                 <div class="text-activity"><h2>Activités à Marseille</h2></div>
                 <div class="box-activity">
+                    <a href="">
                     <div class="container-activity">
-                        <a href=""><div class="image-activity">
+                        <div class="image-activity">
                             <picture>
                                 <!-- Image pour les écrans de 320px à 767px -->
-                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/hotel Bleu Blanc.jpg">
+                                <source srcset="./Images-Booki\activites\4_small\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                 <!-- Image pour les écrans de 767px à 991px -->
-                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\3_medium\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                 <!-- Image pour les écrans de 991px à 1400px -->
-                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\2_large\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                 <!-- Image par défaut -->
                                 <img src="./Images-Booki/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
                             </picture>
                         </div>
                         <p><strong>Vieux-Port</strong></p>
-                    </div></a>
+                    </div>
+                    </a>
+                    <a href="">
                     <div class="container-activity">
-                        <a href=""><div class="image-activity">
+                        <div class="image-activity">
                             <picture>
                                 <!-- Image pour les écrans de 320px à 767px -->
-                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/hotel Bleu Blanc.jpg">
+                                <source srcset="./Images-Booki\activites\4_small\paul-hermann-QFTrLdQIRhI-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                 <!-- Image pour les écrans de 767px à 991px -->
-                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\3_medium\paul-hermann-QFTrLdQIRhI-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                 <!-- Image pour les écrans de 991px à 1400px -->
-                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\2_large\paul-hermann-QFTrLdQIRhI-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                 <!-- Image par défaut -->
                                 <img src="./Images-Booki/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
                             </picture>
                         </div>
                         <p><strong>Fort de Pomègues</strong></p>
-                    </div></a>
-                    <div class="container-activity">
-                        <a href=""><div class="image-activity"> 
+                    </div>
+                    </a>
+                    <a href="">
+                        <div class="container-activity">
+                        <div class="image-activity"> 
                             <picture>
                                 <!-- Image pour les écrans de 320px à 767px -->
-                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/hotel Bleu Blanc.jpg">
+                                <source srcset="./Images-Booki\activites\4_small\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
                                 <!-- Image pour les écrans de 767px à 991px -->
-                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\3_medium\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
                                 <!-- Image pour les écrans de 991px à 1400px -->
-                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                                <source srcset="./Images-Booki\activites\2_large\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
                                 <!-- Image par défaut -->
                                 <img src="./Images-Booki/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
                             </picture>
                         </div>
                         <p><strong>Parc national des Calanques</strong></p>
-                    </div></a>
-                    <div class="container-activity">
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="container-activity">
                         <div class="image-activity">
-                                <!-- Image pour les écrans de 320px à 767px -->
-                                <source media="(min-width: 320px) and (max-width: 767px)" src="./Images-Booki/hebergements/4_small/hotel Bleu Blanc.jpg">
-                                <!-- Image pour les écrans de 767px à 991px -->
-                                <source media="(min-width: 768px) and (max-width: 991px)" src="./Images-Booki/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
-                                <!-- Image pour les écrans de 991px à 1400px -->
-                                <source media="(min-width: 992px) and (max-width: 1400px)" src="./Images-Booki/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
-                                <!-- Image par défaut -->
-                                <img src="./Images-Booki/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                            <picture>
+                            <!-- Image pour les écrans de 320px à 767px -->
+                            <source srcset="./Images-Booki\activites\4_small\florian-wehde-xW9e8gdotxI-unsplash.jpg" media="(min-width: 320px) and (max-width: 767px)">
+                            <!-- Image pour les écrans de 767px à 991px -->
+                            <source srcset="./Images-Booki\activites\4_small\florian-wehde-xW9e8gdotxI-unsplash.jpg" media="(min-width: 768px) and (max-width: 991px)">
+                            <!-- Image pour les écrans de 991px à 1400px -->
+                            <source srcset="./Images-Booki\activites\4_small\florian-wehde-xW9e8gdotxI-unsplash.jpg" media="(min-width: 992px) and (max-width: 1400px)">
+                            <!-- Image par défaut -->
+                            <img src="./Images-Booki/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                            </picture>
+                        </div>
                         <p><strong>Notre-Dame-de-la-garde</strong></p>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             </section>

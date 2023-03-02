@@ -87,7 +87,7 @@
     display: flex;
     gap: 33px;    
 }
-.container-famous{
+.container-famous {
     display: flex;
     flex-direction: row;
     background: white;
@@ -95,7 +95,9 @@
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
 }
-
+.container-famous a {
+    display: flex;
+}
 .famous-img img{
     display: block;
     object-fit: cover;
@@ -121,7 +123,6 @@ h4{
     margin: 20px 0px 0px 0px;
     
 }
-/* Screen >= 992px */
 @media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-box{
         justify-content: space-between;
@@ -185,7 +186,7 @@ h4{
         width: 17px;
         height: 17px;
     }
-    .container-famous{
+    .container-famous {
         padding: 3px;
         width: 100%;
     }
@@ -207,7 +208,6 @@ h4{
     .container-box{
         display: flex;
         margin: 30px 0px 30px 0px;
-
     }
     .title-accomodation{
         margin: 30px 0px 30px 35px;
@@ -247,7 +247,6 @@ h4{
         display: flex;
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
-
     }
     .box-famous {
         background: var(--bg-color--);
@@ -268,7 +267,7 @@ h4{
         margin: 20px 35px 20px 35px;
         font-size: 12px;
     }
-    .container-famous{
+    .container-famous {
         display: flex;
         background: white;
         border-radius: 15px;
@@ -316,9 +315,9 @@ h4{
         width: 100%;
         margin: 0px 20px 25px 20px;
         gap: 17;
-        justify-content: space-between;
+        justify-content: center;
     }
-    .container-famous{
+    .container-famous {
         display: flex;
         flex-direction: row;
         max-width: 350px;
