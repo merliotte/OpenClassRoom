@@ -61,6 +61,9 @@ nav{
         .bar-logo img {
             visibility: visible;  
         }
+        .bar-logo-recherche{
+            margin: 0px 0px 0px 0px;  
+        }
         .bar-logo-recherche button { 
             visibility: hidden;
         }
