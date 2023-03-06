@@ -121,7 +121,6 @@ h4{
     display: flex;
     padding: 0px 0px 0px 0px;
     margin: 20px 0px 0px 0px;
-    
 }
 @media screen and (min-width: 991px) and (max-width: 1400px) {
     .container-box{
