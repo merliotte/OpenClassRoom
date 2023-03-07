@@ -9,9 +9,8 @@
     flex-wrap: wrap;
 }
 .container-all{
-    display: flex;
-    margin: 0px 50px 0px 50px;
-    max-width: 1400px;
+    margin: 0px auto;
+    padding: 0 15px;
 }
 :root{
     --main-color : #DEEBFF; 
@@ -47,9 +46,6 @@
     padding: 10px 0 0 0;
 } 
 @media screen and (min-width: 320px) and (max-width: 767px) { 
-    .container-all{
-        margin: 0;
-    }
     .container-menu{
         flex-direction: column;
         margin: 0px 0px 0px 0px;
@@ -107,7 +103,9 @@
     }
 } 
 @media screen and (min-width: 767px) and (max-width: 991px) {
-
+    .container-all{
+        max-width: 720px;
+    }
     .container-menu{
         display: flex;
         justify-content: space-between;
@@ -134,7 +132,9 @@
     }
 }
 @media screen and (min-width: 991px) and (max-width: 1400px) {
-    
+    .container-all{
+        max-width: 960px;
+    }
     .container-menu{
         justify-content: space-between;
         margin: 30px 0 0 0px;
@@ -157,5 +157,10 @@
     }
     .nav-title {
         margin: 50px 0 0 0px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container-all{
+        max-width: 1140px;
     }
 }

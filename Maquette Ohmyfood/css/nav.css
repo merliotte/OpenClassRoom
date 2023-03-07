@@ -86,18 +86,6 @@ nav{
     width: 20px;
     height: auto;
 }
-/* .filter button{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: blue;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: -12px;
-    z-index: 1;
-} */
 /* Icone Nombre */
 .number-filter{
     position: absolute;

@@ -5,7 +5,6 @@
     position: absolute;
     font-weight : bold;
     text-align: center;
-    margin: 10px 10px 214px 231px;
     padding: 8px;
     z-index: 1;
     width: 80px;
@@ -14,13 +13,19 @@
 .box-restaurant{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background: var(--background);
+    width: 100%;
+    padding: 50px 0px 50px 0px;
 }
+    .box-restaurant h2{
+        margin: 0px 20px 0px 20px;
+    }
 .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px;
     gap: 20px;
 }
 .container-restaurant{
@@ -29,16 +34,44 @@
     justify-content: center;
     background: white;
     gap: 5px;
-    border-radius: 15px ;
-}
-.container-restaurant p{
-    padding: 0px 10px;
-}
-.container-restaurant img{
-    object-fit: cover;
-    margin: 0 ;
-    width: 334px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    }
+    .container-restaurant img{ 
+    object-fit: contain;
+    width: 100%;
     border-radius: 15px 15px 0 0;
+    }
+.container-text-restaurant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+/* Texte Sous les containers */
+    .text-restaurant{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 5px 20px 10px 15px;
+        }
+/* Coeur Vide */
+.restaurant-coeur-vide{
+    background-image: url(/icon/coeurvide.svg);
+    object-fit: cover;
+    overflow: hidden;
+    text-indent: 0px;
+    height: 25px;
+    margin: 5px 20px 10px 15px;
+    width: 25px;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.restaurant-coeur-vide:hover{
+    background-image: ;
+
 }
 .logo-restaurant img{
     display: flex;
@@ -46,6 +79,5 @@
     align-items: center;
     object-fit: cover;
     width: 35px; 
-    margin: -34px 8px 12px 271px;
 }
 
