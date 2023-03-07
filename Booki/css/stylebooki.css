@@ -10,7 +10,6 @@
 }
 .container-all{
     margin: 0px auto;
-    padding: 0 15px;
 }
 :root{
     --main-color : #DEEBFF; 
@@ -27,12 +26,14 @@
     display: flex;
     flex-direction: row;
     gap: 30px;
-    color: black;
     border-top: solid transparent;
 }
 .menu ul{
     display: grid;
     grid-template-columns: repeat(2,auto);
+}
+.menu a {
+    color: black;
 }
 .container-menu img{
     width: 61px;
