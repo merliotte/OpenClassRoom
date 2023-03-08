@@ -17,6 +17,10 @@
     flex-direction: row;
     gap: 30px;
     margin: 10px 0px 0px 0px;
+}
+.menu-title h1{
+        font-size: 24px;
+        font-family: 'Shrikhand', cursive;
     }
 /* Menu */
     .container-menu{
@@ -24,14 +28,16 @@
     flex-direction: column;
     border-radius: 30px;
     margin: -33px 0px 0px 0px;
-    padding: 30px 0px 0px 14px;
+    padding: 30px 15px 0px 15px;
     z-index: 1;
     background: var(--background-menu);
     }
-    h3{
+    h2{
     text-transform: uppercase;
     border-bottom: solid var(--tertiaire);
-    width: 60px;
+    width: 18%;
+    font-weight: 200;
+    font-size: 17px;
     }
     /* Image header */
     .box-image {
@@ -51,6 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     }
     .container-menu ol li{
     border-radius: 15px;
@@ -59,7 +66,7 @@
     margin: 10px;
     overflow: hidden;
     white-space: nowrap;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
     background: white;
     }
@@ -93,12 +100,10 @@
     .prix{
         display: flex;
         grid-row: 1/2;
-        margin: 31px 0px 0px 18px;
+        margin: 31px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
 
     }
-
-    
 /* Box Commander */
     .box-order{
     display: flex;

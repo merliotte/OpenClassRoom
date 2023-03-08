@@ -1,3 +1,4 @@
+/* Affichage Nouveau */
 .restautant-box_new{
     background: var(--tertiaire);
     opacity: 85%;
@@ -9,6 +10,7 @@
     z-index: 1;
     width: 80px;
     height: 18px;
+    margin: 0px 0px 183px 167px;
 }
 .box-restaurant{
     display: flex;
@@ -70,8 +72,9 @@
 }
 
 .restaurant-coeur-vide:hover{
-    background-image: ;
-
+    background-image: url(/icon/heart-solid-24.png);
+    transition: 0.3s;
+    background-color:linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);
 }
 .logo-restaurant img{
     display: flex;

@@ -1,13 +1,9 @@
-.box-exploration{
-    
-}
 /* Élément de localisation */
 .localisation{
 display: flex;
 justify-content: center;
 align-items: center;
 background: var(--border-image);
-
 }
 .localisation button{
     display: flex;
@@ -15,6 +11,7 @@ background: var(--border-image);
     background: var(--border-image);
     border: none;
     margin: 20px;  
+    cursor: pointer;
 }
 /* Élément de navigation */
 nav{
@@ -28,15 +25,18 @@ nav{
     text-align: center;
     flex-direction: column;
     background:#F0F2F6 ;    
-    padding: 62px;  
-    
 }
 /* Styles pour la section de réservation */
-.exploration-reservation .reservation{
+.reservation{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 100%;
+    margin: 30px 0px 50px 0px;
+}
+.reservation h2{
+    width: 75%;
 }
 /* Bouton de réservation */
 .exploration-reservation .reservation button{
@@ -44,9 +44,10 @@ nav{
     border-radius: 30px;
     width: 170px;
     border: transparent;
-    background: rgb(147,86,220);
-    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);   
+    box-shadow: rgb(99 99 99 / 50%) 0px 5px 10px 0px;
     height: 40px;
+    cursor: pointer;
 }
 /* Box de fonctionnement */
 .box-fonctionnement{
@@ -80,6 +81,17 @@ nav{
     font-weight: bold;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
     color: black;
+    background: #EFEFEF;
+    cursor: pointer;
+}
+.filter-fonctionnement button:hover{
+    background: rgba(250, 87, 207, 0.200) ; 
+    color: black;
+    transition: 0.5s ease;
+}
+.filter-fonctionnement:hover img{
+    filter: opacity(0.4) drop-shadow(0 0 0 rgb(119, 4, 148));
+    transition: 0.5s ease;
 }
 .filter-fonctionnement img{
     object-fit: cover;

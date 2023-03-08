@@ -10,6 +10,7 @@
 }
 .container-all{
     margin: 0px auto;
+    max-width: 1400px;
 }
 :root{
     --main-color : #DEEBFF; 
