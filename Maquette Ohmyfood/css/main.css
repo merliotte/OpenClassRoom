@@ -48,7 +48,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 /* Texte Sous les containers */
     .text-restaurant{
@@ -70,7 +69,7 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-
+/* Animation coeur */
 .restaurant-coeur-vide:hover{
     background-image: url(/icon/heart-solid-24.png);
     transition: 0.3s;

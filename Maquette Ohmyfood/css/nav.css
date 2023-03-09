@@ -49,6 +49,12 @@ nav{
     height: 40px;
     cursor: pointer;
 }
+/* Animation du boutton de réservation */
+.reservation button:hover{
+    box-shadow: rgb(99 99 99 / 50%) 7px 7px 7px 7px;
+    opacity: 70%;
+    transition: 0.5s;
+}
 /* Box de fonctionnement */
 .box-fonctionnement{
     display: flex;

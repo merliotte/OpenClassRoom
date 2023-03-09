@@ -122,7 +122,12 @@
     box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
     height: 40px;
     }
-    /* Animation */
+    /* Animation button ORDER */
+    .box-order button:hover{
+        box-shadow: rgb(99 99 99 / 50%) 7px 7px 7px 7px;
+        opacity: 70%;
+        transition: 0.5s;
+    }
     li{
         display: flex;
         flex-direction: row;

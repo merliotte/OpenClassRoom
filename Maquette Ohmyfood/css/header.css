@@ -15,9 +15,12 @@
     --background: #F0F2F6;
     --background-menu: #F7F7F7;
 }
+
 /* Box ALL */
 .container--all{
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 /* Header */
 header{
@@ -29,4 +32,37 @@ header{
 /* Box Logo */
 .logo{
     display: flex ;
+}
+.loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loader--lettre{
+    color: #484848;
+    font-style: 80px;
+    letter-spacing: 15px;
+    margin-bottom: 150px;
+    animation: flash 1.2s linear infinite;
+}
+
+@keyframes flash {
+    0% {
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+    }
+    90% {
+        color: #484848;
+        text-shadow: none;
+    }
+    100%{
+        color: #fff900;
+        text-shadow: 0 0 7px #fff900;
+
+    }
 }
