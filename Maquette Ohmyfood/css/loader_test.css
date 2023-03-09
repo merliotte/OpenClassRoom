@@ -1,0 +1,26 @@
+html,body{
+    height: 100%;
+}
+body{
+    align-items: center;
+    background-color: #1d1f20;
+    display: flex;
+    justify-content: center;
+}
+.fork--move{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background: url(../icon/fourchette-et-couteau\ noir.png);
+    background-position: 0px 350px;
+    background-repeat: no-repeat;
+    animation: filling 5s ease-in-out infinite;
+    box-shadow: 0 0 0 6px #f12c2c7b;
+}
+  @keyframes filling {
+    50% {background-position: 0px 0px;}
+    100% {background-position: 1000px 0px;}
+  }
+
+
+
