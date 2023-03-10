@@ -67,6 +67,7 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
+    max-width: 350px;
     cursor: pointer;
     background: white;
     }

@@ -1,9 +1,9 @@
 /* Affichage Nouveau */
-.restautant-box_new{
+.restaurant--box--new{
+    position: absolute;
     background: var(--tertiaire);
     opacity: 85%;
     color: #008766;
-    position: absolute;
     font-weight : bold;
     text-align: center;
     padding: 8px;
