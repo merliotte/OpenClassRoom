@@ -120,7 +120,7 @@
         height: 20px;
     }
 }
-@media screen and (min-width: 991px) and (max-width: 1400px) {
+@media screen and (min-width: 991px) {
     .container-filter{
         gap: 32px;
         margin: 40px 0px 40px 0px;
