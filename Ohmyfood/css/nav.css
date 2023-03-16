@@ -4,22 +4,29 @@ display: flex;
 justify-content: center;
 align-items: center;
 background: var(--border-image);
+
 }
-.localisation button{
+.localisation input{
     display: flex;
     gap: 20px;
     background: var(--border-image);
+    text-align: center;
     border: none;
-    margin: 20px;  
+    margin: 20px 0px 20px 0px;
     cursor: pointer;
+    width: 112px;
 }
+.localisation ::placeholder{
+    color: black;
+}
+
 /* Élément de navigation */
 nav{
     display: flex;
     flex-direction: column;
 }
 /* Exploration et réservation */
-.exploration-reservation{
+.box-exploration-reservation{
     display: flex;
     justify-content: center;
     text-align: center;
@@ -39,7 +46,7 @@ nav{
     width: 75%;
 }
 /* Bouton de réservation */
-.exploration-reservation .reservation button{
+.box-exploration-reservation .reservation button{
     color: white;
     border-radius: 30px;
     width: 170px;
@@ -118,13 +125,11 @@ ol {
     list-style-type: none;
     padding-left: 0;
   }
-  
   li {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
-  
   .number-circle {
     width: 20px;
     height: 20px;
@@ -138,5 +143,38 @@ ol {
     z-index: 1;
   }
   
-  
+  /* Screen > 1440px */
+  @media screen and ( min-width : 1440px ) {
+    .localisation input{
+        font-size: 25px;
+        width: auto;
+    }
+    .localisation img{
+        width: 25px;
+    }
+    .reservation{
+        font-size: 35px;
+    }
+    .box-exploration-reservation .reservation button{
+        width: 373px;
+        height: 88px;
+        font-size: 25px;
+    }
+    .filter-fonctionnement button{
+        width: 373px;
+        height: 88px;
+        transition: 0.3s ease;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .filter-fonctionnement img{
+        width: 30px;
+    }
+    .number-circle{
+        width: 35px;
+        height: 35px;
+        margin-right: -21px;
+
+    }
+  }
   

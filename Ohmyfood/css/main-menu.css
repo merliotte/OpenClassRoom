@@ -1,4 +1,3 @@
-@media screen and (min-width: 319px) {
     main{ 
         display: flex;
         flex-direction: column;
@@ -67,7 +66,9 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
-    max-width: 350px;
+    height: 60px;
+    max-width: 750px;
+    max-height: 150px;
     cursor: pointer;
     background: white;
     }
@@ -150,7 +151,6 @@
         animation-delay: 1s;
         opacity: 0;
     }
-}
 /* Animation Apparition */
 @keyframes showList {
     0% {
@@ -180,7 +180,7 @@
         opacity: 0;
     }
     li:hover .animation-hover{
-        animation: slide  1.3s  ease-in-out forwards ;
+        animation: slide  1.1s  ease forwards ;
         }
         .animation-hover img{
             width: 20px;
@@ -191,11 +191,11 @@
     }   
     @keyframes slide {
         0%{
-            width: 0%;
+            width: 3%;
             opacity: 100%;
         }
         30%{
-            width: 33%;
+            width: 17%;
             opacity: 100%;
         }
         50%{
@@ -203,7 +203,8 @@
             opacity: 100%;
         }
         75%{
-            width: 75%;
+            width: 85%;
+            max-width: 70px;
             opacity: 100%;
         }
         100%{
@@ -226,4 +227,19 @@
             transform: rotate(360deg);
             
         }
+    }
+
+    @media screen and (min-width: 325px) {
+        .container-list{
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+        .animation-hover{
+            width: 100%;
+            max-width: 70px;
+        }
+        li:hover .animation-hover{
+            animation: slide  0.5s  ease forwards ;
+            }
     }
