@@ -40,7 +40,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
     }
     .container-restaurant img{ 
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     border-radius: 15px 15px 0 0;
     }
@@ -87,8 +87,14 @@
         align-items: center;
     }
     .container-restaurant{
-        max-width: 850px ;
+        max-width: 850px;
+        max-height: max-content;
     } 
+    .container-restaurant img{
+        width: 725px;
+        height: 526px;
+    }
+
     .restaurant--box--new{
         position: absolute;
         background: var(--tertiaire);
@@ -100,7 +106,7 @@
         z-index: 1;
         width: auto;
         height: auto;
-        margin: 0px 0px 462px 41px;
+        margin: 0px 0px 341px 41px;
         font-size: 35px;
     }
 }
