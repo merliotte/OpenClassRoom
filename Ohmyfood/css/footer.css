@@ -16,6 +16,8 @@ footer{
     }
     .container-footer a{
         color: white;
+        display: flex;
+        flex-direction: row;
     }
 .container-footer li h4{
     margin: 0px 10px;

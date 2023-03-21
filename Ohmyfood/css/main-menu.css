@@ -134,7 +134,7 @@
         display: flex;
         flex-direction: row;
         overflow: hidden;
-        transition: all 1s ease-in-out forwards ;
+        transition: all 1s ease-in-out;
     }
     .container-menu li:nth-child(1) {
         animation: showList 1s ease-in-out forwards;
