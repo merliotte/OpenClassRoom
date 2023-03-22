@@ -180,13 +180,13 @@
         margin: 0px 0px 0px 0px;
         opacity: 0;
     }
-    li:hover .animation-hover{
+    li:active .animation-hover{
         animation: slide  1.1s  ease forwards ;
         }
         .animation-hover img{
             width: 20px;
         }
-    li:hover .animation-hover img{
+    li:active .animation-hover img{
         object-fit: contain;
         animation: rotate 0.3s ease-in-out forwards;
     }   
