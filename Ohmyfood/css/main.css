@@ -58,7 +58,7 @@
         }
 /* Coeur Vide */
 .restaurant-coeur-vide{
-    background-image: url(/icon/coeurvide.svg);
+    background-image: url(../icon/coeurvide.svg);
     object-fit: cover;
     overflow: hidden;
     text-indent: 0px;
@@ -71,7 +71,7 @@
 }
 /* Animation coeur */
 .restaurant-coeur-vide:hover{
-    background-image: url(/icon/heart-solid-24.png);
+    background-image: url(../icon/heart-solid-24.png);
     transition: 0.3s;
 }
 .logo-restaurant img{
@@ -82,7 +82,16 @@
     width: 35px; 
 }
 
-@media screen and ( min-width : 768px ) {
+@media screen and ( min-width : 320px) {
+    .container-restaurant img{ 
+        height: 160px;
+        width: 100%;
+        max-height: 350px;
+        border-radius: 15px 15px 0 0;
+        }
+    
+}
+@media screen and ( min-width : 768px) {
     .container{
         align-items: center;
     }
@@ -110,7 +119,6 @@
         font-size: 35px;
     }
 }
-
 
 @media screen and ( min-width : 1440px ) {
     .box-restaurant h2{
