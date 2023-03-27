@@ -66,8 +66,11 @@ nav{
 .box-fonctionnement{
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 30px 10px 50px 10px;
     gap: 10px;
+}
+.text-fontionnement{
+    margin: 0px 0px 0px 20px;
 }
 /* Box des filtres */
 .box-filter{
