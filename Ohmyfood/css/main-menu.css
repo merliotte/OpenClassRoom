@@ -14,6 +14,7 @@
     .menu-title{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 30px;
     margin: 10px 0px 0px 0px;
 }
@@ -21,6 +22,7 @@
         font-size: 24px;
         font-family: 'Shrikhand', cursive;
     }
+    
 /* Menu */
     .container-menu{
     display: flex;
@@ -102,7 +104,6 @@
     }
     .prix{
         display: flex;
-        grid-row: 1/2;
         margin: 31px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
 
@@ -180,13 +181,13 @@
         margin: 0px 0px 0px 0px;
         opacity: 0;
     }
-    li:active .animation-hover{
+    li:hover .animation-hover{
         animation: slide  1.1s  ease forwards ;
         }
         .animation-hover img{
             width: 20px;
         }
-    li:active .animation-hover img{
+    li:hover .animation-hover img{
         object-fit: contain;
         animation: rotate 0.3s ease-in-out forwards;
     }   
@@ -194,7 +195,6 @@
         0%{
             width: 3%;
             max-width: 70px;
-
             opacity: 100%;
         }
         30%{
@@ -232,8 +232,48 @@
             
         }
     }
+    @media screen  and ( min-width : 320px ) and ( max-width : 767px ) {
+        .container-menu li{
+        }
+        .prix{
+            grid-row: none ;
+        }
+        .container-list{
+            width: 60%;
+        }
+        li:hover .animation-hover {
+            animation: slide 1.1s ease forwards;
+        }
+        @keyframes slide {
+            0%{
+                width: 3%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            30%{
+                width: 17%;
+                opacity: 100%;
+            }
+            50%{
+                width: 25%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            75%{
+                width: 28%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            100%{
+                width: 30%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+        }
+    }
 
     @media screen and ( min-width : 768px ) {
+    
         .container-menu ol li{
             height: 72px;
         }
