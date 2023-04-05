@@ -6,7 +6,7 @@
         dataApi.then(async(responseData) => {
             const response = await responseData.json();
             console.table(response);
-        //dedede dedededededegisz
+        //dedede dedededededegiszdede
         // .catch(err){
         // console.log(err);
     }
