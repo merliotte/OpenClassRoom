@@ -1,0 +1,32 @@
+footer{
+    display: flex;
+    background: rgb(58, 54, 54);
+}
+/* Box Footer */
+.box-footer{
+    display: flex;
+    background: rgb(58, 54, 54);
+}
+.container-footer{
+    margin: 20px;
+}
+    .container--logo--footer img{
+        width: 50%;
+        margin: 0px 0px 10px 0px;
+    }
+    .container-footer a{
+        color: white;
+        display: flex;
+        flex-direction: row;
+    }
+.container-footer li h4{
+    margin: 0px 10px;
+}
+
+/* Icon Footer */
+
+.container-footer ol img{
+    object-fit: cover;
+    width: 20px;
+}
+

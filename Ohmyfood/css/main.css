@@ -1,0 +1,140 @@
+/* Affichage Nouveau */
+.restaurant--box--new{
+    position: absolute;
+    background: var(--tertiaire);
+    opacity: 85%;
+    color: #008766;
+    font-weight : bold;
+    text-align: center;
+    padding: 8px;
+    z-index: 1;
+    width: auto;
+    height: auto;
+}
+.box-restaurant{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--background);
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+}
+    .box-restaurant h2{
+        margin: 0px 20px 0px 20px;
+    }
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 20px 0px 20px;
+    gap: 20px;
+}
+.container-restaurant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    gap: 5px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    }
+    .container-restaurant img{ 
+    object-fit: cover;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    }
+.container-text-restaurant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Texte Sous les containers */
+    .text-restaurant{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin: 5px 20px 10px 15px;
+        }
+/* Coeur Vide */
+.restaurant-coeur-vide{
+    background-image: url(../icon/coeurvide.svg);
+    object-fit: cover;
+    overflow: hidden;
+    text-indent: 0px;
+    height: 25px;
+    margin: 5px 20px 10px 15px;
+    width: 25px;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* Animation coeur */
+.restaurant-coeur-vide:hover{
+    background-image: url(../icon/heart-solid-24.png);
+    transition: 0.3s;
+}
+.logo-restaurant img{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    object-fit: cover;
+    width: 35px; 
+}
+
+@media screen and ( min-width : 320px) and ( max-width : 767px) {
+    .container-restaurant img{ 
+        object-fit: cover;
+        height: 160px;
+        width: 100%;
+        max-height: 350px;
+        border-radius: 15px 15px 0 0;
+        }
+        .restaurant--box--new{
+            right: 50px ;
+            margin: 13px -15px 180px 32px;
+        }
+}
+@media screen and ( min-width : 768px)  {
+    .container{
+        align-items: center;
+    }
+    .container-restaurant{
+        max-width: 850px;
+        max-height: max-content;
+    } 
+    .container-restaurant img{
+        width: 725px;
+        height: 526px;
+    }
+
+    .restaurant--box--new{
+        width: auto;
+        height: auto;
+        margin: 0px 0px 471px 538px;
+        font-size: 35px;
+    }
+}
+
+@media screen and ( min-width : 1440px ) {
+    .box-restaurant h2{
+        font-size: 25px;
+    }
+
+    .text-restaurant{
+        font-size: 23px;
+    }
+    .restaurant--box--new{
+        position: absolute;
+        background: var(--tertiaire);
+        opacity: 85%;
+        color: #008766;
+        font-weight : bold;
+        text-align: center;
+        padding: 8px;
+        z-index: 1;
+        width: auto;
+        height: auto;
+        margin: 0px 0px 462px 41px;
+        font-size: 35px;
+    }
+}

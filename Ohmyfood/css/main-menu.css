@@ -1,0 +1,286 @@
+    main{ 
+        display: flex;
+        flex-direction: column;
+    }
+    .box-menu{
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    background: var(--background-menu);
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+/* Title Restaurant */
+    .menu-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 10px 0px 0px 0px;
+}
+.menu-title h1{
+        font-size: 24px;
+        font-family: 'Shrikhand', cursive;
+    }
+    
+/* Menu */
+    .container-menu{
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    margin: -33px 0px 0px 0px;
+    padding: 30px 15px 0px 15px;
+    z-index: 1;
+    background: var(--background-menu);
+    }
+    h2{
+    text-transform: uppercase;
+    border-bottom: solid var(--tertiaire);
+    width: 18%;
+    font-weight: 200;
+    font-size: 17px;
+    }
+    /* Image header */
+    .box-image {
+        display: flex;
+        align-content: center;
+    }
+/* Image Coeur */
+    .container-menu img{
+    object-fit: contain;
+    width: 32px;  
+    }
+ /* Liste des plats  */
+    .list-menu {
+    margin: 10px 0;
+    }
+    .list-menu ol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    }
+    .container-menu ol li{
+    border-radius: 15px;
+    background: white ;
+    padding:  0px 0px 0px 0px;;
+    margin: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 60px;
+    max-width: 750px;
+    max-height: 150px;
+    cursor: pointer;
+    background: white;
+    }
+    .container-menu h4, p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    ol li .prix{
+    text-align: center;
+    padding: 0px 10px;
+    }
+    .container-menu li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+    }
+    .container-list{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: 14px 0px 11px 17px;
+        padding: 0px 0px 0px 0px;
+    }
+    .container-list p{
+        text-overflow: ellipsis;
+        font-size: 13px;
+    }
+    .prix{
+        display: flex;
+        margin: 31px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+
+    }
+/* Box Commander */
+    .box-order{
+    display: flex;
+    justify-content: center;
+    background: var(--background-menu);
+    padding: 0px 0px 30px 0px;
+    }
+    .box-order button{
+    color: white;
+    border-radius: 30px;
+    width: 170px;
+    cursor: pointer;
+    border: transparent;
+    background: rgb(147,86,220);
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    height: 40px;
+    }
+    /* Animation button ORDER */
+    .box-order button:hover{
+        box-shadow: rgb(99 99 99 / 50%) 7px 7px 7px 7px;
+        opacity: 70%;
+        transition: 0.5s;
+    }
+    li{
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        transition: all 1s ease-in-out;
+    }
+    .container-menu li:nth-child(1) {
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
+    }
+    .container-menu li:nth-child(2) {
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 0.6s; 
+        opacity: 0;
+    }
+    .container-menu  li:nth-child(3) {
+        animation: showList 1s ease-in-out forwards;
+        animation-delay: 1s;
+        opacity: 0;
+    }
+/* Animation Apparition */
+@keyframes showList {
+    0% {
+        opacity: 0;
+        transform: translateY(-15%);
+    }
+    30%{
+        opacity: 30%;
+        transform: translateY(-10%);
+        }
+        60%{
+            opacity:60%;
+            transform: translateY(-5%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    /* Animation slide left */
+    .animation-hover{
+        display: flex;   
+        justify-content: center;
+        background-color: var(--tertiaire);
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        opacity: 0;
+    }
+    li:hover .animation-hover{
+        animation: slide  1.1s  ease forwards ;
+        }
+        .animation-hover img{
+            width: 20px;
+        }
+    li:hover .animation-hover img{
+        object-fit: contain;
+        animation: rotate 0.3s ease-in-out forwards;
+    }   
+    @keyframes slide {
+        0%{
+            width: 3%;
+            max-width: 70px;
+            opacity: 100%;
+        }
+        30%{
+            width: 17%;
+            opacity: 100%;
+        }
+        50%{
+            width: 25%;
+            opacity: 100%;
+        }
+        75%{
+            width: 35%;
+            max-width: 70px;
+            opacity: 100%;
+        }
+        100%{
+            width: 45%;
+            max-width: 70px;
+            opacity: 100%;
+        }
+    }
+    @keyframes rotate {
+        0%{
+            transform: rotate(90deg);
+        }  
+        25%{
+            transform: rotate(180deg);
+        }
+        50%{
+            transform: rotate(240deg);
+           
+        }
+        100%{
+            transform: rotate(360deg);
+            
+        }
+    }
+    @media screen  and ( min-width : 320px ) and ( max-width : 767px ) {
+
+        .prix{
+            grid-row: none ;
+        }
+        .container-list{
+            width: 60%;
+        }
+        li:hover .animation-hover {
+            animation: slide 1.1s ease forwards;
+        }
+        @keyframes slide {
+            0%{
+                width: 3%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            30%{
+                width: 17%;
+                opacity: 100%;
+            }
+            50%{
+                width: 25%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            75%{
+                width: 28%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+            100%{
+                width: 30%;
+                max-width: 60px;
+                opacity: 100%;
+            }
+        }
+    }
+
+    @media screen and ( min-width : 768px ) {
+    
+        .container-menu ol li{
+            height: 72px;
+        }
+        .container-list h4{
+            font-size: 21px;
+        }
+        .container-list p{
+            font-size: 17px;
+        }
+    
+    }
