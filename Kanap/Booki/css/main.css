@@ -1,0 +1,394 @@
+.container-box{
+    display: flex;
+    flex-direction: row;
+}
+.box-accommodation{
+    display: flex;
+    background: var(--bg-color--);
+    border-radius: 15px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+.accomodation-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.accomodation-1 img{
+    display: flex;
+    box-sizing: content-box;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+.accomodation-container{
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color--);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.accomodation-text{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+.star{
+    overflow: hidden;
+    text-indent: 999px;
+    height: 12px;
+    margin: 1px;
+    width: 12px;
+    float: left;
+    background-image: url(../icon/star-blue.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.star-transparent{
+    overflow: hidden;
+    text-indent: 999px;
+    height: 12px;
+    margin: 1px;
+    width: 12px;
+    float: left;
+    background-image: url(../icon/star.svg) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 20%;
+}
+.accomodation-information h3{
+    display: flex;
+    font-size: large;
+    margin: 20px 0px 30px 0px;
+}
+/* Box Famous */
+.box-famous{
+    display: flex;
+    background: var(--bg-color--);
+    border-radius: 15px;
+    width: 100%;
+}
+.famous-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.famous-title img{
+    object-fit: cover;
+    width: 23px;
+    height: 20px;
+}
+.famous{
+    display: flex;
+    gap: 33px;    
+}
+.container-famous {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+}
+.container-famous a {
+    display: flex;
+}
+.famous-img img{
+    display: block;
+    object-fit: cover;
+    width: 144px;
+    height: 148px;
+    border-radius: 15px 0 0  15px;
+}
+.famous-text{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;  
+    overflow: hidden;
+    color: black;
+}
+.container-star{
+    display: flex;
+    padding: 0px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
+}
+@media screen and (min-width: 992px) {
+    .container-box{
+        justify-content: space-between;
+        width: 100%;
+    }
+    .title-accomodation{
+        margin: 30px 0px 20px 30px;
+        padding: 0px 0px 0px 0px;
+    }
+    .box-accommodation{
+        margin: 0px 0px 0px 0px;
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+        font-size: 12px;
+        width: 65%;
+    }
+    .box{
+        margin: 0px 30px 0px 30px;
+        padding: 0px 0px 0px 0px;
+    }
+    .accomodation-1{
+        justify-content: space-between;
+    }
+    .accomodation-container{
+        width: 29%; 
+        max-width: 550px;
+    }
+    .accomodation-container img{
+        display: block;
+        object-fit: cover;
+        height: 70px;
+    }
+    .accomodation-text{
+        gap: 5px;
+        margin: 9px 0px 5px 9px;
+        padding: 0px 0px 0px 0px;
+        font-size: 10px;
+    }
+    .accomodation-text ul {
+        width: 100%;
+    }
+    .box-famous {
+        flex-direction: column;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        gap: 16px;
+        width: 30%;
+    }
+    .famous{
+        flex-direction: column;
+        gap: 28px;  
+        margin: 0px 30px 0px 30px;
+        padding: 0px 0px 0px 0px;
+    }  
+    .famous-title{
+        margin: 30px 32px 6px 34px;
+        padding: 0px 0px 0px 0px;
+        font-size: 10px;
+    }
+    .famous-title img{
+        width: 17px;
+        height: 17px;
+    }
+    .container-famous {
+        padding: 3px;
+        width: 100%;
+    }
+    .famous-text{
+        margin: 5px 0px 0px 7px;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .famous-img img{
+        width: 70px;
+        height: 90px;
+    }
+    .container-star ul{
+        display: flex;
+    }
+}
+/* Format tablette */
+@media screen  and (min-width: 767px) and (max-width: 991px) {
+    .container-box{
+        display: flex;
+        margin: 30px 0px 30px 0px;
+    }
+    .title-accomodation{
+        margin: 30px 0px 30px 35px;
+    }
+    .box-accommodation{
+        display: flex;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 100%;
+        font-size: 12px;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 35px 0px 35px;
+        padding: 0px 0px 0px 0px;        
+    }
+    .accomodation-1{
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .accomodation-container{
+        width: 30%;
+        max-width: 400px;
+    }
+    .accomodation-container img{
+        width: 100%;
+        height: 90px;
+    }
+    .accomodation-text{
+        gap: 5px;
+        margin: 8px 0px 0px 9px;
+        padding: 0px 0px 0px 0px;
+    }
+    .accomodation-text ul{
+        display: flex;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .box-famous {
+        background: var(--bg-color--);
+        border-radius: 15px;
+        box-sizing: content-box;
+        margin: 40px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 100%;
+    }
+    .famous{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0px 31px 40px 31px;
+    }  
+    .famous-title{
+        width: 100%;
+        margin: 20px 35px 20px 35px;
+        font-size: 12px;
+    }
+    .container-famous {
+        display: flex;
+        background: white;
+        border-radius: 15px;
+        padding: 3px;
+        width: 180px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .famous-text{
+        font-size: 10px;  
+    }
+    .famous-img{
+        display: flex;
+        flex-direction: row;
+        max-width: 150px;
+    }
+    .famous-img img{
+        display: block;
+        object-fit: cover;
+        width: 70px;
+        height: 90px;
+    }
+    .famous-text{
+        font-size: 10px;
+        margin: 0px 0px 0px 9px;
+    }
+    .famous-text h4{
+        margin: 0px 0px 7px 0px;
+    }
+    .container-star ul{
+        display: flex;
+    }
+}
+@media screen  and (min-width: 320px) and (max-width: 767px){
+    .container-box{
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 30px 0px 0px 0px;
+    }
+    .box-famous{
+        justify-content: center;
+        align-items: center;
+        border-radius: 0;
+    }
+    .famous{
+        width: 100%;
+        margin: 0px 20px 25px 20px;
+        gap: 17;
+        justify-content: center;
+    }
+    .container-famous {
+        display: flex;
+        flex-direction: row;
+        max-width: 350px;
+        width: 100%;
+    }
+    .famous-img{
+        display: flex;
+        max-width: 150px;
+        padding: 3px;
+    }
+    .famous-img img{
+        display: block;
+        object-fit: cover;
+        margin: 0;
+        width: 6rem;
+        height: 7rem;
+        margin: 0px 10px 0px 0px;
+    }
+    .famous-text{
+        font-size: 15px;
+        gap: 5px;
+    }
+    .container-star {
+        margin: 20px 0px 0px 0px;
+    }
+    .container-star ul{
+        display: flex;
+    }
+    .famous-title {
+        width: 100%;
+        margin: 0px 20px 30px 20px;
+        padding: 29px 0px 0px 0px;
+        font-size: 16px;
+        max-width: 350px;
+    }
+    .box-accommodation{
+        align-items: center;
+        background: none;
+        margin: 20px 0px 20px 0px;
+        padding: 0;
+        width: 100%;
+    }
+    .title-accomodation{
+        width: 100%;
+        margin: 0px 0px 20px 20px;
+    }
+    .title-accomodation h2{
+        font-size: 20px ;
+    }
+    .box{
+        margin: 0px 20px 20px 20px;    
+    }
+    .accomodation-1{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 0px 0px 20px 0px;
+        gap: 15px;
+    }
+    .accomodation-1 img{
+        object-fit: cover;
+        height: 80px;
+    }
+    .accomodation-container {
+        width: 100%;
+        max-width: 550px;
+        background: white;
+    }
+    .accomodation-text{
+        margin: 5px 0px 5px 5px;
+        gap: 5px;
+    }
+    .accomodation-text ul{
+        display: flex;
+    }
+    .accomodation-information{
+        display: none;
+    }
+}

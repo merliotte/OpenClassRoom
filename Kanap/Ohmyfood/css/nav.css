@@ -1,0 +1,182 @@
+/* Élément de localisation */
+.localisation{
+display: flex;
+justify-content: center;
+align-items: center;
+background: #eaeaea;
+box-shadow: inset 0px 7px 6px -3px rgba(171,171,171,0.35);}
+.localisation input{
+    display: flex;
+    gap: 20px;
+    background: #eaeaea;
+    text-align: center;
+    border: none;
+    margin: 20px 0px 20px 0px;
+    cursor: pointer;
+    width: 112px;
+}
+.localisation ::placeholder{
+    color: black;
+}
+
+/* Élément de navigation */
+nav{
+    display: flex;
+    flex-direction: column;
+}
+/* Exploration et réservation */
+.box-exploration-reservation{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background:#f7f7f7;    
+}
+/* Styles pour la section de réservation */
+.reservation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 30px 0px 50px 0px;
+}
+.reservation h2{
+    width: 75%;
+}
+/* Bouton de réservation */
+.box-exploration-reservation .reservation button{
+    color: white;
+    border-radius: 30px;
+    width: 170px;
+    border: transparent;
+    background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,123,219,1) 100%);   
+    box-shadow: rgb(99 99 99 / 50%) 0px 5px 10px 0px;
+    height: 40px;
+    cursor: pointer;
+}
+/* Animation du boutton de réservation */
+.reservation button:hover{
+    box-shadow: rgb(99 99 99 / 50%) 7px 7px 7px 7px;
+    opacity: 70%;
+    transition: 0.5s;
+}
+/* Box de fonctionnement */
+.box-fonctionnement{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 50px 0px;
+    gap: 10px;
+}
+.text-fontionnement{
+    margin: 20px 0px 17px 27px;
+}
+/* Box des filtres */
+.box-filter{
+    display: flex;
+    justify-content: center;
+}
+/* Filtre de fonctionnement */
+.filter-fonctionnement{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Bouton de filtre */
+.filter-fonctionnement button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: transparent;
+    border-radius: 15px;
+    height: 56px;
+    width: 260px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+    color: black;
+    background: #EFEFEF;
+    cursor: pointer;
+}
+.filter-fonctionnement button:hover{
+    background: #f5edff; 
+    color: black;
+    transition: 0.5s ease;
+}
+.filter-fonctionnement:hover img{
+    filter: opacity(0.4) drop-shadow(0 0 0 rgb(119, 4, 148));
+    transition: 0.5s ease;
+}
+.filter-fonctionnement img{
+    object-fit: cover;
+    width: 20px;
+    height: auto;
+}
+/* Icone Nombre */
+.number-filter{
+    position: absolute;
+    padding: 55px 50px 10px;
+} 
+.number-filter img {
+    object-fit: cover;
+    width: 20px;
+}
+/* button à puce listé */
+ol {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .number-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primaire);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -12px;
+    z-index: 1;
+  }
+  
+  /* Screen > 1440px */
+  @media screen and ( min-width : 1440px ) {
+    .localisation input{
+        font-size: 25px;
+        width: auto;
+    }
+    .localisation img{
+        width: 25px;
+    }
+    .reservation{
+        font-size: 35px;
+    }
+    .box-exploration-reservation .reservation button{
+        width: 373px;
+        height: 88px;
+        font-size: 25px;
+    }
+    .filter-fonctionnement button{
+        width: 373px;
+        height: 88px;
+        transition: 0.3s ease;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .filter-fonctionnement img{
+        width: 30px;
+    }
+    .number-circle{
+        width: 35px;
+        height: 35px;
+        margin-right: -21px;
+
+    }
+  }
+  
