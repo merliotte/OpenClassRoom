@@ -11,6 +11,7 @@ const arrayId = [
     {htmlElementId: ".cart__item__img > img ", propsToLoadFromData:"imageUrl", useMethodByClass: true},
     {htmlElementId: ".cart__item__img > img", propsToLoadFromData:"altTxt"},
     {htmlElementId: ".cart__item__content__description > p:last-of-type ", propsToLoadFromData:"price"},
+    {htmlElementId: "totalPrice", propsToLoadFromData:"price"},
 
 ];
 
@@ -48,7 +49,41 @@ cartItems.forEach((item) => {
         
     const cartItemColor = document.querySelector('p');
         cartItemColor.textContent = item.color;
-    
+
+    const totalQuantity = document.getElementById("totalQuantity"); 
+        totalQuantity.textContent = item.quantity;
+
+    const totalPrice = document.getElementById("totalPrice"); 
+    totalPrice.textContent = item
 });
 };
+ // Suppression des articles du Panier
+
+// Sélectionner tous les boutons "Supprimer"
+const deleteButtons = document.querySelectorAll('.deleteItem');
+
+// Ajouter un gestionnaire d'événements "click" pour le bouton de reset
+    
+deleteButtons.forEach(button => {
+    button.addEventListener('click', () => {
+  // Récupérer tous les éléments de quantité d'article
+  const quantityInputs = document.querySelectorAll('.itemQuantity');
+  
+  // Réinitialiser la quantité de chaque élément
+  quantityInputs.forEach(input => {
+    input.value = 1;
+  });
+  
+  // Réinitialiser le panier dans le Local Storage
+  localStorage.setItem('cart', JSON.stringify([]));
+  
+  // Supprimer tous les éléments de panier de la page
+  const cartItems = document.querySelectorAll('.cart__item');
+  cartItems.forEach(item => {
+    item.remove();
+        });
+    });
+});
+
+
   addElements();

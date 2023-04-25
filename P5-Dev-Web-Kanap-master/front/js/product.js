@@ -60,7 +60,7 @@ function addElements() {
                 // Récupérer les éléments de panier existants à partir du localstorage et les convertir en tableau   
                 let cartItems = JSON.parse(window.localStorage.getItem("cartItems") || "[]");
                 // Vérifier si un article de la même couleur existe déjà dans le panier
-                const existingItemIndex = cartItems.findIndex((item) => item.color === selectedColor );
+                const existingItemIndex = cartItems.findIndex((item) => item.color === selectedColor && item.quantity === selectedQuantity );
             if (existingItemIndex !== -1 )   {
                 // Mettre à jour la quantité de l'article existant
                 existingItemIndex.quantity += Number(selectedQuantity);
@@ -70,9 +70,11 @@ function addElements() {
             }
             // Stocker les articles du panier mis à jour dans le localstorage
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+
             // Afficher quand le panier est rempli 
             if (cartItems.length > 0) {
-                const panierRempli = document.getElementById("panier");
+                const panierRempli = document.querySelector("#panier");
                 panierRempli.style.color = "red";
             }
         }
