@@ -11,10 +11,7 @@ const arrayId = [
     {htmlElementId: ".cart__item__img > img ", propsToLoadFromData:"imageUrl", useMethodByClass: true},
     {htmlElementId: ".cart__item__img > img", propsToLoadFromData:"altTxt"},
     {htmlElementId: ".cart__item__content__description > p:last-of-type ", propsToLoadFromData:"price"},
-    {htmlElementId: "totalPrice", propsToLoadFromData:"price"},
-
 ];
-
 function addElements() {
     fetch(url)
     .then((response) => response.json())
@@ -37,26 +34,39 @@ function addElements() {
             }
 
         });
-});
-// Ajout des informations stockés
-cartItems.forEach((item) => {
-    const cartItem = document.querySelector('article');
-        cartItem.setAttribute('data-id', item.id);
-        cartItem.setAttribute('data-color', item.color);
-
-    const quantityKanap = document.querySelector(".itemQuantity"); 
-    quantityKanap.value = item.quantity; 
+        cartItems.forEach((item) => {
+            const cartItem = document.querySelector('article');
+                cartItem.setAttribute('data-id', item.id);
+                cartItem.setAttribute('data-color', item.color);
         
-    const cartItemColor = document.querySelector('p');
-        cartItemColor.textContent = item.color;
+            const quantityKanap = document.querySelector(".itemQuantity"); 
+            quantityKanap.value = item.quantity; 
+            // Inserction de la couleur 
+            const cartItemColor = document.querySelector('p');
+                cartItemColor.textContent = item.color;
+            // Inserction de la quantité 
+            const totalQuantity = document.getElementById("totalQuantity"); 
+                totalQuantity.value = item.quantity;
+                console.log(totalQuantity);
+            // Calcul du total Prix 
+            const totalPrice = document.getElementById("totalPrice");
+            const price = data.price* item.quantity;
+                totalPrice.innerHTML = price.toFixed(2);
+                quantityKanap.addEventListener('input', (event) => {
+                    const quantity = event.target.value;
+                    const newTotal = data.price * quantity;
+                    totalPrice.textContent = newTotal.toFixed(2);
+                  });
+        });
+    });
 
-    const totalQuantity = document.getElementById("totalQuantity"); 
-        totalQuantity.textContent = item.quantity;
-
-    const totalPrice = document.getElementById("totalPrice"); 
-    totalPrice.textContent = item
-});
 };
+
+
+
+
+
+
  // Suppression des articles du Panier
 
 // Sélectionner tous les boutons "Supprimer"

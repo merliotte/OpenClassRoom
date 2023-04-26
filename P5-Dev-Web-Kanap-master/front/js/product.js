@@ -37,7 +37,6 @@ function addElements() {
         // Réclamation des couleurs avec une boucle forEach
         data.colors.forEach(color => {
             select.innerHTML += `<option value="${color}">${color}</option>`;
-            
         }); 
         // Stockage au click des informations dans le localStorage
         const informationKanap = document.getElementById("addToCart");
@@ -70,7 +69,6 @@ function addElements() {
             }
             // Stocker les articles du panier mis à jour dans le localstorage
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
 
             // Afficher quand le panier est rempli 
             if (cartItems.length > 0) {
