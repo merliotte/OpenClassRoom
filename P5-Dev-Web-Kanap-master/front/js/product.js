@@ -69,10 +69,10 @@ function addElements() {
             }
             // Stocker les articles du panier mis à jour dans le localstorage
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
+            
             // Afficher quand le panier est rempli 
             if (cartItems.length > 0) {
-                const panierRempli = document.querySelector("#panier");
+                const panierRempli = document.getElementById("panier");
                 panierRempli.style.color = "red";
             }
         }

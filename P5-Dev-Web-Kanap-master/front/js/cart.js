@@ -51,11 +51,11 @@ function addElements() {
             // Calcul du total Prix 
             const totalPrice = document.getElementById("totalPrice");
             const price = data.price* item.quantity;
-                totalPrice.innerHTML = price.toFixed(2);
+                totalPrice.innerHTML = price.toFixed(1);
                 quantityKanap.addEventListener('input', (event) => {
                     const quantity = event.target.value;
                     const newTotal = data.price * quantity;
-                    totalPrice.textContent = newTotal.toFixed(2);
+                    totalPrice.textContent = newTotal.toFixed(1);
                   });
         });
     });
@@ -70,7 +70,7 @@ function addElements() {
  // Suppression des articles du Panier
 
 // Sélectionner tous les boutons "Supprimer"
-const deleteButtons = document.querySelectorAll('.deleteItem');
+const deleteButtons = document.querySelectorAll(".deleteItem");
 
 // Ajouter un gestionnaire d'événements "click" pour le bouton de reset
     
@@ -88,9 +88,15 @@ deleteButtons.forEach(button => {
   localStorage.setItem('cart', JSON.stringify([]));
   
   // Supprimer tous les éléments de panier de la page
-  const cartItems = document.querySelectorAll('.cart__item');
-  cartItems.forEach(item => {
-    item.remove();
+  const cartItems = document.querySelectorAll('.cart');
+    cartItems.forEach(item => { 
+        item.innerHTML = 
+        `
+        <h2>Nom du produits</h2>
+        <p>Couleur du Produit</p>
+        <p>0.00 €</p>
+        `
+
         });
     });
 });
