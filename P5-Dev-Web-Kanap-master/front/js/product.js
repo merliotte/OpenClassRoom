@@ -47,7 +47,7 @@ function addElements() {
         informationKanap.addEventListener("click", () => {
             const selectedColor = saveColor.value;
             const selectedQuantity = quantityKanap.value;
-            
+            console.log(selectedColor);
             // Création de l'objet 
             if (selectedColor !== "Sélectionnez une couleur" && selectedQuantity > 0 ) {
                 const cartItem = {
@@ -86,7 +86,6 @@ function addElements() {
 // Appel à la fonction 
 addElements();
 console.log(url);
-// Ajout des couleurs de l'API 
 
 
  

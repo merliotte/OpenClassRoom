@@ -32,7 +32,6 @@ function addElements() {
          }
             else {document.querySelector(addkanap.htmlElementId).innerHTML = data[addkanap.propsToLoadFromData] ;
             }
-
         });
         cartItems.forEach((item) => {
             const cartItem = document.querySelector('article');
@@ -88,13 +87,28 @@ deleteButtons.forEach(button => {
   localStorage.setItem('cart', JSON.stringify([]));
   
   // Supprimer tous les éléments de panier de la page
-  const cartItems = document.querySelectorAll('.cart');
+  const cartItems = document.querySelectorAll('.cart__item');
     cartItems.forEach(item => { 
         item.innerHTML = 
         `
-        <h2>Nom du produits</h2>
-        <p>Couleur du Produit</p>
-        <p>0.00 €</p>
+        <div class="cart__item__img">
+          <img src="../images/product01.jpg" alt="Photographie d'un canapé">
+        </div>
+        <div class="cart__item__content">
+          <div class="cart__item__content__description">
+            <h2>Nom du produit</h2>
+            <p>Couleur du Produit</p>
+            <p>0,00 €</p>
+          </div>
+          <div class="cart__item__content__settings">
+            <div class="cart__item__content__settings__quantity">
+              <p>Qté : </p>
+              <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="0">
+            </div>
+            <div class="cart__item__content__settings__delete">
+              <p class="deleteItem">Supprimer</p>
+            </div>
+
         `
 
         });
