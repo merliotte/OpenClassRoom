@@ -3,16 +3,16 @@ const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
 // Récupération des éléments HTML
 const cartItemsContainer = document.querySelector("#cart__items");
 
-// async function fetchCartItem(data) {
-//     try {
-//     const kanap = await fetch(`http://localhost:3000/api/products/${data.id}`)
-//     const promessdata = kanap.json()
-//     return promessdata;
-// }
-// catch (error) {
-//     console.error(error.message);
-// } 
-// }
+async function fetchCartItem(data) {
+    try {
+        const kanap = await fetch(`http://localhost:3000/api/products/${data.id}`)
+        const promessdata = kanap.json()
+    return promessdata;
+}
+    catch (error) {
+        console.error(error.message);
+    } 
+}
 
 // Fonction qui crée un élément HTML pour chaque produit
 function createCartItemElement(data) {
@@ -76,27 +76,12 @@ function createCartItemElement(data) {
         }`;
         document.head.appendChild(styleDeleteItem);
     
-    // Total des prix des composents
-    const totalQuantityElement = document.querySelector("#totalPrice");
-    let totalPricesArray = [];
-    let totalPrice = parseInt(product.price); ;
-    totalPricesArray.push({totalPrice});
-    const totalPriceQuantity = totalPricesArray.reduce((acc,price) => acc + price, 0)
-    totalQuantityElement.textContent = totalPrice;
-
-  
-    console.log(totalPriceQuantity);
-
     // Ajout des éléments dans l'élément article
     const cartItemContentElement = document.createElement("div");
         cartItemContentElement.classList.add("cart__item__content");
-      
     const arrayElementsHtml = [imgElement, h2Element, colorElement, priceElement, quantityElement, deleteButtonElement, deleteItemElement];
-      
-    arrayElementsHtml.forEach(element => {
-    cartItemContentElement.appendChild(element);
+        arrayElementsHtml.forEach(element => { cartItemContentElement.appendChild(element);
     });
-    
     articleElement.appendChild(cartItemContentElement);
     
     //AJout de la fonction supprimer
@@ -117,27 +102,6 @@ if (cartItems) {
            // Supprimer l'élément article parent 
         const articleElement = deleteButtonElement.closest(".cart__item");
         articleElement.parentNode.removeChild(articleElement);
-
-        articleElement.innerHTML =
-            `
-            <div class="cart__item__img">
-            <img src="../images/product01.jpg" alt="Photographie d'un canapé">
-    </div>
-    <div class="cart__item__content">
-    <div class="cart__item__content__description">
-    <h2>Nom du produit</h2>
-    <p>Couleur du Produit</p>
-    <p>0,00 €</p>
-    </div>
-    <div class="cart__item__content__settings">
-    <div class="cart__item__content__settings__quantity">
-    <p>Qté : </p>
-    <input type="number" class="itemQuantity" name="itemQuantity" min="1" max="100" value="0">
-    </div>
-    <div class="cart__item__content__settings__delete">
-    <p class="deleteItem">Supprimer</p>
-    </div>
-        `
           // Ajoutez les autres propriétés de l'article ici
         });
       };
@@ -166,19 +130,48 @@ if (cartItems) {
 
     function arraytotalPrice () {
     const elementLocal = cartItems.map(item => item.quantity)
+    
         console.log(elementLocal); 
     }
+    function calculPrice(price) {
+        const totalQuantityElement = document.querySelector("#totalPrice");
+        let totalPricesArray = [];
+        let totalPrice = parseInt(product.price); ;
+            totalPricesArray.push({totalPrice});
+        const totalPriceQuantity = totalPricesArray.reduce((acc,price) => acc + price, 0)
+            totalQuantityElement.textContent = totalPrice;
+    
+        console.log(totalPriceQuantity);
+    }
+    function controlQuantity() {
+        const quantity = document.querySelector('#quantity').value;
+        if (quantity != null) {
+            if (quantity < 0 ) document.querySelector('#quantity').value = 0;
+            if (quantity > 100) document.querySelector('#quantity').value = 100;
+        }
+    }
+    document.querySelector('[name="itemQuantity"]').addEventListener('keyup', controlQuantity);
 
 totalQuantity();
 arraytotalPrice();
 
-// async function main () {
-//     try {
-//         const fectchInfo = fetchCartItem();
-//         createCartItemElement(fectchInfo);
-//     }
-//     catch(error) {
-//     console.error(error.message);
-// }
-// }
-// main ();
+async function main () {
+    try {
+        const fectchInfo = fetchCartItem();
+        createCartItemElement(fectchInfo);
+    }
+    catch(error) {
+        console.error(error.message);
+    }
+}
+main ();
+
+
+
+
+function test (hache, couteau) {
+    const resultCouteau = couteau();
+    console.log(resultCouteau);
+}
+
+test( ["17"], function(){ return "Hello wordl" ;});

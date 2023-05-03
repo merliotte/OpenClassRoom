@@ -38,15 +38,14 @@ function fillHtmlWithCanapData(data) {
         // Réclamation des couleurs avec une boucle forEach
         data.colors.forEach(color => {
             select.innerHTML += `<option value="${color}">${color}</option>`;
-            if (select.selectedIndex === 0) {
-                console.log("Aucune couleur sélectionnée");
-              }
+
         });  
 }
 
 function isCanapInLocalStorage(canapId) {
   const cartItems = JSON.parse(window.localStorage.getItem("cartItems") || "[]");
   return cartItems.findIndex((item) => item.id === canapId);
+  
 };
 
 function addItemsIntoStorage(canapId) {
@@ -59,11 +58,15 @@ function addItemsIntoStorage(canapId) {
     quantity: Math.min(parseInt(quantityKanap.value), 100),
     color: saveColor.value,
   };
+  if (saveColor.value === "Sélectionnez une couleur" || quantity.value === "0")
+    return saveColor;
+
   if (indexCanap >= 0) {
   	cartItems[indexCanap] = newKanapData;
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     return;
   }
+
   cartItems.push(newKanapData);
   localStorage.setItem('cartItems', JSON.stringify(cartItems));
   if (newKanapData.quantity !== parseInt(quantityKanap.value)) {
@@ -72,18 +75,17 @@ function addItemsIntoStorage(canapId) {
 }
 function controlQuantity() {
 	const quantity = document.querySelector('#quantity').value;
-	if (quantity != null) {
-		if (quantity < 0 ) document.querySelector('#quantity').value = 0;
-		if (quantity > 100) document.querySelector('#quantity').value = 100;
-	}
+    if (quantity < 0 ) document.querySelector('#quantity').value = 0;
+    if (quantity > 100) document.querySelector('#quantity').value = 100;
 }
-document.querySelector('[name="itemQuantity"]').addEventListener('keyup', controlQuantity);
 
 async function main() {
-	try {
-  	const canap = await fetchKanapData();
-    fillHtmlWithCanapData(canap);
-    document.getElementById("addToCart").addEventListener('click', () => addItemsIntoStorage(canap._id)
+    try {
+        
+        const canap = await fetchKanapData();
+        fillHtmlWithCanapData(canap);
+        document.querySelector('[name="itemQuantity"]').addEventListener('keyup', controlQuantity);
+        document.getElementById("addToCart").addEventListener('click', () => addItemsIntoStorage(canap._id)
     );
   } catch(error) {
   	console.error(error.message);
