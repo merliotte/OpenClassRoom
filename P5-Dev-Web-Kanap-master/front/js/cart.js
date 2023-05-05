@@ -76,9 +76,9 @@ const deleteButtons = document.querySelectorAll(".deleteItem");
 deleteButtons.forEach(button => {
     button.addEventListener('click', () => {
   // Récupérer tous les éléments de quantité d'article
-  const quantityInputs = document.querySelectorAll('.itemQuantity');
+    const quantityInputs = document.querySelectorAll('.itemQuantity');
   // Réinitialiser la quantité de chaque élément
-  quantityInputs.forEach(input => {
+    quantityInputs.forEach(input => {
     input.value = 1;
   });
   // Réinitialiser le panier dans le Local Storage
