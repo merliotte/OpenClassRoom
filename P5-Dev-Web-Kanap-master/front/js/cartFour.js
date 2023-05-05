@@ -83,7 +83,6 @@ async function main () {
         if (!cartItems.length) return;
         const productIdArray = getIdFromLocalStorage(cartItems); 
         const arrayKanaps = await getProductFromApi(productIdArray, cartItems);
-        addCartItems(arrayKanaps);
         arrayKanaps.forEach((kanap) => {
             addCartItems({
                 id: kanap.id,
