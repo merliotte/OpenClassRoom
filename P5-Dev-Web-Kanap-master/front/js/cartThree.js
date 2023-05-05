@@ -80,7 +80,7 @@ function createCartItemElement(data) {
     const cartItemContentElement = document.createElement("div");
         cartItemContentElement.classList.add("cart__item__content");
     const arrayElementsHtml = [imgElement, h2Element, colorElement, priceElement, quantityElement, deleteButtonElement, deleteItemElement];
-        arrayElementsHtml.forEach(element => { cartItemContentElement.appendChild(element);
+        arrayElementsHtml.forEach(element => {cartItemContentElement.appendChild(element);
     });
     articleElement.appendChild(cartItemContentElement);
     
