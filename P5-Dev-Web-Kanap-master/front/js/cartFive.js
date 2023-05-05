@@ -75,8 +75,10 @@ function deleteElement (deleteButtonElement) {
             // Cible le contenu supprimez 
             articleElement.parentNode.removeChild(articleElement);
             // Supprime les éléments dans le localStorage
-            cartItems.splice(2, 1);
-            
+            const index = cartItems.findIndex(item => item.id);
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+            }
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
        });
      });
