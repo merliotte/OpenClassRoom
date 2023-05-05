@@ -83,7 +83,7 @@ function deleteElement (deleteButtonElement) {
        });
      });
 };
-const addCartItems = (cartItemInfo) => {
+const createCartItems = (cartItemInfo) => {
     console.log(cartItemInfo);
     const cartItemsContainer = document.querySelector("#cart__items");
     
@@ -169,7 +169,7 @@ async function main () {
         if (!cartItems.length) return;
         const productIdArray = getIdFromLocalStorage(cartItems); 
         const arrayKanaps = await getProductFromApi(productIdArray, cartItems);
-        const addCartItem = await addCartItems(arrayKanaps);
+        const cartItemsContainer = await createCartItems(arrayKanaps);
        
     } catch (error) {
         console.log(error);
