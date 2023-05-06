@@ -28,23 +28,20 @@ async function getProductFromApi (arrayStringId, arrayCartItems) {
 
 function renderKanapDataIntoHtml(kanapArray) {
     const articlesContainer = document.getElementById('cart__items');
-    
     kanapArray.forEach((canap) => {
-      const article = document.createElement('article');
-  
+        const article = document.createElement('article');
         article.classList.add( 'cart__item');
-        article.setAttributes('data-id', canap.id);
-        article.setAttributes('data-color', canap.color);
-  
-      article.innerHTML = `
+        
+      article.innerHTML += `
       <div class="cart__item__img">
-        <img src="${canap.imgUrl}" alt="${canap.altTxt}">
+        <img src="${canap.imageUrl}" alt="${canap.altTxt}">
       </div>
       <div class="cart__item__content">
         <div class="cart__item__content__description">
           <h2>${canap.name}</h2>
           <p>${canap.color}</p>
-          <p>${canap.price} €</p>
+          <p> Prix: ${canap.price} €</p>
+          <p>Prix Total: ${(canap.price)*(canap.quantity)} €</p>
         </div>
         <div class="cart__item__content__settings">
           <div class="cart__item__content__settings__quantity">
@@ -57,31 +54,55 @@ function renderKanapDataIntoHtml(kanapArray) {
         </div>
       </div>
       `;
-      
       articlesContainer.appendChild(article);
-    });
+    }); 
   };
 
-function deleteElement (deleteButtonElement) {
-    const deleteButtons = document.querySelectorAll(".deleteItem");
-    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    const articleElement = deleteButtonElement.closest(".cart__item");
-    deleteButtons.forEach(button => {
-        
-        deleteButtonElement.addEventListener("click", () => {
+  const deleteElement =  (deleteButtons) => {
+    const cartItemsStorage = JSON.parse(localStorage.getItem('cartItems'));
+    deleteButtons.forEach((button) => {
+        button.addEventListener("click", () => {
             // Cible le contenu supprimez 
+            const articleElement = button.closest(".cart__item");
             articleElement.parentNode.removeChild(articleElement);
-            // Supprime les éléments dans le localStorage
-            const index = cartItems.findIndex(item => item.id);
-            if (index !== -1) {
-                cartItems.splice(index, 1);
-            }
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            // Supprime l'élément dans le localStorage
+            const index = cartItemsStorage.findIndex(item => item.id);
+            cartItemsStorage.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItemsStorage));
        });
      });
 };
 
+const totalQuantity = (dataQuantity) => {
+    const totalquantityItems = document.querySelector("#totalQuantity")
+    let totalQuantity = 0;
 
+        dataQuantity.forEach((kanap) => {
+            totalQuantity += parseInt(kanap.quantity) ;
+
+    console.log(totalquantityItems);
+    });
+    totalquantityItems.innerHTML = totalQuantity
+}
+const totalPrice = (dataPrice) => {
+    const totalquantityItems = document.querySelector("#totalPrice")
+    let totalQuantity = 0;
+
+        dataPrice.forEach((kanap) => {
+            totalQuantity += parseInt((kanap.price)*(kanap.quantity)) ;
+    });
+    totalquantityItems.innerHTML = totalQuantity.toFixed(2);
+}
+
+function controlQuantity(item, value) {
+    inputValue = input.value;
+    const quantity = document.querySelector('.itemQuantity').value;
+    console.log(inputValue);
+  
+        if (inputValue < 0 ) document.querySelector('.itemQuantity').value = 0;
+        if (inputValue > 100) document.querySelector('.itemQuantity').value = 100;
+    
+}
 
 async function main () {
     try {
@@ -90,7 +111,12 @@ async function main () {
         if (!cartItems.length) return;
         const productIdArray = getIdFromLocalStorage(cartItems); 
         const arrayKanaps = await getProductFromApi(productIdArray, cartItems);
-        renderKanapDataIntoHtml(arrayKanaps);
+        const renderContainer  = renderKanapDataIntoHtml(arrayKanaps);
+        const deleteButtons = document.querySelectorAll(".deleteItem");
+        document.querySelector('[name="itemQuantity"]').addEventListener('keyup', controlQuantity);
+        deleteElement(deleteButtons);
+        totalQuantity(arrayKanaps);
+        totalPrice(arrayKanaps);
     } catch (error) {
         console.log(error);
     }

@@ -17,7 +17,7 @@ function renderCartItem(item) {
       li.className = 'cart-item';
 
       // Ajouter l'image de l'article
-      const img = document.createElement('cart__item__img');
+      const img = document.createElement('img');
       img.src = data.imageUrl;
       img.alt = data.name;
       li.appendChild(img);
