@@ -17,7 +17,7 @@ function renderCartItem(item) {
       li.className = 'cart-item';
 
       // Ajouter l'image de l'article
-      const img = document.createElement('img');
+      const img = document.querySelector('img');
       img.src = data.imageUrl;
       img.alt = data.name;
       li.appendChild(img);
@@ -33,7 +33,7 @@ function renderCartItem(item) {
       li.appendChild(color);
 
       // Ajouter la quantité de l'article
-      const quantity = document.createElement('p');
+      const quantity = document.createElement('input');
       quantity.textContent = `Quantité: ${item.quantity}`;
       li.appendChild(quantity);
 

@@ -31,8 +31,8 @@ function renderKanapDataIntoHtml(kanapArray) {
     kanapArray.forEach((canap) => {
         const article = document.createElement('article');
         article.classList.add( 'cart__item');
-        article.setAttribute ("data-id", canap.id)
-
+        article.setAttribute ("data-id", canap.id);
+        article.setAttribute ("data-color", canap.color);
             article.innerHTML += `
             <div class="cart__item__img">
               <img src="${canap.imageUrl}" alt="${canap.altTxt}">
@@ -55,12 +55,15 @@ function renderKanapDataIntoHtml(kanapArray) {
               </div>
             </div>
             `;   
-     
-     
+        const removeItemId = document.querySelector('.cart__item[data-id="{product-ID}"]')
+        if (removeItemId) {
+            removeItemId.remove();
+        }
       articlesContainer.appendChild(article);
-    }); 
+        }
+    ); 
   };
-
+// Supprime un Element au click 
   const deleteElement =  (deleteButtons) => {
     const cartItemsStorage = JSON.parse(localStorage.getItem('cartItems'));
     deleteButtons.forEach((button) => {
@@ -76,6 +79,16 @@ function renderKanapDataIntoHtml(kanapArray) {
      });
 };
 
+// Controle de la Quantité indiqué
+const changementQuantity = () => {
+    const inputQuantity = document.querySelectorAll('.itemQuantity');
+    inputQuantity.forEach((input) => {
+            input.addEventListener("keyup", (kanapData) => {
+            const newValue = kanapData.target.value;
+            localStorage.setItem('maValeur', newValue);           
+        });
+    });
+}
 // Calcul du Total quantité
 const totalQuantity = (dataQuantity) => {
     const totalquantityItems = document.querySelector("#totalQuantity")
@@ -83,8 +96,8 @@ const totalQuantity = (dataQuantity) => {
 
         dataQuantity.forEach((kanap) => {
             totalQuantity += parseInt(kanap.quantity) ;
+            totalquantityItems.textContent = totalQuantity
     });
-    totalquantityItems.textContent = totalQuantity
 }
 
 // Calcul du Total du Prix 
@@ -97,21 +110,43 @@ const totalPrice = (dataPrice) => {
     });
     totalquantityItems.textContent = totalQuantity.toFixed(2);
 }
-// Controle de la Quantité indiqué
 
-// function controlQuantity() {
-//     const quantity = document.querySelectorAll('.itemQuantity').value;
-//     console.log(quantity);
-//     if (quantityValue != null) {
-//         if (quantityValue < 0 ) document.querySelector('.itemQuantity').value = 0;
-//         if (quantityValue > 100) document.querySelector('.itemQuantity').value = 100;
-//     }
-    
-// }
-const changementQuantity = () => {
-    const inputQuantity = document.querySelectorAll(".itemQuantity");
-    const valueInput = inputQuantity.value; 
-    console.log(valueInput);
+function controlQuantity(item) {
+    inputValue = item.value;
+    const quantityValue = document.querySelectorAll('.itemQuantity').value;
+    console.log(inputValue);
+    if (quantityValue != null) {
+        if (quantityValue < 0 ) document.querySelector('.itemQuantity').value = 0;
+        if (quantityValue > 100) document.querySelector('.itemQuantity').value = 100;
+    }
+}
+
+function testInData(element) {
+	if (element.id != 'order') {
+		if (element.value === '') {
+			element.setAttribute('style', 'border:1px solid #FF0000; padding-left: 15px;');
+		} else {
+			element.setAttribute('style', 'border:1px solid #767676; padding-left: 15px;');
+			switch (element.id) {
+				case 'firstName': {
+					document.querySelector('#firstNameErrorMsg').textContent = '';
+					break;
+				}
+				case 'lastName': {
+					document.querySelector('#lastNameErrorMsg').textContent = '';
+					break;
+				}
+				case 'address': {
+					document.querySelector('#addressErrorMsg').textContent = '';
+					break;
+				}
+				case 'city': {
+					document.querySelector('#cityErrorMsg').textContent = '';
+					break;
+				}
+			}
+		}
+	}
 }
 const testFieldsIsEmpty = () => {
 	const form = document.querySelector('.cart__order__form');
@@ -160,6 +195,31 @@ const testFieldsIsEmpty = () => {
 	});
 	return pass;
 }
+ const controlEmail = () => {
+    const mailElement = document.querySelector("#email");
+	const regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i);
+    const valueTextMail = mailElement.regex ; 
+    const errorMsg = document.querySelector("#emailErrorMsg");
+
+    if(valueTextMail === "") {
+    errorMsg.innerHTML = "Veuillez entrer votre adresse e-mail.";
+    regex.classList.add("error");
+    return false ;
+    }
+
+    if (!mailElement.test(valueTextMail)){
+        errorMsg.innerHTML = 'Veuillez saisir une adresse e-mail valide.';
+        regex.classList.add("error");
+        return false;
+    }
+
+    errorMsg.innerHTML = '';
+    elem.classList.remove('error');
+    return true;
+
+}
+
+
 
 async function main () {
     try {
@@ -176,14 +236,17 @@ async function main () {
 
         deleteElement(deleteButtons);
 
-        const totalItemsQuantity = await totalQuantity(arrayKanaps);
+        totalQuantity(arrayKanaps);
+
+        controlQuantity(totalQuantity, totalPrice); 
 
         totalPrice(arrayKanaps);
-        // controlQuantity(arrayKanaps);
 
         testFieldsIsEmpty();
 
         changementQuantity(arrayKanaps);
+
+        controlEmail();
 
 
 

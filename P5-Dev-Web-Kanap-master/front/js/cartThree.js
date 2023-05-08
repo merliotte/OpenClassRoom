@@ -1,11 +1,14 @@
 // Récupération des données depuis le localStorage
-const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
-// Récupération des éléments HTML
+
+function getIdFromLocalStorage (arrayCartItems){
+    return arrayCartItems.map(item => item.id);
+     
+}// Récupération des éléments HTML
 const cartItemsContainer = document.querySelector("#cart__items");
 
 async function fetchCartItem(data) {
     try {
-        const kanap = await fetch(`http://localhost:3000/api/products/${data.id}`)
+        const kanap = await fetch(`http://localhost:3000/api/products/${data}`)
         const promessdata = kanap.json()
     return promessdata;
 }
@@ -13,13 +16,19 @@ async function fetchCartItem(data) {
         console.error(error.message);
     } 
 }
-
+async function getProductFromApi (arrayStringId, arrayCartItems) {
+    return await Promise.all(
+        await arrayStringId.map(async (id, index) => {
+           const kanap =  await fetchProduct(id);
+           return {
+                ...kanap, 
+                ...arrayCartItems[index]
+           }
+        })
+    )
+}
 // Fonction qui crée un élément HTML pour chaque produit
 function createCartItemElement(data) {
-    // Retourne une promesse
-     fetch(`http://localhost:3000/api/products/${data.id}`)
-    .then(response => response.json())
-    .then(product => {
     // Remplacement des articles 
     if (cartItemsContainer){
         const valueImg = document.querySelector(".cart__item");
@@ -28,17 +37,17 @@ function createCartItemElement(data) {
     // Création de l'élément article
     const articleElement = document.createElement("article");
         articleElement.classList.add("cart__item");
-        articleElement.setAttribute("data-id", product._id);
+        articleElement.setAttribute("data-id", data._id);
         articleElement.setAttribute("data-color", data.color);
         
     // Création de l'élément img
     const imgElement = document.createElement("img");
-        imgElement.setAttribute("src", product.imageUrl);
+        imgElement.setAttribute("src", data.imageUrl);
         imgElement.setAttribute("alt", "Photographie d'un canapé");
     
     // Création de l'élément h2
     const h2Element = document.createElement("h2");
-        h2Element.textContent = product.name;
+        h2Element.textContent = data.name;
 
     // Création de l'élément p pour la couleur
     const colorElement = document.createElement("p");
@@ -46,7 +55,7 @@ function createCartItemElement(data) {
     
     // Création de l'élément p pour le prix
     const priceElement = document.createElement("p");
-        priceElement.textContent = `${product.price} €`;
+        priceElement.textContent = `${data.price} €`;
     
     // Création de l'élément input pour la quantité
     const quantityElement = document.createElement("input");
@@ -90,8 +99,7 @@ function createCartItemElement(data) {
     // Ajout de l'élément article au conteneur
     cartItemsContainer.appendChild(articleElement);
     }
-    );
-}
+    
 // Parcours des produits du panier et appel de la fonction createCartItemElement pour chacun d'eux
 if (cartItems) {
     cartItems.forEach(item => createCartItemElement(item));
@@ -116,23 +124,7 @@ if (cartItems) {
         }
         totalQuantityElement.textContent = totalQuantity;
     }
-    // function totalPrice(data) {
-    //     fetch(`http://localhost:3000/api/products/${data.id}`)
-    //     .then(response => response.json())
-    //     .then(product => {
-    //     const totalQuantityElement = document.querySelector("#totalPrice");
-    //     let totaltPrice = 0;
-    //         totaltPrice = parseInt(product.price);
-    //     totalQuantityElement.textContent = totaltPrice;
-    //     console.log(totaltPrice);
-    //         } 
-    //     )}; 
 
-    function arraytotalPrice () {
-    const elementLocal = cartItems.map(item => item.quantity)
-    
-        console.log(elementLocal); 
-    }
     function calculPrice(price) {
         const totalQuantityElement = document.querySelector("#totalPrice");
         let totalPricesArray = [];
@@ -152,13 +144,14 @@ if (cartItems) {
     }
     document.querySelector('[name="itemQuantity"]').addEventListener('keyup', controlQuantity);
 
-totalQuantity();
-arraytotalPrice();
-
-async function main () {
-    try {
-        const fectchInfo = fetchCartItem();
+    
+    async function main () {
+        try {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        
+        const fectchInfo = fetchCartItem(cartItems);
         createCartItemElement(fectchInfo);
+        totalQuantity(fectchInfo);
     }
     catch(error) {
         console.error(error.message);
