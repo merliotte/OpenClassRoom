@@ -82,10 +82,13 @@ function renderKanapDataIntoHtml(kanapArray) {
 // Controle de la Quantité indiqué
 const changementQuantity = () => {
     const inputQuantity = document.querySelectorAll('.itemQuantity');
+    
     inputQuantity.forEach((input) => {
             input.addEventListener("keyup", (kanapData) => {
             const newValue = kanapData.target.value;
-            localStorage.setItem('maValeur', newValue);           
+            const itemIndex = newValue.quantity;
+
+            localStorage.setItem("cartItems", newValue);
         });
     });
 }
@@ -110,7 +113,7 @@ const totalPrice = (dataPrice) => {
     });
     totalquantityItems.textContent = totalQuantity.toFixed(2);
 }
-
+// Controle les données mis par l'utilisateur dans l'input 
 function controlQuantity(item) {
     inputValue = item.value;
     const quantityValue = document.querySelectorAll('.itemQuantity').value;
