@@ -83,15 +83,22 @@ function renderKanapDataIntoHtml(kanapArray) {
 const changementQuantity = () => {
     const inputQuantity = document.querySelectorAll('.itemQuantity');
     
-    inputQuantity.forEach((input) => {
-            input.addEventListener("keyup", (kanapData) => {
+    inputQuantity.forEach((inputValue) => {
+        inputValue.addEventListener("change", (kanapData) => {
             const newValue = kanapData.target.value;
-            const itemIndex = newValue.quantity;
-
-            localStorage.setItem("cartItems", newValue);
+            const itemId = kanapData.target.closest('.itemQuantity').dataset.id;
+            try {
+            const cartItems =  JSON.parse(localStorage.getItem('cartItems'));
+            const itemToUpdate = cartItems.findIndex(item => item._id === itemId);
+            cartItems[itemToUpdate].quantity= newValue;
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            window.location.reload(); 
+            } catch (error) {
+            console.error("Erreur du chargement du LocalStorage", error);
+        }
         });
     });
-}
+};
 // Calcul du Total quantité
 const totalQuantity = (dataQuantity) => {
     const totalquantityItems = document.querySelector("#totalQuantity")
