@@ -205,6 +205,74 @@ const testFieldsIsEmpty = () => {
 	});
 	return pass;
 }
+
+const createContactForm = () => {
+    const form = document.querySelector('.cart__order__form');
+	const contactForm = {
+		contact: {
+			firstName: form.firstName.value,
+			lastName: form.lastName.value,
+			address: form.address.value,
+			city: form.city.value,
+			email: form.email.value,
+		},
+		products: listIDs(), // fournit la liste des IDs à transmettre
+	};
+	return contactForm;
+}
+function submitForm(order) {
+    // empêche de rafraichir la page
+	order.preventDefault(); 
+	if (cart.length === 0) {
+		theBasketIsEmpty();
+		return;
+	}
+	// test si les champs sont vides
+	const pass = testFieldsIsEmpty();
+	if (pass) {
+		// construit l'objet avec les données de contacts et la liste des IDs des articles
+		const contactForm = createObjetForContactForm();
+
+		if (controlEmail()) sendCommand(contactForm);
+	}
+}
+
+async function sendCommand(contactForm) {
+	await fetch('http://localhost:3000/api/products/order', {
+		method: 'POST',
+		body: JSON.stringify(contactForm),
+		headers: { 'Content-Type': 'application/json' },
+	})
+		.then((res) => res.json())
+		.then((data) => {
+			const orderId = data.orderId;
+			window.location.href = 'confirmation.html?orderId=' + orderId;
+		})
+		.catch((err) => {
+			console.error(err);
+			alert('erreur: ' + err);
+		});
+}
+function listIDs() {
+	let ids = [];
+	for (let cpt = 0; cpt < cart.length; cpt++) {
+		ids.push(cart[cpt].id);
+	}
+	return ids;
+}
+
+function theBasketIsEmpty() {
+	const parent = document.querySelector('#mess-oblig');
+	parent.style.color = '#82FA58';
+	parent.style.fontweight = 'bold';
+	parent.style.borderStyle = 'solid';
+	parent.style.borderColor = '#E3F6CE';
+	parent.style.background = '#3d4c68';
+	parent.style.padding = '10px';
+	parent.style.borderRadius = '15px';
+	parent.style.textAlign = 'center';
+	parent.textContent = 'Votre panier est vide';
+}
  const controlEmail = () => {
     const mailElement = document.querySelector("#email");
 	const regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i);
@@ -229,7 +297,23 @@ const testFieldsIsEmpty = () => {
 
 }
 
-
+function testValidityForm(parent) {
+	let textTemp = parent.value;
+	let newStr = textTemp.replace(/0/g, '');
+	newStr = newStr.replace(/1/g, '');
+	newStr = newStr.replace(/2/g, '');
+	newStr = newStr.replace(/3/g, '');
+	newStr = newStr.replace(/4/g, '');
+	newStr = newStr.replace(/5/g, '');
+	newStr = newStr.replace(/6/g, '');
+	newStr = newStr.replace(/7/g, '');
+	newStr = newStr.replace(/8/g, '');
+	newStr = newStr.replace(/9/g, '');
+	newStr = newStr.replace(/'/g, '');
+	newStr = newStr.replace(/"/g, '');
+	newStr = newStr.replace(/=/g, '');
+	parent.value = newStr;
+}
 
 async function main () {
     try {
@@ -258,7 +342,14 @@ async function main () {
 
         controlEmail();
 
+        createContactFrom();
 
+        const parent = document.getElementById('firstName');
+            parent.addEventListener('keyup', () => testValidityForm(parent));
+        const parent2 = document.getElementById('lastName');
+            parent2.addEventListener('keyup', () => testValidityForm(parent2));
+        const parent3 = document.getElementById('city');
+            parent3.addEventListener('keyup', () => testValidityForm(parent3));
 
     } catch (error) {
         console.log(error);
