@@ -28,6 +28,8 @@ async function getProductFromApi (arrayStringId, arrayCartItems) {
 
 function renderKanapDataIntoHtml(kanapArray) {
     const articlesContainer = document.getElementById('cart__items');
+    // Efface le HTML de base 
+    articlesContainer.innerHTML= '';
     kanapArray.forEach((canap) => {
         const article = document.createElement('article');
         article.classList.add( 'cart__item');
@@ -55,10 +57,6 @@ function renderKanapDataIntoHtml(kanapArray) {
               </div>
             </div>
             `;   
-        const removeItemId = document.querySelector('.cart__item[data-id="{product-ID}"]')
-        if (removeItemId) {
-            removeItemId.remove();
-        }
       articlesContainer.appendChild(article);
         }
     ); 
@@ -79,58 +77,65 @@ function renderKanapDataIntoHtml(kanapArray) {
      });
 };
 
-// Controle de la Quantité indiqué
-const changementQuantity = () => {
+// Controle du changement de la quantité indiqué
+const changementQuantity = (arrayKanaps) => {
     const inputQuantity = document.querySelectorAll('.itemQuantity');
     
-    inputQuantity.forEach((inputValue) => {
-        inputValue.addEventListener("change", (kanapData) => {
-            const newValue = kanapData.target.value;
-            const itemId = kanapData.target.closest('.itemQuantity').dataset.id;
+    inputQuantity.forEach((inputValue, index) => {
+        inputValue.addEventListener("change", (event) => {
             try {
-            const cartItems =  JSON.parse(localStorage.getItem('cartItems'));
-            const itemToUpdate = cartItems.findIndex(item => item._id === itemId);
-            cartItems[itemToUpdate].quantity= newValue;
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-            window.location.reload(); 
+              updateAfterQuantityChange(index, parseInt(event.target.value),arrayKanaps);
+              totalQuantity(arrayKanaps);
+              totalPrice(arrayKanaps);
+              controlQuantity(arrayKanaps);
             } catch (error) {
-            console.error("Erreur du chargement du LocalStorage", error);
-        }
+                console.error("Erreur du chargement du LocalStorage", error);
+            }
         });
     });
 };
-// Calcul du Total quantité
-const totalQuantity = (dataQuantity) => {
-    const totalquantityItems = document.querySelector("#totalQuantity")
-    let totalQuantity = 0;
+// Permet de mettre à jour la quantité
+function updateAfterQuantityChange(index, newQuantity, arrayKanap) {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  
+    cartItems[index].quantity = newQuantity;
+    arrayKanap[index].quantity = newQuantity;
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    return arrayKanap; 
+}
 
-        dataQuantity.forEach((kanap) => {
-            totalQuantity += parseInt(kanap.quantity) ;
-            totalquantityItems.textContent = totalQuantity
+// Calcul du Total quantité
+function totalQuantity(arrayKanaps) {
+	const totalArticleElement = document.getElementById('totalQuantity');
+    const totalArticles = arrayKanaps.reduce((actual, next, index) => {
+        if (index === 1) {
+            return actual.quantity + next.quantity;
+        }
+        return actual + next.quantity;
     });
+  totalArticleElement.textContent = totalArticles;
 }
 
 // Calcul du Total du Prix 
-const totalPrice = (dataPrice) => {
+const totalPrice = (arrayKanaps) => {
     const totalquantityItems = document.querySelector("#totalPrice")
     let totalQuantity = 0;
 
-        dataPrice.forEach((kanap) => {
+    arrayKanaps.forEach((kanap) => {
             totalQuantity += parseInt((kanap.price)*(kanap.quantity)) ;
     });
     totalquantityItems.textContent = totalQuantity.toFixed(2);
 }
 // Controle les données mis par l'utilisateur dans l'input 
-function controlQuantity(item) {
-    inputValue = item.value;
+function controlQuantity() {
     const quantityValue = document.querySelectorAll('.itemQuantity').value;
-    console.log(inputValue);
-    if (quantityValue != null) {
-        if (quantityValue < 0 ) document.querySelector('.itemQuantity').value = 0;
-        if (quantityValue > 100) document.querySelector('.itemQuantity').value = 100;
+        if (quantityValue < 0 ) document.querySelector('.itemQuantity').value = 1;
+        if (quantityValue > 100) {document.querySelector('.itemQuantity').value = 100; 
     }
+    
 }
-
+// Test si un champ et vide et lui change sa couleur lors du remplissage
 function testInData(element) {
 	if (element.id != 'order') {
 		if (element.value === '') {
@@ -158,6 +163,8 @@ function testInData(element) {
 		}
 	}
 }
+
+// Test Si le champ est vide le met en évidence en rouge
 const testFieldsIsEmpty = () => {
 	const form = document.querySelector('.cart__order__form');
 	const inputs = form.querySelectorAll('input');
@@ -206,72 +213,118 @@ const testFieldsIsEmpty = () => {
 	return pass;
 }
 
-const createContactForm = () => {
+// const createContactForm = () => {
+//     const form = document.querySelector('.cart__order__form');
+// 	const contactForm = {
+// 		contact: {
+// 			firstName: form.firstName.value,
+// 			lastName: form.lastName.value,
+// 			address: form.address.value,
+// 			city: form.city.value,
+// 			email: form.email.value,
+// 		},
+// 		products: listIDs(), // fournit la liste des IDs à transmettre
+// 	};
+// 	return contactForm;
+// }
+
+
+// async function sendCommand(contactForm) {
+// 	await fetch('http://localhost:3000/api/products/order', {
+// 		method: 'POST',
+// 		body: JSON.stringify(contactForm),
+// 		headers: { 'Content-Type': 'application/json' },
+// 	})
+// 		.then((res) => res.json())
+// 		.then((data) => {
+// 			const orderId = data.orderId;
+// 			window.location.href = 'confirmation.html?orderId=' + orderId;
+// 		})
+// 		.catch((err) => {
+// 			console.error(err);
+// 			alert('erreur: ' + err);
+// 		});
+// }
+function addFormSubmitListener() {
+    // Ajouter un gestionnaire d'événements "submit" au formulaire
     const form = document.querySelector('.cart__order__form');
-	const contactForm = {
-		contact: {
-			firstName: form.firstName.value,
-			lastName: form.lastName.value,
-			address: form.address.value,
-			city: form.city.value,
-			email: form.email.value,
-		},
-		products: listIDs(), // fournit la liste des IDs à transmettre
-	};
-	return contactForm;
-}
-function submitForm(order) {
-    // empêche de rafraichir la page
-	order.preventDefault(); 
-	if (cart.length === 0) {
-		theBasketIsEmpty();
-		return;
-	}
-	// test si les champs sont vides
-	const pass = testFieldsIsEmpty();
-	if (pass) {
-		// construit l'objet avec les données de contacts et la liste des IDs des articles
-		const contactForm = createObjetForContactForm();
+    form.addEventListener('submit', submitForm);
+  }
+  
+  function submitForm(event) {
+    event.preventDefault(); // Empêche la page de se recharger
+  
+    // Récupérer les données du formulaire
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const email = document.getElementById('email').value;
+  
+    // Formater les données dans un objet JSON
+    const contact = {
+      firstName: firstName,
+      lastName: lastName,
+      address: address,
+      city: city,
+      email: email
+    };
+    const products = listIDs(); // récupérer la liste des IDs de la commande
+    
+    const order = { contact, products }; // objets à envoyer au serveur
+  
+    // Envoyer les données à votre API avec fetch()
+    fetch('http://localhost:3000/api/products/order', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(order)
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Traiter la réponse de l'API
+        const orderId = data.orderId;
+        // Rediriger l'utilisateur vers la page de confirmation
+        window.location.href = `confirmation.html?orderId=${orderId}`;
+      })
+      .catch(error => {
+        console.error('Erreur lors de l\'envoi de la commande:', error);
+      });
+  }
+  
+// Permet de transmettre le formulaire et les données à la page confirmation.html
+// function submitForm(order) {
+//     // empêche de rafraichir la page
+// 	order.preventDefault(); 
+// 	if (cart.length === 0) {
+// 		theBasketIsEmpty();
+// 		return;
+// 	}
+// 	// test si les champs sont vides
+// 	const pass = testFieldsIsEmpty();
+// 	if (pass) {
+// 		// construit l'objet avec les données de contacts et la liste des IDs des articles
+// 		const contactForm = createContactForm();
+// 		sendCommand(contactForm);
+// 	}
+// }
 
-		if (controlEmail()) sendCommand(contactForm);
-	}
-}
-
-async function sendCommand(contactForm) {
-	await fetch('http://localhost:3000/api/products/order', {
-		method: 'POST',
-		body: JSON.stringify(contactForm),
-		headers: { 'Content-Type': 'application/json' },
-	})
-		.then((res) => res.json())
-		.then((data) => {
-			const orderId = data.orderId;
-			window.location.href = 'confirmation.html?orderId=' + orderId;
-		})
-		.catch((err) => {
-			console.error(err);
-			alert('erreur: ' + err);
-		});
-}
-function listIDs() {
-	let ids = [];
-	for (let cpt = 0; cpt < cart.length; cpt++) {
-		ids.push(cart[cpt].id);
-	}
-	return ids;
-}
-
+function listIDs(arrayKanap) {
+    let ids = [];
+    if (Array.isArray(arrayKanap)) {
+      arrayKanap.forEach(kanap => {
+        ids.push(kanap.id);
+      });
+    }
+    return ids;
+  }
+  
+  
 function theBasketIsEmpty() {
-	const parent = document.querySelector('#mess-oblig');
-	parent.style.color = '#82FA58';
-	parent.style.fontweight = 'bold';
-	parent.style.borderStyle = 'solid';
-	parent.style.borderColor = '#E3F6CE';
-	parent.style.background = '#3d4c68';
-	parent.style.padding = '10px';
-	parent.style.borderRadius = '15px';
-	parent.style.textAlign = 'center';
-	parent.textContent = 'Votre panier est vide';
+    const parent = document.querySelector('#mess-oblig');
+    parent.style.cssText = 'color: #82FA58; font-weight: bold; border-style: solid; border-color: #E3F6CE; background: #3d4c68; padding: 10px; border-radius: 15px; text-align: center;';
+    parent.textContent = 'Votre panier est vide';
 }
  const controlEmail = () => {
     const mailElement = document.querySelector("#email");
@@ -299,22 +352,20 @@ function theBasketIsEmpty() {
 
 function testValidityForm(parent) {
 	let textTemp = parent.value;
-	let newStr = textTemp.replace(/0/g, '');
-	newStr = newStr.replace(/1/g, '');
-	newStr = newStr.replace(/2/g, '');
-	newStr = newStr.replace(/3/g, '');
-	newStr = newStr.replace(/4/g, '');
-	newStr = newStr.replace(/5/g, '');
-	newStr = newStr.replace(/6/g, '');
-	newStr = newStr.replace(/7/g, '');
-	newStr = newStr.replace(/8/g, '');
-	newStr = newStr.replace(/9/g, '');
-	newStr = newStr.replace(/'/g, '');
-	newStr = newStr.replace(/"/g, '');
-	newStr = newStr.replace(/=/g, '');
+    const newStr = textTemp.replace(/[^A-Za-z\s]/g, "");
 	parent.value = newStr;
 }
-
+const orderButton = () => {
+        const orderButtonSelector = document.querySelector("#order");
+            orderButtonSelector.addEventListener('click', (order) => submitForm(order));
+        const parent = document.getElementById("firstName");
+            parent.addEventListener("keyup", () => testValidityForm(parent))
+        const parent2 = document.getElementById("firstName");
+            parent2.addEventListener("keyup", () => testValidityForm(parent2))
+        const parent3 = document.getElementById("firstName");
+            parent3.addEventListener("keyup", () => testValidityForm(parent3))
+};
+// Appel et stocke les autres fonctions 
 async function main () {
     try {
         const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
@@ -337,20 +388,16 @@ async function main () {
         totalPrice(arrayKanaps);
 
         testFieldsIsEmpty();
+        
+        // sendCommand();
 
         changementQuantity(arrayKanaps);
 
-        controlEmail();
+        addFormSubmitListener();
 
-        createContactFrom();
+        listIDs(arrayKanaps);
 
-        const parent = document.getElementById('firstName');
-            parent.addEventListener('keyup', () => testValidityForm(parent));
-        const parent2 = document.getElementById('lastName');
-            parent2.addEventListener('keyup', () => testValidityForm(parent2));
-        const parent3 = document.getElementById('city');
-            parent3.addEventListener('keyup', () => testValidityForm(parent3));
-
+        orderButton(arrayKanaps);
     } catch (error) {
         console.log(error);
     }
