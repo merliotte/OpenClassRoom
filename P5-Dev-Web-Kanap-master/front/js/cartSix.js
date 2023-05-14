@@ -213,38 +213,6 @@ const testFieldsIsEmpty = () => {
 	return pass;
 }
 
-// const createContactForm = () => {
-//     const form = document.querySelector('.cart__order__form');
-// 	const contactForm = {
-// 		contact: {
-// 			firstName: form.firstName.value,
-// 			lastName: form.lastName.value,
-// 			address: form.address.value,
-// 			city: form.city.value,
-// 			email: form.email.value,
-// 		},
-// 		products: listIDs(), // fournit la liste des IDs à transmettre
-// 	};
-// 	return contactForm;
-// }
-
-
-// async function sendCommand(contactForm) {
-// 	await fetch('http://localhost:3000/api/products/order', {
-// 		method: 'POST',
-// 		body: JSON.stringify(contactForm),
-// 		headers: { 'Content-Type': 'application/json' },
-// 	})
-// 		.then((res) => res.json())
-// 		.then((data) => {
-// 			const orderId = data.orderId;
-// 			window.location.href = 'confirmation.html?orderId=' + orderId;
-// 		})
-// 		.catch((err) => {
-// 			console.error(err);
-// 			alert('erreur: ' + err);
-// 		});
-// }
 function addFormSubmitListener() {
     // Ajouter un gestionnaire d'événements "submit" au formulaire
     const form = document.querySelector('.cart__order__form');
@@ -293,23 +261,6 @@ function addFormSubmitListener() {
       });
   }
   
-// Permet de transmettre le formulaire et les données à la page confirmation.html
-// function submitForm(order) {
-//     // empêche de rafraichir la page
-// 	order.preventDefault(); 
-// 	if (cart.length === 0) {
-// 		theBasketIsEmpty();
-// 		return;
-// 	}
-// 	// test si les champs sont vides
-// 	const pass = testFieldsIsEmpty();
-// 	if (pass) {
-// 		// construit l'objet avec les données de contacts et la liste des IDs des articles
-// 		const contactForm = createContactForm();
-// 		sendCommand(contactForm);
-// 	}
-// }
-
 function listIDs(arrayKanap) {
     let ids = [];
     if (Array.isArray(arrayKanap)) {
@@ -332,20 +283,20 @@ function theBasketIsEmpty() {
     const valueTextMail = mailElement.regex ; 
     const errorMsg = document.querySelector("#emailErrorMsg");
 
-    if(valueTextMail === "") {
-    errorMsg.innerHTML = "Veuillez entrer votre adresse e-mail.";
-    regex.classList.add("error");
-    return false ;
+        if(valueTextMail === "") {
+            errorMsg.innerHTML = "Veuillez entrer votre adresse e-mail.";
+            regex.classList.add("error");
+        return false ;
     }
 
-    if (!mailElement.test(valueTextMail)){
-        errorMsg.innerHTML = 'Veuillez saisir une adresse e-mail valide.';
-        regex.classList.add("error");
+        if (!mailElement.test(valueTextMail)){
+            errorMsg.innerHTML = 'Veuillez saisir une adresse e-mail valide.';
+            regex.classList.add("error");
         return false;
     }
 
-    errorMsg.innerHTML = '';
-    elem.classList.remove('error');
+        errorMsg.innerHTML = '';
+        elem.classList.remove('error');
     return true;
 
 }
@@ -353,16 +304,16 @@ function theBasketIsEmpty() {
 function testValidityForm(parent) {
 	let textTemp = parent.value;
     const newStr = textTemp.replace(/[^A-Za-z\s]/g, "");
-	parent.value = newStr;
+        parent.value = newStr;
 }
 const orderButton = () => {
         const orderButtonSelector = document.querySelector("#order");
             orderButtonSelector.addEventListener('click', (order) => submitForm(order));
         const parent = document.getElementById("firstName");
             parent.addEventListener("keyup", () => testValidityForm(parent))
-        const parent2 = document.getElementById("firstName");
+        const parent2 = document.getElementById("lastName");
             parent2.addEventListener("keyup", () => testValidityForm(parent2))
-        const parent3 = document.getElementById("firstName");
+        const parent3 = document.getElementById("address");
             parent3.addEventListener("keyup", () => testValidityForm(parent3))
 };
 // Appel et stocke les autres fonctions 
