@@ -65,7 +65,7 @@ function renderKanapDataIntoHtml(kanapArray) {
   const deleteElement =  (deleteButtons) => {
     const cartItemsStorage = JSON.parse(localStorage.getItem('cartItems'));
     deleteButtons.forEach((button) => {
-        button.addEventListener("click", () => {
+        button.addEventListener("click", (arrayKanaps) => {
             // Cible le contenu supprimez 
             const articleElement = button.closest(".cart__item");
             articleElement.parentNode.removeChild(articleElement);
@@ -73,6 +73,7 @@ function renderKanapDataIntoHtml(kanapArray) {
             const index = cartItemsStorage.findIndex(item => item.id);
             cartItemsStorage.splice(index, 1);
             localStorage.setItem('cartItems', JSON.stringify(cartItemsStorage));
+            location.reload();
        });
      });
 };
@@ -107,13 +108,12 @@ function updateAfterQuantityChange(index, newQuantity, arrayKanap) {
 
 // Calcul du Total quantité
 function totalQuantity(arrayKanaps) {
-	const totalArticleElement = document.getElementById('totalQuantity');
-    const totalArticles = arrayKanaps.reduce((actual, next, index) => {
-        if (index === 1) {
-            return actual.quantity + next.quantity;
-        }
-        return actual + next.quantity;
-    });
+  const totalArticleElement = document.getElementById('totalQuantity');
+
+  const totalArticles = arrayKanaps.reduce((actual, kanap) => {
+    return actual + kanap.quantity;
+  }, 0);
+
   totalArticleElement.textContent = totalArticles;
 }
 
@@ -129,12 +129,27 @@ const totalPrice = (arrayKanaps) => {
 }
 // Controle les données mis par l'utilisateur dans l'input 
 function controlQuantity() {
-    const quantityValue = document.querySelectorAll('.itemQuantity').value;
-        if (quantityValue < 0 ) document.querySelector('.itemQuantity').value = 1;
-        if (quantityValue > 100) {document.querySelector('.itemQuantity').value = 100; 
+  const inputQuantity = document.querySelector('.itemQuantity');
+
+  inputQuantity.addEventListener("input", (event) => {
+    const value = parseInt(event.target.value ); 
+
+    if (value < 0 || value > 100) {
+      event.target.value = Math.max(0, Math.min(100,value));
     }
-    
+    controlQuantityTest();
+  });
+};
+
+const controlQuantityTest = () => {
+  const inputQuantity = document.querySelector(".itemQuantity");
+
+  inputQuantity.addEventListener("input", (event) => {
+    event.target.value = event.target.value.replace(/\D/g, '');
+
+  });
 }
+
 // Test si un champ et vide et lui change sa couleur lors du remplissage
 function testInData(element) {
 	if (element.id != 'order') {
@@ -222,14 +237,14 @@ function addFormSubmitListener() {
   function submitForm(event) {
     event.preventDefault(); // Empêche la page de se recharger
   
-    // Récupérer les données du formulaire
+    // Récupére les données du formulaire
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const address = document.getElementById('address').value;
     const city = document.getElementById('city').value;
     const email = document.getElementById('email').value;
   
-    // Formater les données dans un objet JSON
+    // Formate les données dans un objet JSON
     const contact = {
       firstName: firstName,
       lastName: lastName,
@@ -241,7 +256,7 @@ function addFormSubmitListener() {
     
     const order = { contact, products }; // objets à envoyer au serveur
   
-    // Envoyer les données à votre API avec fetch()
+    // Envoi les données à votre API avec fetch()
     fetch('http://localhost:3000/api/products/order', {
       method: 'POST',
       headers: {
@@ -316,6 +331,7 @@ const orderButton = () => {
         const parent3 = document.getElementById("address");
             parent3.addEventListener("keyup", () => testValidityForm(parent3))
 };
+
 // Appel et stocke les autres fonctions 
 async function main () {
     try {
@@ -330,18 +346,16 @@ async function main () {
 
         const deleteButtons = document.querySelectorAll(".deleteItem");
 
-        deleteElement(deleteButtons);
+        deleteElement(deleteButtons, arrayKanaps);
 
         totalQuantity(arrayKanaps);
 
-        controlQuantity(totalQuantity, totalPrice); 
+        controlQuantity(totalQuantity); 
 
         totalPrice(arrayKanaps);
 
         testFieldsIsEmpty();
         
-        // sendCommand();
-
         changementQuantity(arrayKanaps);
 
         addFormSubmitListener();
